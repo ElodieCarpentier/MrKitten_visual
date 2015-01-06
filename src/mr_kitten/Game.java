@@ -1,6 +1,7 @@
+package mr_kitten;
+
 
 import java.util.Random;
-import mr_kitten.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
