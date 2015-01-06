@@ -15,12 +15,14 @@ public class Characters {
     private int ennemiHP;
     private int ennemiAD;
     private String talk;
+    private String room;
     
-    public Characters(String n, int hp, int ad, String t){
+    public Characters(String n, int hp, int ad, String t, String r){
         name=n;
         ennemiHP=hp;
         ennemiAD=ad;
         talk=t;
+        room=r;
     }
     
     public String getName(){
