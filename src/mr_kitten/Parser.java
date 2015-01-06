@@ -11,9 +11,8 @@ package mr_kitten;
  */
 public class Parser {
     
-}
-import java.util.Scanner;
-import java.util.StringTokenizer;
+    import java.util.Scanner;
+    import java.util.StringTokenizer;
 
 
     private CommandWords commands;  // holds all valid command words
