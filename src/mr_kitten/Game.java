@@ -26,7 +26,6 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-    private ArrayList<Item> inventory;
     private ArrayList<Item> items;
     private ArrayList<Characters> characters;
     
@@ -40,7 +39,6 @@ public class Game
         createCharacters();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
-        inventory = new ArrayList<Item>();
      }
 
     /**
@@ -52,20 +50,20 @@ public class Game
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
-        kitchen = new Room ("are in the Kitchen of the Master's house");
-        livingRoom = new Room ("are in the Living room of the Master's house");
-        bedroom = new Room ("are in the Bedroom of the Master's house");
-        street1 = new Room ("are in the Street near the entrance of the house");
-        street2 = new Room ("are in the Street near the Petshop");
-        sewer = new Room ("are in the Sewer under the streets");
-        petshop = new Room ("are in the Petshop");
-        theGreatDescent = new Room ("are going deep down under water");
-        dory = new Room ("are with Dory the great fish");
-        theFishPalace = new Room ("are in the Fish Palace");
-        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo");
-        starWars = new Room ("are in a Galaxy far far away...");
-        theCloset = new Room ("are ready to fight with lions");
-        theEnd = new Room ("did it, you did it, Yeah!");
+        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen");
+        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom");
+        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom");
+        street1 = new Room ("are in the Street near the entrance of the house","street1");
+        street2 = new Room ("are in the Street near the Petshop","street2");
+        sewer = new Room ("are in the Sewer under the streets","sewer");
+        petshop = new Room ("are in the Petshop","petshop");
+        theGreatDescent = new Room ("are going deep down under water","theGreatDescent");
+        dory = new Room ("are with Dory the great fish","dory");
+        theFishPalace = new Room ("are in the Fish Palace","theFishPalace");
+        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo");
+        starWars = new Room ("are in a Galaxy far far away...","starWars");
+        theCloset = new Room ("are ready to fight with lions","theCloset");
+        theEnd = new Room ("did it, you did it, Yeah!","theEnd");
         
         //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
@@ -296,7 +294,7 @@ public class Game
         boolean charactersFind = false;
         for (int i = 0;i<characters.size();i++){
             Characters currentChar = characters.get(i);
-            if (currentChar.getRoom().equals(currentRoom)) {
+            if (currentChar.getRoom().equals(currentRoom.getName())) {
                 ennemi = currentChar.getName();
                 ennemiHP = currentChar.getEnnemiHP();
                 ennemiAD = currentChar.getEnnemiAD();
@@ -308,19 +306,19 @@ public class Game
             System.out.println("There is no character in this room");
         }
         else {
-          int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
-          System.out.println ("Mr Kitten VS "+ ennemi);
-          while (MrKittenHP>0 || ennemiHP>0){
-            int intEnnemiHP = ennemiHP;
-            while(intEnnemiHP == ennemiHP) {
-                System.out.println (" What would you like ? attack / special attack / items");
-                intEnnemiHP = fightCommand(command,ennemiHP);
+            int MrKittenHP = MrKitten.getPlayerHP();
+            System.out.println ("Mr Kitten VS "+ ennemi);
+            while (MrKittenHP>0 || ennemiHP>0){
+                int intEnnemiHP = ennemiHP;
+                while(intEnnemiHP == ennemiHP) {
+                    System.out.println (" What would you like ? attack / special attack / items");
+                    intEnnemiHP = fightCommand(command,ennemiHP);
+                }
+                ennemiHP = intEnnemiHP;
+                Random nbRd = new Random();
+                int nextnb = nbRd.nextInt(ennemiAD)+1;
+                MrKittenHP =  MrKittenHP - nextnb;        
             }
-            ennemiHP = intEnnemiHP;
-            Random nbRd = new Random();
-            int nextnb = nbRd.nextInt(ennemiAD)+1;
-            MrKittenHP =  MrKittenHP - nextnb;        
-          }
         }
     }
     /**
@@ -364,8 +362,8 @@ public class Game
     private int specialAttack(int ennemiHP)
     {
         System.out.println(" What would you like ? ");
-        for (int i = 0;i<inventory.size();i++){
-            Item currentItem = inventory.get(i);
+        for (int i = 0;i<MrKitten.getInventory().size();i++){
+            Item currentItem = MrKitten.getInventory().get(i);
             if (currentItem.getName().equals("superPiss")){
                 System.out.println(" superPiss ");
             }

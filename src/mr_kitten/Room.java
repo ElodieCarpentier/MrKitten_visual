@@ -29,13 +29,7 @@ import java.util.*;
 public class Room 
 {
     private String description;
-//     public Room northExit;
-//     public Room southExit;
-//     public Room eastExit;
-//     public Room westExit;
-//     public Room upExit;
-//     public Room downExit;
-
+    private String name;
     private HashMap <String,Door> HM;
 
     /**
@@ -44,9 +38,10 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room(String description, String name) 
     {
         this.description = description;
+        this.name = name;
         HM = new HashMap <String,Door> ();
     }
     
@@ -86,4 +81,7 @@ public class Room
         return description;
     }
 
+    public String getName() {
+        return name;
+    }
 }
