@@ -138,16 +138,16 @@ public class Game
         }
 
         String commandWord = command.getCommandWord();
-        if (commandWord.equals("help")){
+        if(commandWord.equals("help")){
             printHelp();
         }    
-        else if (commandWord.equals("go")){
+        else if(commandWord.equals("go")){
             goRoom(command);
         }    
-        else if (commandWord.equals("quit")){
+        else if(commandWord.equals("quit")){
             wantToQuit = quit(command);
         }
-        else if (commandWord.equals("look")){
+        else if(commandWord.equals("look")){
             lookRoom(command);
         }
         return wantToQuit;
@@ -316,6 +316,7 @@ public class Game
                 System.out.println(" laserTail ");
             }
         }
+        Command command = parser.getCommand();
         ennemiHP = specialCommand(command,ennemiHP);
         return ennemiHP;
     }
