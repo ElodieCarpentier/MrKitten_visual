@@ -281,7 +281,7 @@ public class Game
             ennemiHP = specialAttack(ennemiHP);
         }
         else if (commandWord.equals("items")){
-            ennemiHP = items(ennemiHP);
+            //ennemiHP = items(ennemiHP);
         }
          
         return ennemiHP;
