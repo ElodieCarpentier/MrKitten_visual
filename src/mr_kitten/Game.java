@@ -28,6 +28,7 @@ public class Game
     private Players MrKitten;
     private ArrayList<Item> inventory;
     private ArrayList<Item> items;
+    private ArrayList<Characters> characters;
     
     /**
      * Create the game and initialise its internal map.
@@ -36,6 +37,7 @@ public class Game
     {
         createRooms();
         createItems();
+        createCharacters();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
         inventory = new ArrayList<Item>();
@@ -92,15 +94,49 @@ public class Game
     private void createItems()
     {
         Item potion = new Item ("potion","It's nice and warm",1);
-        Item jaw = new Item ("jaw","It's sharp and ready",5);
+        Item superBite = new Item ("superBite","It's sharp and ready",10);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
+        Item puppyEyes = new Item ("puppy eyes", "...", 13); //A COMPLETER
+        Item laserTail = new Item ("laser tail", "...", 20); //A COMPLETER
         items.add(potion);
-        items.add(jaw);
+        items.add(superBite);
         items.add(superPiss);
+        items.add(puppyEyes);
+        items.add(laserTail);
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
         items.add(keyLivingStreet);
         Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
         items.add(keyFishTavern);
+    }
+    
+    /**
+     * Create all characters in the game
+     */
+    public void createCharacters() {
+        Characters goldFish = new Characters("Gold Fish", 10, 3,"...", "livingRoom");//A COMPLETER
+        Characters garfield = new Characters("Garfield", 30, 5,"...", "street1");//A COMPLETER
+        Characters splinter = new Characters("Splinter", 25, 15,"...", "street2");//A COMPLETER
+        Characters dory = new Characters("Dory", 25, 5,"...", "dory");//A COMPLETER
+        Characters ratatouille = new Characters("Ratatouille", 20, 5,"...", "petshop");//A COMPLETER
+        Characters mrRobot = new Characters("Mr.Robot", 40, 25,"...", "petshop");//A COMPLETER
+        Characters shark = new Characters("Sharks", 20, 10,"...", "theGreatDescent");//A COMPLETER
+        Characters darkMoule = new Characters("Dark Moule", 35, 20, "...", "theFishPalace");//A COMPLETER
+        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");//A COMPLETER
+        Characters darkVador = new Characters("Dark Vador", 40, 25,"...", "star wars");//A COMPLETER
+        Characters brother = new Characters("Brother", 50, 30,"...", "theEnd");//A COMPLETER
+    
+        characters = new ArrayList<Characters>();
+        characters.add(goldFish);
+        characters.add(garfield);
+        characters.add(splinter);
+        characters.add(dory);
+        characters.add(ratatouille);
+        characters.add(mrRobot);
+        characters.add(shark);
+        characters.add(darkMoule);
+        characters.add(pussInBoots);
+        characters.add(darkVador);
+        characters.add(brother);
     }
     
     /**
@@ -254,9 +290,24 @@ public class Game
      */
     private void fightPeople(Command command)
     { 
-          String ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
-          int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
-          int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
+        String ennemi = "";
+        int ennemiHP=0;
+        int ennemiAD=0;
+        boolean charactersFind = false;
+        for (int i = 0;i<characters.size();i++){
+            Characters currentChar = characters.get(i);
+            if (currentChar.getRoom().equals(currentRoom)) {
+                ennemi = currentChar.getName();
+                ennemiHP = currentChar.getEnnemiHP();
+                ennemiAD = currentChar.getEnnemiAD();
+                charactersFind = true;
+                return;
+            }
+        }  
+        if (charactersFind == false) {
+            System.out.println("There is no character in this room");
+        }
+        else {
           int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
           System.out.println ("Mr Kitten VS "+ ennemi);
           while (MrKittenHP>0 || ennemiHP>0){
@@ -270,7 +321,7 @@ public class Game
             int nextnb = nbRd.nextInt(ennemiAD)+1;
             MrKittenHP =  MrKittenHP - nextnb;        
           }
-        
+        }
     }
     /**
      * Give a command to fight
@@ -321,6 +372,9 @@ public class Game
             if (currentItem.getName().equals("superBite")){
                 System.out.println(" superBite ");
             }
+            if (currentItem.getName().equals("puppyEyes")){
+                System.out.println(" puppyEyes ");
+            }
             if (currentItem.getName().equals("laserTail")){
                 System.out.println(" laserTail ");
             }
@@ -345,8 +399,10 @@ public class Game
             ennemiHP = ennemiHP - 15;
         } else if (commandWord.equals("superBite")){
             ennemiHP = ennemiHP - 20;
-        } else if (commandWord.equals("laserTail")){
+        } else if (commandWord.equals("puppyEyes")){
             ennemiHP = ennemiHP - 25;
+        } else if (commandWord.equals("laserTail")){
+            ennemiHP = ennemiHP - 30;
         }
         
         return ennemiHP;
