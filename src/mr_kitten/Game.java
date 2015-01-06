@@ -27,6 +27,7 @@ public class Game
     private Room currentRoom;
     private Players MrKitten;
     private ArrayList<Item> inventory;
+    private ArrayList<Item> items;
     
     /**
      * Create the game and initialise its internal map.
@@ -37,18 +38,18 @@ public class Game
         createItems();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
-    }
+        inventory = new ArrayList<Item>();
+     }
 
     /**
      * Create all the rooms and link their exits together.
      */
     private void createRooms()
     {
-        //Room outside, theatre, pub, lab, office;
+        //Declare rooms;
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
-        
-        
+                
         kitchen = new Room ("are in the Kitchen of the Master's house");
         livingRoom = new Room ("are in the Living room of the Master's house");
         bedroom = new Room ("are in the Bedroom of the Master's house");
@@ -64,6 +65,7 @@ public class Game
         theCloset = new Room ("are ready to fight with lions");
         theEnd = new Room ("did it, you did it, Yeah!");
         
+        //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
         Door doorBLr = new Door (bedroom, livingRoom); livingRoom.addExit("east",doorBLr); bedroom.addExit("west",doorBLr);
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
@@ -92,6 +94,13 @@ public class Game
         Item potion = new Item ("potion","It's nice and warm",1);
         Item jaw = new Item ("jaw","It's sharp and ready",5);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
+        items.add(potion);
+        items.add(jaw);
+        items.add(superPiss);
+        Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
+        items.add(keyLivingStreet);
+        Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
+        items.add(keyFishTavern);
     }
     
     /**
@@ -245,7 +254,7 @@ public class Game
      */
     private void fightPeople(Command command)
     { 
-          ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
+          String ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
           int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
           int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
           int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
@@ -281,7 +290,7 @@ public class Game
             ennemiHP = specialAttack(ennemiHP);
         }
         else if (commandWord.equals("items")){
-            ennemiHP = items(ennemiHP);
+            //ennemiHP = items(ennemiHP);
         }
          
         return ennemiHP;
