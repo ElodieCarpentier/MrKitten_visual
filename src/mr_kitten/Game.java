@@ -2,6 +2,7 @@ package mr_kitten;
 
 
 import java.util.Random;
+import java.util.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -25,7 +26,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-        
+    private ArrayList<Item> inventory;
+    
     /**
      * Create the game and initialise its internal map.
      */
