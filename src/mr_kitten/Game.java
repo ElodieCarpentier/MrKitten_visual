@@ -91,12 +91,20 @@ public class Game
      */
     private void createItems()
     {
-        Item potion = new Item ("potion","It's nice and warm",1);
+        Item potionCareMin = new Item ("potionCareMin","...",5); //A COMPLETER
+        Item potionCareMax = new Item ("potionCareMax","...",25); //A COMPLETER
+        Item potionCareMean = new Item("potionCareMean","...",20); //A COMPLETER
+        Item algea = new Item ("algea", "...", 10); //A COMPLETER
+        Item potionBonus = new Item("potionBonus", "...", 25); //A COMPLETER
         Item superBite = new Item ("superBite","It's sharp and ready",10);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
         Item puppyEyes = new Item ("puppy eyes", "...", 13); //A COMPLETER
         Item laserTail = new Item ("laser tail", "...", 20); //A COMPLETER
-        items.add(potion);
+        items.add(potionCareMin);
+        items.add(potionCareMax);
+        items.add(potionCareMean);
+        items.add(algea);
+        items.add(potionBonus);
         items.add(superBite);
         items.add(superPiss);
         items.add(puppyEyes);
@@ -339,7 +347,7 @@ public class Game
             ennemiHP = specialAttack(ennemiHP);
         }
         else if (commandWord.equals("items")){
-            //ennemiHP = items(ennemiHP);
+            ennemiHP = itemsAttack(ennemiHP);
         }
          
         return ennemiHP;
@@ -406,4 +414,8 @@ public class Game
         return ennemiHP;
     }
     
+    private int itemsAttack(int ennemiHP)
+    {
+        
+    }
 }
