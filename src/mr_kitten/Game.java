@@ -1,12 +1,3 @@
-
-import java.util.*;
-import mr_kitten.*;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package mr_kitten;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -28,6 +19,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Players MrKitten;
+        
     /**
      * Create the game and initialise its internal map.
      */
@@ -35,7 +28,7 @@ public class Game
     {
         createRooms();
         createItems();
-        Players MrKitten = new Players("Mr.Kitten");
+        MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
     }
 
@@ -64,37 +57,23 @@ public class Game
         theCloset = new Room ("are ready to fight with lions");
         theEnd = new Room ("did it, you did it, Yeah!");
         
-        Door door1 = new Door(livingRoom); kitchen.addExit("east", door1);  
-        Door door2 = new Door (bedroom); livingRoom.addExit("east",door2);
-        //Door door3 = new Door (street1); livingRoom.addExit("south",door3);
+        Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
+        Door doorBLr = new Door (bedroom, livingRoom); livingRoom.addExit("east",doorBLr); bedroom.addExit("west",doorBLr);
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
-        LockedDoor door3 = new LockedDoor (keyLivingStreet, street1); livingRoom.addExit("south",door3);
-        Door door4 = new Door (kitchen); livingRoom.addExit("west",door4);
-        Door door5 = new Door (livingRoom);bedroom.addExit("west",door5);
-        Door door6 = new Door (livingRoom); street1.addExit("north",door6);
-        Door door7 = new Door (street2);street1.addExit("east",door7);
-        Door door8 = new Door (sewer);street1.addExit("down",door8);
-        Door door9 = new Door (petshop);street2.addExit("south",door9);
-        Door door10 = new Door (street1);street2.addExit("west",door10);
-        Door door11 = new Door (sewer);street2.addExit("down",door11);
-        Door door12 = new Door (street2);sewer.addExit("up",door12);
-        Door door13 = new Door (street2);petshop.addExit("north",door13);
-        Door door14 = new Door (theGreatDescent);petshop.addExit("down", door14);
-        Door door15 = new Door (dory);theGreatDescent.addExit("west",door15);
-        Door door16 = new Door (petshop);theGreatDescent.addExit("up",door16);
-        Door door17 = new Door (theFishPalace);theGreatDescent.addExit("down",door17);
-        Door door18 = new Door (theGreatDescent);dory.addExit("east",door18);
-        Door door19 = new Door (tavernSanRicardo);theFishPalace.addExit("south", door19);
-        Door door20 = new Door (theGreatDescent);theFishPalace.addExit("up",door20);
-        //Door door21 = new Door (theFishPalace);tavernSanRicardo.addExit("north", door21);
+        LockedDoor doorS1Lr = new LockedDoor (keyLivingStreet, street1, livingRoom); livingRoom.addExit("south",doorS1Lr);street1.addExit("north",doorS1Lr);
+        Door doorS2S1 = new Door (street2, street1);street1.addExit("east",doorS2S1); street2.addExit("west",doorS2S1);
+        Door doorSS1 = new Door (sewer, street1);street1.addExit("down",doorSS1);sewer.addExit("up",doorSS1);
+        Door doorPS2 = new Door (petshop, street2);street2.addExit("south",doorPS2);petshop.addExit("north",doorPS2);
+        Door doorSS2 = new Door (sewer, street2);street2.addExit("down",doorSS2);sewer.addExit("up",doorSS2);
+        Door doorGdP = new Door (theGreatDescent, petshop);petshop.addExit("down", doorGdP);theGreatDescent.addExit("up",doorGdP);
+        Door doorDGd = new Door (dory, theGreatDescent);theGreatDescent.addExit("west",doorDGd); dory.addExit("east",doorDGd);
+        Door doorFpGd = new Door (theFishPalace, theGreatDescent);theGreatDescent.addExit("down",doorFpGd);theFishPalace.addExit("up",doorFpGd);
         Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
-        LockedDoor door21 = new LockedDoor (keyFishTavern, theFishPalace);tavernSanRicardo.addExit("north", door21);
-        Door door22 = new Door (starWars);tavernSanRicardo.addExit("up", door22);
-        Door door23 = new Door (theCloset);starWars.addExit("east",door23);
-        Door door24 = new Door (tavernSanRicardo);starWars.addExit("down",door24);
-        Door door25 = new Door (theEnd);theCloset.addExit("south", door25);
-        Door door26 = new Door (starWars);theCloset.addExit("west",door26);
-
+        LockedDoor doorFpTsr = new LockedDoor (keyFishTavern, theFishPalace, tavernSanRicardo);tavernSanRicardo.addExit("north", doorFpTsr); theFishPalace.addExit("south", doorFpTsr);
+        Door doorSwTsr = new Door (starWars, tavernSanRicardo);tavernSanRicardo.addExit("up", doorSwTsr); starWars.addExit("down",doorSwTsr);
+        Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
+        Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
+        
         currentRoom = livingRoom;  // start game in master's house
     }
 
@@ -162,8 +141,6 @@ public class Game
             wantToQuit = quit(command);
         else if (commandWord.equals("look"))
             lookRoom(command);
-        else if (commandWord.equals("fight"))
-            fightPeople (command);         
 
         return wantToQuit;
     }
@@ -197,20 +174,27 @@ public class Game
         }
 
         String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Door nextDoor = null; 
-        nextDoor = currentRoom.getNextRoom(direction);
         
-        if (nextDoor == null) {
-            System.out.println("There is no door!");
+        // Try to leave current room.
+        Door nextDoor = currentRoom.getNextRoom(direction);
+        if (nextDoor instanceof LockedDoor){
+            LockedDoor l = (LockedDoor)nextDoor;
+            l.openLockedDoor(MrKitten.getInventory(),currentRoom);
         }
-        else {
-            Room nextRoom = nextDoor.getRoom();
+        else{
+        try{
+            Room nextRoom = nextDoor.getRoom(currentRoom);
             currentRoom = nextRoom;
             System.out.println("You " + currentRoom.getDescription());
             currentRoom.printExits();
         }
+        catch (Exception e){
+            System.out.println("Wrong direction!");
+            System.out.println("You " + currentRoom.getDescription());
+            System.out.println("You can go :");
+            currentRoom.printExits();
+        }
+    }
     }
 
     /** 
@@ -246,110 +230,5 @@ public class Game
             return;
         }
     }
-    
-    
-    /*
-     * You can fight peoples in the current room  
-     */
-    private void fightPeople(Command command)
-    { 
-          ennemi= "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
-          int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
-          int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
-          int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
-          System.out.println ("Mr Kitten VS "+ ennemi);
-          while (MrKittenHP>0 || ennemiHP>0){
-            int intEnnemiHP = ennemiHP;
-            while(intEnnemiHP == ennemiHP) {
-                System.out.println (" What would you like ? attack / special attack / items");
-                intEnnemiHP = fightCommand(command,ennemiHP);
-            }
-            ennemiHP = intEnnemiHP;
-            Random nbRd = new Random();
-            int nextnb = nbRd.nextInt(ennemiAD)+1;
-            MrKittenHP =  MrKittenHP - nextnb;        
-          }
-        
-    }
-    /**
-     * Give a command to fight
-     */
-    private int fightCommand(Command command, int ennemiHP) 
-    {
-        if(command.isUnknown()) {
-            System.out.println("I don't know what you mean...");
-            return ennemiHP;
-        }
-
-        String commandWord = command.getCommandWord();
-        if (commandWord.equals("attack")){
-            ennemiHP = attack(ennemiHP);
-        }
-        else if (commandWord.equals("special attack")){
-            ennemiHP = specialAttack(ennemiHP);
-        }
-        else if (commandWord.equals("items")){
-            ennemiHP = items(ennemiHP);
-        }
-         
-        return ennemiHP;
-    }
-    /**
-     * Reduce ennemi HP by a normal attack
-     */
-    private int attack (int ennemiHP)
-    {
-        Random nbRd = new Random();
-        int nextnb = nbRd.nextInt(7)+1;
-        ennemiHP = ennemiHP - nextnb;
-     
-        return ennemiHP;
-    }
-    
-     /**
-     * Choose a special attack
-     */
-    private int specialAttack(int ennemiHP)
-    {
-        System.out.println(" What would you like ? ");
-        for (int i = 0;i<inventory.size();i++){
-            Item currentItem = inventory.get(i);
-            if (currentItem.getName().equals("superPiss")){
-                System.out.println(" superPiss ");
-            }
-            if (currentItem.getName().equals("superBite")){
-                System.out.println(" superBite ");
-            }
-            if (currentItem.getName().equals("laserTail")){
-                System.out.println(" laserTail ");
-            }
-        }
-        ennemiHP = specialCommand(command,ennemiHP);
-        return ennemiHP;
-    }
-    
-    /**
-     * Reduce ennemi HP by a special attack
-     */
-    private int specialCommand(Command command, int ennemiHP)
-    {
-        if(command.isUnknown()) {
-            System.out.println("I don't know what you mean...");
-            return ennemiHP;
-        }
-
-        String commandWord = command.getCommandWord();
-        if (commandWord.equals("superPiss")){
-            ennemiHP = ennemiHP - 15;
-        } else if (commandWord.equals("superBite")){
-            ennemiHP = ennemiHP - 20;
-        } else if (commandWord.equals("laserTail")){
-            ennemiHP = ennemiHP - 25;
-        }
-        
-        return ennemiHP;
-    }
-    
-
     
 }
