@@ -46,11 +46,10 @@ public class Game
      */
     private void createRooms()
     {
-        //Room outside, theatre, pub, lab, office;
+        //Declare rooms;
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
-        
-        
+                
         kitchen = new Room ("are in the Kitchen of the Master's house");
         livingRoom = new Room ("are in the Living room of the Master's house");
         bedroom = new Room ("are in the Bedroom of the Master's house");
@@ -66,6 +65,7 @@ public class Game
         theCloset = new Room ("are ready to fight with lions");
         theEnd = new Room ("did it, you did it, Yeah!");
         
+        //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
         Door doorBLr = new Door (bedroom, livingRoom); livingRoom.addExit("east",doorBLr); bedroom.addExit("west",doorBLr);
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
@@ -97,6 +97,10 @@ public class Game
         items.add(potion);
         items.add(jaw);
         items.add(superPiss);
+        Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
+        items.add(keyLivingStreet);
+        Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
+        items.add(keyFishTavern);
     }
     
     /**
