@@ -38,7 +38,7 @@ public class Game
         createItems();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
-        inventory = new ArrayList<Item>
+        inventory = new ArrayList<Item>();
      }
 
     /**
