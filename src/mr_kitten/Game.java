@@ -27,6 +27,7 @@ public class Game
     private Room currentRoom;
     private Players MrKitten;
     private ArrayList<Item> inventory;
+    private ArrayList<Item> items;
     
     /**
      * Create the game and initialise its internal map.
@@ -37,7 +38,8 @@ public class Game
         createItems();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
-    }
+        inventory = new ArrayList<Item>
+     }
 
     /**
      * Create all the rooms and link their exits together.
@@ -92,6 +94,9 @@ public class Game
         Item potion = new Item ("potion","It's nice and warm",1);
         Item jaw = new Item ("jaw","It's sharp and ready",5);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
+        items.add(potion);
+        items.add(jaw);
+        items.add(superPiss);
     }
     
     /**
