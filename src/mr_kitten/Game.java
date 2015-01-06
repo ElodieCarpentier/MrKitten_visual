@@ -245,7 +245,7 @@ public class Game
      */
     private void fightPeople(Command command)
     { 
-          ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
+          String ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
           int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
           int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
           int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
