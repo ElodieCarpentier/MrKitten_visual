@@ -5,19 +5,13 @@
  */
 package mr_kitten;
 
-/**
- *
- * @author Arya
- */
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
 public class Parser {
     
-    import java.util.Scanner;
-    import java.util.StringTokenizer;
-
-
     private CommandWords commands;  // holds all valid command words
     private Scanner reader;         // source of command input
-
     /**
      * Create a parser to read from the terminal window.
      */
