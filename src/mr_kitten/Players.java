@@ -24,6 +24,7 @@ public class Players
     private static ArrayList<Item> inventory;
     private int inventoryWeight = 0;
     private static int maxWeight = 30;
+    private int playerHP;
 
     /**
      * Constructor for objects of class Players
@@ -33,6 +34,7 @@ public class Players
         inventory = new ArrayList<Item>();
         playerName = name;
         currentPlayerRoom = "livingRoom";
+        playerHP = 120;
     }
     
     /**
@@ -53,6 +55,10 @@ public class Players
             System.out.println(currentItem.getDescription());
             System.out.println(currentItem.getWeight());
         }
+    }
+    
+    public int getPlayerHP(){
+        return playerHP;
     }
     
     /*
