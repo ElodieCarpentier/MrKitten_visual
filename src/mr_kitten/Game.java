@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -229,6 +232,109 @@ public class Game
             Players.getItemDescription(itemName);
             return;
         }
+    }
+    
+    
+    /*
+     * You can fight peoples in the current room  
+     */
+    private void fightPeople(Command command)
+    { 
+          ennemi= "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
+          int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
+          int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
+          int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
+          System.out.println ("Mr Kitten VS "+ ennemi);
+          while (MrKittenHP>0 || ennemiHP>0){
+            int intEnnemiHP = ennemiHP;
+            while(intEnnemiHP == ennemiHP) {
+                System.out.println (" What would you like ? attack / special attack / items");
+                intEnnemiHP = fightCommand(command,ennemiHP);
+            }
+            ennemiHP = intEnnemiHP;
+            Random nbRd = new Random();
+            int nextnb = nbRd.nextInt(ennemiAD)+1;
+            MrKittenHP =  MrKittenHP - nextnb;        
+          }
+        
+    }
+    /**
+     * Give a command to fight
+     */
+    private int fightCommand(Command command, int ennemiHP) 
+    {
+        if(command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return ennemiHP;
+        }
+
+        String commandWord = command.getCommandWord();
+        if (commandWord.equals("attack")){
+            ennemiHP = attack(ennemiHP);
+        }
+        else if (commandWord.equals("special attack")){
+            ennemiHP = specialAttack(ennemiHP);
+        }
+        else if (commandWord.equals("items")){
+            ennemiHP = items(ennemiHP);
+        }
+         
+        return ennemiHP;
+    }
+    /**
+     * Reduce ennemi HP by a normal attack
+     */
+    private int attack (int ennemiHP)
+    {
+        Random nbRd = new Random();
+        int nextnb = nbRd.nextInt(7)+1;
+        ennemiHP = ennemiHP - nextnb;
+     
+        return ennemiHP;
+    }
+    
+     /**
+     * Choose a special attack
+     */
+    private int specialAttack(int ennemiHP)
+    {
+        System.out.println(" What would you like ? ");
+        for (int i = 0;i<inventory.size();i++){
+            Item currentItem = inventory.get(i);
+            if (currentItem.getName().equals("superPiss")){
+                System.out.println(" superPiss ");
+            }
+            if (currentItem.getName().equals("superBite")){
+                System.out.println(" superBite ");
+            }
+            if (currentItem.getName().equals("laserTail")){
+                System.out.println(" laserTail ");
+            }
+        }
+        ennemiHP = specialCommand(command,ennemiHP);
+        return ennemiHP;
+    }
+    
+    /**
+     * Reduce ennemi HP by a special attack
+     */
+    private int specialCommand(Command command, int ennemiHP)
+    {
+        if(command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return ennemiHP;
+        }
+
+        String commandWord = command.getCommandWord();
+        if (commandWord.equals("superPiss")){
+            ennemiHP = ennemiHP - 15;
+        } else if (commandWord.equals("superBite")){
+            ennemiHP = ennemiHP - 20;
+        } else if (commandWord.equals("laserTail")){
+            ennemiHP = ennemiHP - 25;
+        }
+        
+        return ennemiHP;
     }
     
 }
