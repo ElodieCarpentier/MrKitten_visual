@@ -28,6 +28,7 @@ public class Game
     private Players MrKitten;
     private ArrayList<Item> inventory;
     private ArrayList<Item> items;
+    private ArrayList<Characters> characters;
     
     /**
      * Create the game and initialise its internal map.
@@ -98,10 +99,10 @@ public class Game
         Item puppyEyes = new Item ("puppy eyes", "...", 13); //A COMPLETER
         Item laserTail = new Item ("laser tail", "...", 20); //A COMPLETER
         items.add(potion);
-        items.add(jaw);
+        items.add(superBite);
         items.add(superPiss);
         items.add(puppyEyes);
-        items.add(tailLaser);
+        items.add(laserTail);
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);
         items.add(keyLivingStreet);
         Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
@@ -123,6 +124,19 @@ public class Game
         Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");//A COMPLETER
         Characters darkVador = new Characters("Dark Vador", 40, 25,"...", "star wars");//A COMPLETER
         Characters brother = new Characters("Brother", 50, 30,"...", "theEnd");//A COMPLETER
+    
+        characters = new ArrayList<Characters>();
+        characters.add(goldFish);
+        characters.add(garfield);
+        characters.add(splinter);
+        characters.add(dory);
+        characters.add(ratatouille);
+        characters.add(mrRobot);
+        characters.add(shark);
+        characters.add(darkMoule);
+        characters.add(pussInBoots);
+        characters.add(darkVador);
+        characters.add(brother);
     }
     
     /**
@@ -276,9 +290,24 @@ public class Game
      */
     private void fightPeople(Command command)
     { 
-          String ennemi = "Dory"; // REGARDER LA DESCRIPTION DES ROOM POUR VOIR QUI EST LA
-          int ennemiHP = 25; // REGARDER LA DESCRIPTION DES ACTEURS
-          int ennemiAD = 10; // REGARDER  LA DESCRIPTION DES ACTEURS
+        String ennemi = "";
+        int ennemiHP=0;
+        int ennemiAD=0;
+        boolean charactersFind = false;
+        for (int i = 0;i<characters.size();i++){
+            Characters currentChar = characters.get(i);
+            if (currentChar.getRoom().equals(currentRoom)) {
+                ennemi = currentChar.getName();
+                ennemiHP = currentChar.getEnnemiHP();
+                ennemiAD = currentChar.getEnnemiAD();
+                charactersFind = true;
+                return;
+            }
+        }  
+        if (charactersFind == false) {
+            System.out.println("There is no character in this room");
+        }
+        else {
           int MrKittenHP = 120; // REGARDER LA DESCRIPTION DE MR KITTEN
           System.out.println ("Mr Kitten VS "+ ennemi);
           while (MrKittenHP>0 || ennemiHP>0){
@@ -292,7 +321,7 @@ public class Game
             int nextnb = nbRd.nextInt(ennemiAD)+1;
             MrKittenHP =  MrKittenHP - nextnb;        
           }
-        
+        }
     }
     /**
      * Give a command to fight

@@ -40,4 +40,8 @@ public class Characters {
         return talk;
     }
     
+    public String getRoom() {
+        return room;
+    }
+    
 }
