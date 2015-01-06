@@ -329,6 +329,7 @@ public class Game
             }
         }
     }
+    
     /**
      * Give a command to fight
      */
@@ -346,12 +347,28 @@ public class Game
         else if (commandWord.equals("special attack")){
             ennemiHP = specialAttack(ennemiHP);
         }
-        else if (commandWord.equals("items")){
-            ennemiHP = itemsAttack(ennemiHP);
-        }
-         
+        
         return ennemiHP;
     }
+    
+    /**
+     * Add player HP 
+     */
+    private int careCommand(Command command, int playerHP) 
+    {
+        if(command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return playerHP;
+        }
+
+        String commandWord = command.getCommandWord();
+        if (commandWord.equals("items")){
+            playerHP = itemsAttack(playerHP);
+        }
+         
+        return playerHP;
+    }
+    
     /**
      * Reduce ennemi HP by a normal attack
      */
@@ -410,12 +427,60 @@ public class Game
         } else if (commandWord.equals("laserTail")){
             ennemiHP = ennemiHP - 30;
         }
-        
         return ennemiHP;
     }
     
-    private int itemsAttack(int ennemiHP)
+    /**
+     * Chosse an items in your inventory
+     */
+    private int itemsAttack(int playerHP)
     {
-        
+        System.out.println(" What would you like to add your HP ? ");
+        for (int i = 0;i<MrKitten.getInventory().size();i++){
+            Item currentItem = MrKitten.getInventory().get(i);
+            if (currentItem.getName().equals("potionCareMin")){
+                System.out.println(" potionCareMin ");
+            }
+            if (currentItem.getName().equals("potionCareMax")){
+                System.out.println(" potionCareMax ");
+            }
+            if (currentItem.getName().equals("potionCareMean")){
+                System.out.println(" potionCareMean ");
+            }
+            if (currentItem.getName().equals("algea")){
+                System.out.println(" algea ");
+            }
+            if (currentItem.getName().equals("potionBonus")){
+                System.out.println(" potionBonus ");
+            }
+        }
+        Command command = parser.getCommand();
+        playerHP = itemsCommand(command,playerHP);
+        return playerHP;
+    }
+    
+    /**
+     * Add player HP by a item 
+     */
+    private int itemsCommand(Command command, int playerHP)
+    {
+        if(command.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return playerHP;
+        }
+
+        String commandWord = command.getCommandWord();
+        if (commandWord.equals("potionCareMin")){
+            playerHP = playerHP + 30;
+        } else if (commandWord.equals("potionCareMax")){
+            playerHP = playerHP + 120;
+        } else if (commandWord.equals("potionCareMean")){
+            playerHP = playerHP + 60;
+        } else if (commandWord.equals("algea")){
+            playerHP = playerHP + 35;
+        } else if (commandWord.equals("potionBonus")){
+            playerHP = playerHP + 100;
+        }
+        return playerHP;
     }
 }
