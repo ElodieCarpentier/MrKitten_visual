@@ -1,5 +1,6 @@
 
 import java.util.*;
+import mr_kitten.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,7 +28,6 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
     /**
      * Create the game and initialise its internal map.
      */
