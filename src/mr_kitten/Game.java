@@ -91,15 +91,15 @@ public class Game
      */
     private void createItems()
     {
-        Item potionCareMin = new Item ("potionCareMin","...",5); //A COMPLETER
-        Item potionCareMax = new Item ("potionCareMax","...",25); //A COMPLETER
-        Item potionCareMean = new Item("potionCareMean","...",20); //A COMPLETER
-        Item algea = new Item ("algea", "...", 10); //A COMPLETER
+        Item potionCareMin = new Item ("potionCareMin","This potion heals you for a small amount of your health",5);
+        Item potionCareMax = new Item ("potionCareMax","This potion heals you for a big amount of your health",25);
+        Item potionCareMean = new Item("potionCareMean","This potion heals you for a medium amount of your health",20);
+        Item algea = new Item ("algea", "Je ne me rappelle plus à quoi sert ce truc", 10); //A COMPLETER
         Item potionBonus = new Item("potionBonus", "...", 25); //A COMPLETER
-        Item superBite = new Item ("superBite","It's sharp and ready",10);
+        Item superBite = new Item ("superBite","It's sharp and ready to rip your opponents' heads off",10);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
-        Item puppyEyes = new Item ("puppy eyes", "...", 13); //A COMPLETER
-        Item laserTail = new Item ("laser tail", "...", 20); //A COMPLETER
+        Item puppyEyes = new Item ("puppy eyes", "Use this look to charm anyone", 13);
+        Item laserTail = new Item ("laser tail", "May the catnip be with you, young Catawan.", 20);
         items.add(potionCareMin);
         items.add(potionCareMax);
         items.add(potionCareMean);
