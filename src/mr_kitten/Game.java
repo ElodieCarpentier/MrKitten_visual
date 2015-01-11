@@ -119,17 +119,43 @@ public class Game
      * Create all characters in the game
      */
     public void createCharacters() {
-        Characters goldFish = new Characters("Gold Fish", 10, 3,"...", "livingRoom");//A COMPLETER
-        Characters garfield = new Characters("Garfield", 30, 5,"...", "street1");//A COMPLETER
-        Characters splinter = new Characters("Splinter", 25, 15,"...", "street2");//A COMPLETER
+        Characters goldFish = new Characters("Gold Fish", 10, 3,"Blub blub blub blob. Please don't kill me.", "livingRoom");
+        Characters garfield = new Characters("Garfield", 30, 5,"Hey buddy...What are you carrying there?"
+                + "Oh my...Is that the ancient Cat book? Are you a descendant of the Ancients?"
+                + "You look pretty young. I bet you do not know our race story."
+                + "Long ago, the ancient Cats were very powerful. But today, they have almost disappeared."
+                + "Today, only small, dumb and domesticated cats remain."
+                + "Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family."
+                + "I know this is shocking, but it is the truth.", "street1");
+        Characters splinter = new Characters("Splinter", 25, 15,"Mr Kitten,"
+                + "I am here to inform you that the King of the Waterworld summons you to the underwater court."
+                + "You will be judged for the murder of one of our beloved citizens, an honest goldfish who used to live in the same house you did."
+                + "We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes.", "street2");
         Characters dory = new Characters("Dory", 25, 5,"...", "dory");//A COMPLETER
-        Characters ratatouille = new Characters("Ratatouille", 20, 5,"...", "petshop");//A COMPLETER
-        Characters mrRobot = new Characters("Mr.Robot", 40, 25,"...", "petshop");//A COMPLETER
-        Characters shark = new Characters("Sharks", 20, 10,"...", "theGreatDescent");//A COMPLETER
-        Characters darkMoule = new Characters("Dark Moule", 35, 20, "...", "theFishPalace");//A COMPLETER
-        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");//A COMPLETER
-        Characters darkVador = new Characters("Dark Vador", 40, 25,"...", "star wars");//A COMPLETER
-        Characters brother = new Characters("Brother", 50, 30,"...", "theEnd");//A COMPLETER
+        Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
+                + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
+                + "I have a dream that our txo races can live together peacefully.", "petshop");
+        Characters mrRobot = new Characters("Mr.Robot", 40, 25,"Bip Beep Bop, stranger detected. Beep beep, danger incoming"
+                + "Must..destroy..."
+                + "The danger..."
+                + "Beep...", "petshop");
+        Characters shark = new Characters("Sharks", 20, 10,"Look at that Bruce! A furry fish! We have to taste that. Prepare to die!", "theGreatDescent");//A COMPLETER
+        Characters darkMoule = new Characters("Dark Moule", 35, 20, "Who do you think you are?!"
+                + "You cannot prevail, you silly kitty..."
+                + "I will crush you!", "theFishPalace");
+        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"Hola, Senor Gato!"
+                + "I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way..."
+                + "I have heard about your quest, and I want you to know that I support you!"
+                + "Let me teach you something that could be of a great help, for this quest and for all your life...", "tavernSanRicardo");
+        Characters darkVador = new Characters("Dark Vador", 40, 25,"Shhhh...Shhhh...Are you a rebel? You look like a strange Ewok..."
+                + "Anyway, no one can enter a colonized planet like this! I will execute you!", "star wars");//A COMPLETER
+        Characters brother = new Characters("Brother", 50, 30,"So, here you are...brother. I have been waiting for you."
+                + "Do not look so suprised! I am an Ancient Cat, just like you."
+                + "When I first heard about the magical Guillotine, I knew I was the only one who could use it."
+                + "And you, you want to take it, and spread power amongst these dumb kitties!"
+                + "This would only lead us to chaos...But if you join me, we could rule the world, together!"
+                + "You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!"
+                + "I will never let you take it!", "theEnd");
     
         characters = new ArrayList<Characters>();
         characters.add(goldFish);
