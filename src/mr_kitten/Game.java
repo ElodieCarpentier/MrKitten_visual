@@ -94,8 +94,8 @@ public class Game
         Item potionCareMin = new Item ("potionCareMin","This potion heals you for a small amount of your health",5);
         Item potionCareMax = new Item ("potionCareMax","This potion heals you for a big amount of your health",25);
         Item potionCareMean = new Item("potionCareMean","This potion heals you for a medium amount of your health",20);
-        Item algea = new Item ("algea", "Je ne me rappelle plus à quoi sert ce truc", 10); //A COMPLETER
-        Item potionBonus = new Item("potionBonus", "...", 25); //A COMPLETER
+        Item algea = new Item ("algea", "This algae has revitalizing properties. It can heal wounds and restore a medium amount of your health.", 10); //A COMPLETER
+        Item potionBonus = new Item("potionBonus", "This potion heals you for a big amount of your health", 25); //A COMPLETER
         Item superBite = new Item ("superBite","It's sharp and ready to rip your opponents' heads off",10);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
         Item puppyEyes = new Item ("puppy eyes", "Use this look to charm anyone", 13);
