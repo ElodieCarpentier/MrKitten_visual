@@ -39,7 +39,6 @@ public class Game
         createCharacters();
         MrKitten = new Players("Mr.Kitten");
         parser = new Parser();
-        play();
      }
 
     /**

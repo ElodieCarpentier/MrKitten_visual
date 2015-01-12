@@ -16,6 +16,8 @@ public class Mr_Kitten {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Game g = new Game();
+        g.play();
     }
     
 }
