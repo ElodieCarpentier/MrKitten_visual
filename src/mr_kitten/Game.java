@@ -26,8 +26,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-    private ArrayList<Item> items;
-    private ArrayList<Characters> characters;
+    private static ArrayList<Item> items;
+    private static ArrayList<Characters> characters;
     
     /**
      * Create the game and initialise its internal map.
@@ -47,11 +47,11 @@ public class Game
      * Gettor to access list of items and list of characters
      * @return 
      */
-    public ArrayList<Item> getListItem(){
+    public static ArrayList<Item> getListItem(){
         return items;
     }
     
-    public ArrayList<Characters> getListCharacters(){
+    public static ArrayList<Characters> getListCharacters(){
         return characters;
     }
     /**
