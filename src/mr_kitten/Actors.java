@@ -133,9 +133,11 @@ public class Actors
                     };break;    
                 default : System.out.println("How can you do that you witch!");break;
             }
+            if (good){
+                System.out.println("Good job! You just won an ancient artefact!");
+                System.out.println("You recieved: Artefact of true vision");
+                //Ajouter à l'équipement l'objet!!
+            }
         }
-        System.out.println("Good job! You just won an ancient artefact!");
-        System.out.println("You recieved: Artefact of true vision");
-        //Ajouter à l'équipement l'objet!!
     }
 }
