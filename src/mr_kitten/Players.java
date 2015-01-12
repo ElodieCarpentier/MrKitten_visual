@@ -35,6 +35,9 @@ public class Players
         //Pour le test
         Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);    
         inventory.add(keyLivingStreet);
+        Item superPiss = new Item ("superPiss","Wow it's dirty",8);
+        inventory.add(superPiss);
+        
         //A supprimer les fonctions précédentes
         playerName = name;
         currentPlayerRoom = "livingRoom";

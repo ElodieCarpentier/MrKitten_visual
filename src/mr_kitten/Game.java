@@ -373,8 +373,6 @@ public class Game
                     System.out.println(" Enter the character please :");
                     Scanner keyboard = new Scanner(System.in);
                     String answer = keyboard.nextLine();
-                    System.out.println(answer);
-                    System.out.println("***********");
                     switch (answer){
                         case "a": {
                             ennemiHP=attack(ennemiHP);
@@ -387,13 +385,13 @@ public class Game
                             };break;
                         default:  System.out.println("what the hell did you just say?"); break;
                     }
-                if(ennemiHP <=0){
+                if(ennemiHP >0){
                     Random nbRd = new Random();
                     int nextnb = nbRd.nextInt(ennemiAD)+1;
                     MrKittenHP =  MrKittenHP - nextnb;
                 }
             }
-            if (ennemiHP == 0){
+            if (ennemiHP <= 0){
                 System.out.println("You win !!! It remains "+MrKittenHP+" HP");
             }else {
                 System.out.println("You loose !! GAME OVER !!");
@@ -417,39 +415,48 @@ public class Game
      */
     private int specialAttack(int ennemiHP)
     {
+        boolean specialAttack = false;
         System.out.println(" What would you like ? ");
         for (int i = 0;i<MrKitten.getInventory().size();i++){
             Item currentItem = MrKitten.getInventory().get(i);
             if (currentItem.getName().equals("superPiss")){
                 System.out.println(" a - superPiss ");
+                specialAttack = true;
             }
             if (currentItem.getName().equals("superBite")){
                 System.out.println(" b - superBite ");
+                specialAttack = true;
             }
             if (currentItem.getName().equals("puppyEyes")){
                 System.out.println(" c - puppyEyes ");
+                specialAttack = true;
             }
             if (currentItem.getName().equals("laserTail")){
                 System.out.println(" d - laserTail ");
+                specialAttack = true;
             }
         }
-        System.out.println(" Enter the character please :");
-        Scanner keyboard = new Scanner(System.in);
-        String answer = keyboard.nextLine();
-        switch (answer){
-            case "a": {
-                ennemiHP=ennemiHP-15;
-            };break;
-            case "b": {
-                ennemiHP=ennemiHP-20;
-            };break;
-            case "c": {
-                ennemiHP=ennemiHP-25;
-            };break;
-            case "d": {
-                ennemiHP=ennemiHP-30;
-            };break;
-            default:  System.out.println("what the hell did you just say?"); break;
+        if(specialAttack == true){
+            System.out.println(" Enter the character please :");
+            Scanner keyboard = new Scanner(System.in);
+            String answer = keyboard.nextLine();
+            switch (answer){
+                case "a": {
+                    ennemiHP=ennemiHP-15;
+                };break;
+                case "b": {
+                    ennemiHP=ennemiHP-20;
+                };break;
+                case "c": {
+                    ennemiHP=ennemiHP-25;
+                };break;
+                case "d": {
+                    ennemiHP=ennemiHP-30;
+                };break;
+                default:  System.out.println("what the hell did you just say?"); break;
+            }
+        }else {
+            System.out.println("You have no special attack...");
         }
         return ennemiHP;
     }
@@ -459,45 +466,58 @@ public class Game
      */
     private int itemsAttack(int playerHP)
     {
+        boolean itemsAttack = false;
         System.out.println(" What would you like to add your HP ? ");
         for (int i = 0;i<MrKitten.getInventory().size();i++){
             Item currentItem = MrKitten.getInventory().get(i);
             if (currentItem.getName().equals("potionCareMin")){
-                System.out.println(" a - potionCareMin ");
+                System.out.println(" a - potionCareMin (+30HP) ");
+                itemsAttack = true;
             }
             if (currentItem.getName().equals("potionCareMax")){
-                System.out.println(" b - potionCareMax ");
+                System.out.println(" b - potionCareMax (+120HP)");
+                itemsAttack = true;
             }
             if (currentItem.getName().equals("potionCareMean")){
-                System.out.println(" c - potionCareMean ");
+                System.out.println(" c - potionCareMean (+60HP)");
+                itemsAttack = true;
             }
             if (currentItem.getName().equals("algea")){
-                System.out.println(" d - algea ");
+                System.out.println(" d - algea (+35HP)");
+                itemsAttack = true;
             }
             if (currentItem.getName().equals("potionBonus")){
-                System.out.println(" e - potionBonus ");
+                System.out.println(" e - potionBonus (+100HP)");
+                itemsAttack = true;
             }
         }
-        System.out.println(" Enter the character please :");
-        Scanner keyboard = new Scanner(System.in);
-        String answer = keyboard.nextLine();
-        switch (answer){
-            case "a": {
-                playerHP=playerHP+30;
-            };break;
-            case "b": {
-                playerHP=playerHP+120;
-            };break;
-            case "c": {
-                playerHP=playerHP+60;
-            };break;
-            case "d": {
-                playerHP=playerHP+35;
-            };break;
-            case "e": {
-                playerHP=playerHP+100;
-            };break;
-            default:  System.out.println("what the hell did you just say?"); break;
+        if(itemsAttack == true){
+            System.out.println(" Enter the character please :");
+            Scanner keyboard = new Scanner(System.in);
+            String answer = keyboard.nextLine();
+            switch (answer){
+                case "a": {
+                    playerHP=playerHP+30;
+                };break;
+                case "b": {
+                    playerHP=playerHP+120;
+                };break;
+                case "c": {
+                    playerHP=playerHP+60;
+                };break;
+                case "d": {
+                    playerHP=playerHP+35;
+                };break;
+                case "e": {
+                    playerHP=playerHP+100;
+                };break;
+                default:  System.out.println("what the hell did you just say?"); break;
+            }
+            if(playerHP >120){
+                playerHP = 120;
+            }
+        }else{
+            System.out.println("You have no items to care...");
         }
         return playerHP;
     }
