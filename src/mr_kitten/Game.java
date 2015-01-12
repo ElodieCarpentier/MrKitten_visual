@@ -240,6 +240,7 @@ public class Game
             lookRoom(command);
         }
         else if(commandWord.equals("fight")){
+            System.out.println("Je suis dans le if de fight");
             fightPeople();
         }
         else if(commandWord.equals("talk")){
