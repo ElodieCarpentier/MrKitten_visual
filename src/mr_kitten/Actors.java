@@ -77,7 +77,7 @@ public class Actors
     /**
      * Dori's dialogue
      */
-    public void doryDialogue()
+    public static void doryDialogue()
     {
         System.out.println("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,");
         System.out.println("and this is crazy, but here's my number. Hey how is it going mate?");

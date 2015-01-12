@@ -232,6 +232,9 @@ public class Game
         else if(commandWord.equals("fight")){
             fightPeople();
         }
+        else if(commandWord.equals("talk")){
+            talkRoomPeople();
+        }
         return wantToQuit;
     }
 
@@ -470,5 +473,19 @@ public class Game
             default:  System.out.println("what the hell did you just say?"); break;
         }
         return playerHP;
+    }
+    
+    private void talkRoomPeople(){
+        if (currentRoom.equals("dory")){
+            Actors.doryDialogue();
+        }
+        else {
+            for (int i=0;i < characters.size();i++){
+                Characters currentChar = characters.get(i);
+                if (currentChar.getRoom().equals(currentRoom.getName())){
+                    System.out.println(currentChar.getTalk());
+                }
+            }
+        }
     }
 }
