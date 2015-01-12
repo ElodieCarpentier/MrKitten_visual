@@ -148,6 +148,12 @@ public class Actors
         System.out.println("We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes.");
     }
     
+    public static void ratatouilleDialog(){
+        System.out.println("Hello, young cat. I have heard of you. I think you could use some help in your quest.");
+        System.out.println("I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time.");
+        System.out.println("I have a dream that our txo races can live together peacefully.");
+    }
+    
     public static void mrRobotDialog(){
     System.out.println("Bip Beep Bop, stranger detected. Beep beep, danger incoming");
     System.out.println("Must..destroy...");

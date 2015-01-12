@@ -138,9 +138,7 @@ public class Game
         Characters strayCat = new Characters("strayCat", 20, 5,"...", "street2");
         Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "sewer");
         Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
-        Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
-                + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
-                + "I have a dream that our txo races can live together peacefully.", "petshop");
+        Characters ratatouille = new Characters("Ratatouille", 20, 5,"...", "petshop");
         Characters mrRobot = new Characters("Mr.Robot", 40, 25,"", "petshop");
         Characters shark = new Characters("Sharks", 20, 10,"Look at that Bruce! A furry fish! We have to taste that. Prepare to die!", "theGreatDescent");//A COMPLETER
         Characters darkMoule = new Characters("Dark Moule", 35, 20, "Who do you think you are?!"
@@ -654,7 +652,27 @@ public class Game
                 System.out.println("Congratulations! You have learned a new ability : SuperPiss");
                 System.out.println("You are now able to pee on people in a...deadly way...");
                 break;
-            case "petshop" : break;
+            case "petshop" : 
+                System.out.println("A red fish appears! He looks stern...");
+                Actors.redFishDialog();
+                System.out.println("There is a rat in one of the cages. He looks different from the other rats...wise.");
+                System.out.println("Do you want to talk to him?");
+                System.out.println("a - yes");
+                System.out.println("b - no");
+                answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                Actors.ratatouilleDialog();
+                System.out.println("Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
+                }
+                else if (answer.equals("b")){
+                System.out.println("Let us hope you will not regret it...");
+                }
+                System.out.println("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!");
+                Actors.mrRobotDialog();
+                fightPeople();
+                MrKitten.grabItem("potionCareMean");
+                System.out.println("The robot has dropped a potion. Will you make good use of it?");
+                break;
             case "theGreatDescent" : break;
             case "dory" : break;
             case "theFishPalace" : break;
