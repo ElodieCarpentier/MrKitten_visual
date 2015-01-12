@@ -230,7 +230,7 @@ public class Game
             lookRoom(command);
         }
         else if(commandWord.equals("fight")){
-            figthPeople();
+            fightPeople();
         }
         return wantToQuit;
     }
@@ -318,8 +318,7 @@ public class Game
             Players.getItemDescription(itemName);
         }
     }
-    
-    
+  
     /*
      * You can fight peoples in the current room  
      */
