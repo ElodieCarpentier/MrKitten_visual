@@ -25,13 +25,17 @@ public class Players
     private int inventoryWeight = 0;
     private static int maxWeight = 30;
     private int playerHP;
-
+    
     /**
      * Constructor for objects of class Players
      */
     public Players(String name)
     {
         inventory = new ArrayList<Item>();
+        //Pour le test
+        Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);    
+        inventory.add(keyLivingStreet);
+        //A supprimer les fonctions précédentes
         playerName = name;
         currentPlayerRoom = "livingRoom";
         playerHP = 120;
