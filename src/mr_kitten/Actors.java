@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package mr_kitten;
-import java.util.Scanner;
+import java.util.*;
 /**
  * Write a description of class Actors here.
  * 
@@ -91,20 +91,51 @@ public class Actors
         Scanner keyboard = new Scanner(System.in);
         System.out.println("enter your answer!");
         String answer = keyboard.nextLine();
+        boolean good = false;
         switch (4){
-            case 1: if (answer equals "a"){
-                        System.out.println("Oh I remember now!! ");
+            case 1: if (answer.equals("a")){
+                        System.out.println("Oh I remember now!! Thank you big guy!");
+                    };good = true;break;
+            case 2: if (answer.equals("b")){
+                        System.out.println("How romantic is this, give a kiss to Keane for me!");
                     };break;
-            case 2: if (answer equals "b"){
-                        System.out.println("");
+            case 3: if (answer.equals("c")){
+                        System.out.println("You lost me there man...");
                     };break;
-            case 3: if (answer equals "c"){
-                        System.out.println("");
-                    };break;
-            case 4: if (answer equals "d"){
+            case 4: if (answer.equals("d")){
                         System.out.println("You gotta love panckakes...");
                     };break;    
             default:  System.out.println("what the hell did you just say?"); break;
         }
+        if (good){
+            good = false;
+            System.out.println("I also remember that I have a History test tomorrow!");
+            System.out.println("You gotta help me! Just remember me which animal is");
+            System.out.println("the great defender of the world!");
+            System.out.println("a - Superman! Have you seen his underwear? So much red!");
+            System.out.println("b - Magicarpe! Obviously this magesterial fish! And he is red too!");
+            System.out.println("c - Etalon du cul! What a french name for a true hero! ");
+            System.out.println("d - Do you really want the D?");
+            System.out.println("enter your answer!");
+            answer = keyboard.nextLine();
+            switch (4){
+                case 1: if (answer.equals("a")){
+                        System.out.println("Never trust somebody that has his underwear on top of his pants!");
+                    };break;
+            case 2: if (answer.equals("b")){
+                        System.out.println("His attack dealt too much damage to handle...");
+                    };break;
+            case 3: if (answer.equals("c")){
+                        System.out.println("Soooooo good! You are a true scientist!");
+                    };good = true;break;
+            case 4: if (answer.equals("d")){
+                        System.out.println("That hardrive doesn't have anything special...");
+                    };break;    
+                default : System.out.println("How can you do that you witch!");break;
+            }
+        }
+        System.out.println("Good job! You just won an ancient artefact!");
+        System.out.println("You recieved: Artefact of true vision");
+        //Ajouter à l'équipement l'objet!!
     }
 }
