@@ -358,8 +358,10 @@ public class Game
             int MrKittenHP = MrKitten.getPlayerHP();
             System.out.println("Mr Kitten VS "+ ennemi);
             while (MrKittenHP>0 && ennemiHP>0){
+                    System.out.println("    *********   ");
                     System.out.println("Mr.Kitten's HP = "+MrKittenHP);
                     System.out.println(ennemi+"'s HP = "+ennemiHP);
+                    System.out.println("    *********   ");
                     System.out.println (" What would you like ? ");
                     System.out.println(" a - attack ");
                     System.out.println(" b - special attack ");
