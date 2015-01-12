@@ -262,7 +262,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit fight talk help ");
+        System.out.println("   go quit fight talk explore help  ");
     }
     
     /** 
@@ -525,15 +525,18 @@ public class Game
     
     private void talkRoomPeople(){
         if (currentRoom.getName().equals("dory")){
+            System.out.println("DORY :");
             Actors.doryDialogue();return;
         }
         else if (currentRoom.getName().equals("petshop")){
+            System.out.println("RED FISH :");
             Actors.redFishDialog();return;
         }
         else {
             for (int i=0;i < characters.size();i++){
                 Characters currentChar = characters.get(i);
                 if (currentChar.getRoom().equals(currentRoom.getName())){
+                    System.out.println(currentChar.getName()+":");
                     System.out.println(currentChar.getTalk());return;
                 }
             }
