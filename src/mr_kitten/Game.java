@@ -26,7 +26,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-    private static ArrayList<Item> items;
+    private ArrayList<Item> items;
     private ArrayList<Characters> characters;
     
     /**
