@@ -229,6 +229,9 @@ public class Game
         else if(commandWord.equals("look")){
             lookRoom(command);
         }
+        else if(commandWord.equals("fight")){
+            figthPeople();
+        }
         return wantToQuit;
     }
 
@@ -320,7 +323,7 @@ public class Game
     /*
      * You can fight peoples in the current room  
      */
-    private void fightPeople(Command command)
+    private void fightPeople()
     { 
         String ennemi = "";
         int ennemiHP=0;
@@ -345,7 +348,12 @@ public class Game
             while (MrKittenHP>0 || ennemiHP>0){
                 int intEnnemiHP = ennemiHP;
                 while(intEnnemiHP == ennemiHP) {
-                    System.out.println (" What would you like ? attack / special attack / items");
+                    System.out.println (" What would you like ? ");
+                    System.out.println(" a - attack ");
+                    System.out.println(" b - special attack ");
+                    System.out.println(" c - items");
+                    System.out.println(" Enter the character please :");
+                    Command command;
                     intEnnemiHP = fightCommand(command,ennemiHP);
                 }
                 ennemiHP = intEnnemiHP;
