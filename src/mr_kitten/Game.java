@@ -393,6 +393,7 @@ public class Game
             }
             if (ennemiHP <= 0){
                 System.out.println("You win !!! It remains "+MrKittenHP+" HP");
+                Players.setPlayerHP(MrKittenHP);
             }else {
                 System.out.println("You loose !! GAME OVER !!");
                 System.exit(1);              
@@ -544,6 +545,7 @@ public class Game
     }
     
     private void exploreRoom(){
+        int MrKittenHP = MrKitten.getPlayerHP();
         Scanner keyboard = new Scanner(System.in);
         switch(currentRoom.getName()){
             case "livingRoom" :System.out.println("This couch is where the master always crashes... Let's do something!");
@@ -568,7 +570,28 @@ public class Game
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
                 System.out.println("Hum... Yum!");
                 break;
-            case "kitchen" : break;
+            case "kitchen" :System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
+                System.out.println("It's smelling cooking food ! The kitchen table is probably full of food." 
+                        + "Do you want jump on the kitchen table ?"
+                        + "a - Oh god YES ! I'm hungry guys !"
+                        + "b - No, it's better on the kitchen cupboard");
+                String answer_kitchen = keyboard.nextLine();
+                if (answer_kitchen.equals("a")){
+                    System.out.println("Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
+                    MrKittenHP =MrKittenHP +25;  
+                    Players.setPlayerHP(MrKittenHP);
+                }
+                else {
+                    System.out.println("Jackpot ! A cooked fish is on this cupboard. You eat it and gain 50 hp !");
+                     MrKittenHP =MrKittenHP +50;
+                    Players.setPlayerHP(MrKittenHP);
+                }
+                    if(MrKittenHP >120){
+                        MrKittenHP = 120;
+                        Players.setPlayerHP(MrKittenHP);
+                    }
+                break;
+                
             case "bedroom" : break;
             case "street1" : break;
             case "street2" : break;
