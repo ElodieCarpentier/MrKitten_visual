@@ -134,10 +134,7 @@ public class Game
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
                 + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
                 + "I have a dream that our txo races can live together peacefully.", "petshop");
-        Characters mrRobot = new Characters("Mr.Robot", 40, 25,"Bip Beep Bop, stranger detected. Beep beep, danger incoming"
-                + "Must..destroy..."
-                + "The danger..."
-                + "Beep...", "petshop");
+        Characters mrRobot = new Characters("Mr.Robot", 40, 25,"", "petshop");
         Characters shark = new Characters("Sharks", 20, 10,"Look at that Bruce! A furry fish! We have to taste that. Prepare to die!", "theGreatDescent");//A COMPLETER
         Characters darkMoule = new Characters("Dark Moule", 35, 20, "Who do you think you are?!"
                 + "You cannot prevail, you silly kitty..."
@@ -344,6 +341,8 @@ public class Game
             System.out.println("There is no character in this room");
         }
         else {
+            if (ennemi.equals("mrRobot")){
+            Actors.mrRobotDialog();}
             int MrKittenHP = MrKitten.getPlayerHP();
             System.out.println ("Mr Kitten VS "+ ennemi);
             while (MrKittenHP>0 || ennemiHP>0){
@@ -478,7 +477,9 @@ public class Game
         if (currentRoom.equals("dory")){
             Actors.doryDialogue();
         }
-        else if (currentRoom.equals("petshop")){Actors.redFishDialog();}
+        else if (currentRoom.equals("petshop")){
+            Actors.redFishDialog();
+        }
         else {
             for (int i=0;i < characters.size();i++){
                 Characters currentChar = characters.get(i);

@@ -147,4 +147,11 @@ public class Actors
         System.out.println("You will be judged for the murder of one of our beloved citizens, an honest goldfish who used to live in the same house you did.");
         System.out.println("We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes.");
     }
+    
+    public static void mrRobotDialog(){
+    System.out.println("Bip Beep Bop, stranger detected. Beep beep, danger incoming");
+    System.out.println("Must..destroy...");
+    System.out.println("The danger...");
+    System.out.println("Beep...");
+    }
 }
