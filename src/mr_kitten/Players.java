@@ -70,7 +70,8 @@ public class Players
      */
     public void grabItem (String name)
     {
-        ArrayList<Item> tabItem = Item.getTab();
+        //ArrayList<Item> tabItem = Item.getTab();
+        ArrayList<Item> tabItem = Game.getListItem();
         boolean exist = false;
         for (int i=0;i<tabItem.size();i++){
             Item currentItem = tabItem.get(i);

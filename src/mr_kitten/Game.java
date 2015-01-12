@@ -26,7 +26,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-    private ArrayList<Item> items;
+    private static ArrayList<Item> items;
     private ArrayList<Characters> characters;
     
     /**
@@ -42,7 +42,18 @@ public class Game
         createItems();
         createCharacters();
      }
-
+    
+    /**
+     * Gettor to access list of items and list of characters
+     * @return 
+     */
+    public ArrayList<Item> getListItem(){
+        return items;
+    }
+    
+    public ArrayList<Characters> getListCharacters(){
+        return characters;
+    }
     /**
      * Create all the rooms and link their exits together.
      */
