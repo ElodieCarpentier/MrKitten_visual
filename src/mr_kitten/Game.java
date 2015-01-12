@@ -26,8 +26,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Players MrKitten;
-    private ArrayList<Item> items;
-    private ArrayList<Characters> characters;
+    private static ArrayList<Item> items;
+    private static ArrayList<Characters> characters;
     
     /**
      * Create the game and initialise its internal map.
@@ -42,7 +42,18 @@ public class Game
         createItems();
         createCharacters();
      }
-
+    
+    /**
+     * Gettor to access list of items and list of characters
+     * @return 
+     */
+    public static ArrayList<Item> getListItem(){
+        return items;
+    }
+    
+    public static ArrayList<Characters> getListCharacters(){
+        return characters;
+    }
     /**
      * Create all the rooms and link their exits together.
      */
@@ -85,7 +96,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = livingRoom;  // start game in master's house
+        currentRoom = street2;  // start game in master's house
     }
 
     /*
@@ -247,7 +258,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        System.out.println("   go quit fight talk help ");
     }
     
     /** 
