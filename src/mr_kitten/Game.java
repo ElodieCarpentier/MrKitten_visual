@@ -34,11 +34,13 @@ public class Game
      */
     public Game() 
     {
+        items = new ArrayList<Item>();
+        characters = new ArrayList<Characters>();
+        MrKitten = new Players("Mr.Kitten");
+        parser = new Parser();
         createRooms();
         createItems();
         createCharacters();
-        MrKitten = new Players("Mr.Kitten");
-        parser = new Parser();
      }
 
     /**

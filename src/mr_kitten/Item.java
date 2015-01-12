@@ -23,7 +23,7 @@ public class Item
     private String itemName;
     private int itemWeight;
     private String itemDescription;
-    private static ArrayList<Item> tabItem = new ArrayList<Item>();
+    //private static ArrayList<Item> tabItem = new ArrayList<Item>();
     
     
     /**
@@ -34,7 +34,7 @@ public class Item
         itemName = name;
         itemDescription = description;
         itemWeight = weight;
-        tabItem.add(this);
+        //tabItem.add(this);
     }
     
     public String getName()
@@ -52,7 +52,7 @@ public class Item
         return itemWeight;
     }
     
-    public static ArrayList getTab()
+    /*public static ArrayList getTab()
     {
         return tabItem;
     }
@@ -61,5 +61,5 @@ public class Item
     {
         Item item = new Item(name,description,weight);
         tabItem.add(item);
-    }   
+    } */  
 }
