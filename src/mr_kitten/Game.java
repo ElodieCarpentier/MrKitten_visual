@@ -392,7 +392,7 @@ public class Game
             }else {
                 System.out.println("You loose !! GAME OVER !!");
                 Command command = new Command("quit","");
-                quit(command);
+                
             }
         }
     }
