@@ -348,7 +348,7 @@ public class Game
                 ennemiHP = currentChar.getEnnemiHP();
                 ennemiAD = currentChar.getEnnemiAD();
                 charactersFind = true;
-                return;
+                break;
             }
         }  
         if (charactersFind == false) {
@@ -356,10 +356,15 @@ public class Game
         }
         else {
             if (ennemi.equals("mrRobot")){
-            Actors.mrRobotDialog();}
+                Actors.mrRobotDialog();
+            }
             int MrKittenHP = MrKitten.getPlayerHP();
-            System.out.println ("Mr Kitten VS "+ ennemi);
-            while (MrKittenHP>0 || ennemiHP>0){
+            System.out.println("Mr Kitten VS "+ ennemi);
+            while (MrKittenHP>0 && ennemiHP>0){
+                    System.out.println("    *********   ");
+                    System.out.println("Mr.Kitten's HP = "+MrKittenHP);
+                    System.out.println(ennemi+"'s HP = "+ennemiHP);
+                    System.out.println("    *********   ");
                     System.out.println (" What would you like ? ");
                     System.out.println(" a - attack ");
                     System.out.println(" b - special attack ");
@@ -367,21 +372,30 @@ public class Game
                     System.out.println(" Enter the character please :");
                     Scanner keyboard = new Scanner(System.in);
                     String answer = keyboard.nextLine();
-                    switch (3){
-                    case 1: if (answer.equals("a")){
-                        ennemiHP=attack(ennemiHP);
-                        };break;
-                    case 2: if (answer.equals("b")){
-                        ennemiHP=specialAttack(ennemiHP);
-                        };break;
-                    case 3: if (answer.equals("c")){
-                        MrKittenHP=itemsAttack(MrKittenHP);
-                        };break;
-                    default:  System.out.println("what the hell did you just say?"); break;
+                    System.out.println(answer);
+                    System.out.println("***********");
+                    switch (answer){
+                        case "a": {
+                            ennemiHP=attack(ennemiHP);
+                            };break;
+                        case "b": {
+                            ennemiHP=specialAttack(ennemiHP);
+                            };break;
+                        case "c": {
+                            MrKittenHP=itemsAttack(MrKittenHP);
+                            };break;
+                        default:  System.out.println("what the hell did you just say?"); break;
                     }
-                Random nbRd = new Random();
-                int nextnb = nbRd.nextInt(ennemiAD)+1;
-                MrKittenHP =  MrKittenHP - nextnb;        
+                if(ennemiHP <=0){
+                    Random nbRd = new Random();
+                    int nextnb = nbRd.nextInt(ennemiAD)+1;
+                    MrKittenHP =  MrKittenHP - nextnb;
+                }
+            }
+            if (ennemiHP == 0){
+                System.out.println("You win !!! It remains "+MrKittenHP+" HP");
+            }else {
+                System.out.println("You loose !! GAME OVER !!");
             }
         }
     }
@@ -421,17 +435,17 @@ public class Game
         System.out.println(" Enter the character please :");
         Scanner keyboard = new Scanner(System.in);
         String answer = keyboard.nextLine();
-        switch (4){
-            case 1: if (answer.equals("a")){
+        switch (answer){
+            case "a": {
                 ennemiHP=ennemiHP-15;
             };break;
-            case 2: if (answer.equals("b")){
+            case "b": {
                 ennemiHP=ennemiHP-20;
             };break;
-            case 3: if (answer.equals("c")){
+            case "c": {
                 ennemiHP=ennemiHP-25;
             };break;
-            case 4: if (answer.equals("d")){
+            case "d": {
                 ennemiHP=ennemiHP-30;
             };break;
             default:  System.out.println("what the hell did you just say?"); break;
@@ -466,20 +480,20 @@ public class Game
         System.out.println(" Enter the character please :");
         Scanner keyboard = new Scanner(System.in);
         String answer = keyboard.nextLine();
-        switch (5){
-            case 1: if (answer.equals("a")){
+        switch (answer){
+            case "a": {
                 playerHP=playerHP+30;
             };break;
-            case 2: if (answer.equals("b")){
+            case "b": {
                 playerHP=playerHP+120;
             };break;
-            case 3: if (answer.equals("c")){
+            case "c": {
                 playerHP=playerHP+60;
             };break;
-            case 4: if (answer.equals("d")){
+            case "d": {
                 playerHP=playerHP+35;
             };break;
-            case 5: if (answer.equals("e")){
+            case "e": {
                 playerHP=playerHP+100;
             };break;
             default:  System.out.println("what the hell did you just say?"); break;
