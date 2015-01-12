@@ -135,6 +135,7 @@ public class Game
     public void createCharacters() {
         Characters goldFish = new Characters("Gold Fish", 10, 3,"Blub blub blub blob. Please don't kill me.", "livingRoom");
         Characters garfield = new Characters("Garfield", 30, 5,"...", "street1");
+        Characters strayCat = new Characters("strayCat", 20, 5,"...", "street2");
         Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "street2");
         Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
@@ -162,6 +163,7 @@ public class Game
         characters = new ArrayList<Characters>();
         characters.add(goldFish);
         characters.add(garfield);
+        characters.add(strayCat);
         characters.add(splinter);
         characters.add(dory);
         characters.add(ratatouille);
@@ -628,7 +630,22 @@ public class Game
                 MrKitten.grabItem("potionCareMin");
                 }
                 break;
-            case "street2" : break;
+            case "street2" :
+                System.out.println("Here you are! Back in the light!");
+                System.out.println("There is another garbage can! Sounds like you are going to make a good deal again!");
+                System.out.println("do you want to explore the garbage can?");
+                System.out.println("a - yes");
+                System.out.println("b - no");
+                answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                System.out.println("Uh-Oh! There is already someone in this garbage can!");
+                System.out.println("This stray cat doesn't look soft!");
+                fightPeople();
+                }
+                else if (answer.equals("b")){
+                System.out.println("Let us hope you will not regret it...");
+                }
+                break;
             case "sewer" : break;
             case "petshop" : break;
             case "theGreatDescent" : break;
