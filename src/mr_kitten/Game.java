@@ -379,7 +379,7 @@ public class Game
                         case "c": {
                             MrKittenHP=itemsAttack(MrKittenHP);
                             };break;
-                        default:  System.out.println("what the hell did you just say?"); break;
+                        default:  System.out.println("what the hell did you just say? You are fighting, you take dommage"); break;
                     }
                 if(ennemiHP >0){
                     Random nbRd = new Random();
@@ -391,6 +391,8 @@ public class Game
                 System.out.println("You win !!! It remains "+MrKittenHP+" HP");
             }else {
                 System.out.println("You loose !! GAME OVER !!");
+                Command command = new Command("quit","");
+                quit(command);
             }
         }
     }
@@ -449,7 +451,7 @@ public class Game
                 case "d": {
                     ennemiHP=ennemiHP-30;
                 };break;
-                default:  System.out.println("what the hell did you just say?"); break;
+                default:  System.out.println("what the hell did you just say? You are fighting, you take dommage"); break;
             }
         }else {
             System.out.println("You have no special attack...");
@@ -507,7 +509,7 @@ public class Game
                 case "e": {
                     playerHP=playerHP+100;
                 };break;
-                default:  System.out.println("what the hell did you just say?"); break;
+                default:  System.out.println("what the hell did you just say? You are fighting, you take dommage"); break;
             }
             if(playerHP >120){
                 playerHP = 120;

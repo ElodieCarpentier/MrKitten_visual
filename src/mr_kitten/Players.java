@@ -37,7 +37,8 @@ public class Players
         inventory.add(keyLivingStreet);
         Item superPiss = new Item ("superPiss","Wow it's dirty",8);
         inventory.add(superPiss);
-        
+        Item potionCareMax = new Item ("potionCareMax","This potion heals you for a big amount of your health",25);
+        inventory.add(potionCareMax);
         //A supprimer les fonctions précédentes
         playerName = name;
         currentPlayerRoom = "livingRoom";
