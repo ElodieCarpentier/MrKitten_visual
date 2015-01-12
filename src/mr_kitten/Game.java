@@ -129,10 +129,7 @@ public class Game
                 + "Today, only small, dumb and domesticated cats remain."
                 + "Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family."
                 + "I know this is shocking, but it is the truth.", "street1");
-        Characters splinter = new Characters("Splinter", 25, 15,"Mr Kitten,"
-                + "I am here to inform you that the King of the Waterworld summons you to the underwater court."
-                + "You will be judged for the murder of one of our beloved citizens, an honest goldfish who used to live in the same house you did."
-                + "We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes.", "street2");
+        Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "street2");
         Characters dory = new Characters("Dory", 25, 5,"...", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
                 + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
@@ -481,6 +478,7 @@ public class Game
         if (currentRoom.equals("dory")){
             Actors.doryDialogue();
         }
+        else if (currentRoom.equals("petshop")){Actors.redFishDialog();}
         else {
             for (int i=0;i < characters.size();i++){
                 Characters currentChar = characters.get(i);
