@@ -395,8 +395,7 @@ public class Game
                 System.out.println("You win !!! It remains "+MrKittenHP+" HP");
             }else {
                 System.out.println("You loose !! GAME OVER !!");
-                Command command = new Command("quit","");
-                
+                System.exit(1);              
             }
         }
     }
