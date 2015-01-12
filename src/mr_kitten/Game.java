@@ -97,7 +97,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = street2;  // start game in master's house
+        currentRoom = dory;  // start game in master's house
     }
 
     /*
@@ -142,7 +142,7 @@ public class Game
                 + "Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family."
                 + "I know this is shocking, but it is the truth.", "street1");
         Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "street2");
-        Characters dory = new Characters("Dory", 25, 5,"...", "dory");//A COMPLETER
+        Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
                 + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
                 + "I have a dream that our txo races can live together peacefully.", "petshop");
@@ -523,17 +523,17 @@ public class Game
     }
     
     private void talkRoomPeople(){
-        if (currentRoom.equals("dory")){
-            Actors.doryDialogue();
+        if (currentRoom.getName().equals("dory")){
+            Actors.doryDialogue();return;
         }
-        else if (currentRoom.equals("petshop")){
-            Actors.redFishDialog();
+        else if (currentRoom.getName().equals("petshop")){
+            Actors.redFishDialog();return;
         }
         else {
             for (int i=0;i < characters.size();i++){
                 Characters currentChar = characters.get(i);
                 if (currentChar.getRoom().equals(currentRoom.getName())){
-                    System.out.println(currentChar.getTalk());
+                    System.out.println(currentChar.getTalk());return;
                 }
             }
         }

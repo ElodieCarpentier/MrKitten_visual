@@ -92,17 +92,17 @@ public class Actors
         System.out.println("enter your answer!");
         String answer = keyboard.nextLine();
         boolean good = false;
-        switch (4){
-            case 1: if (answer.equals("a")){
+        switch (answer){
+            case "a": if (answer.equals("a")){
                         System.out.println("Oh I remember now!! Thank you big guy!");
                     };good = true;break;
-            case 2: if (answer.equals("b")){
+            case "b": if (answer.equals("b")){
                         System.out.println("How romantic is this, give a kiss to Keane for me!");
                     };break;
-            case 3: if (answer.equals("c")){
+            case "c": if (answer.equals("c")){
                         System.out.println("You lost me there man...");
                     };break;
-            case 4: if (answer.equals("d")){
+            case "d": if (answer.equals("d")){
                         System.out.println("You gotta love panckakes...");
                     };break;    
             default:  System.out.println("what the hell did you just say?"); break;
