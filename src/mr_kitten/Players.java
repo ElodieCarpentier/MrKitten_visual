@@ -32,14 +32,6 @@ public class Players
     public Players(String name)
     {
         inventory = new ArrayList<Item>();
-        //Pour le test
-        Item keyLivingStreet = new Item("home key", "this key opens the door to exit the master's house",0);    
-        inventory.add(keyLivingStreet);
-        Item superPiss = new Item ("superPiss","Wow it's dirty",8);
-        inventory.add(superPiss);
-        Item potionCareMax = new Item ("potionCareMax","This potion heals you for a big amount of your health",25);
-        inventory.add(potionCareMax);
-        //A supprimer les fonctions précédentes
         playerName = name;
         currentPlayerRoom = "livingRoom";
         playerHP = 120;
@@ -55,13 +47,14 @@ public class Players
     /*
      * Get the inventory of a player
      */
-    public static void getInventory(String name)
+    public static void printInventory()
     {
         for (int i = 0;i<inventory.size();i++){
             Item currentItem = inventory.get(i);
-            System.out.println(currentItem.getName()+"\t");
-            System.out.println(currentItem.getDescription());
-            System.out.println(currentItem.getWeight());
+            System.out.println("   *********   ");
+            System.out.println("Name : "+currentItem.getName()+"\t");
+            System.out.println("Description :"+currentItem.getDescription());
+            System.out.println(currentItem.getWeight()+"g");
         }
     }
     
@@ -82,14 +75,25 @@ public class Players
         boolean exist = false;
         for (int i=0;i<tabItem.size();i++){
             Item currentItem = tabItem.get(i);
-            if (currentItem.getName().equals (name)){
+            if (currentItem.getName().equals(name)){
                 exist = true;
                 if (inventoryWeight + currentItem.getWeight() <= maxWeight){
                     inventory.add(currentItem);
                     inventoryWeight += currentItem.getWeight();
                 }
                 else {
-                    System.out.println("You're too heavy dude! Inventory is full!");
+                    System.out.println("You're too heavy dude! Inventory is full! maxWeight = "+maxWeight);
+                    System.out.println("Do you want delete a item ? (n/y)");
+                    Scanner keyboard = new Scanner(System.in);
+                    String answer = keyboard.nextLine();
+                    if(answer.equals("y")){
+                        System.out.println(" Which item ? ");
+                        printInventory();
+                        System.out.println("enter the name of item :");
+                        Scanner keyboard2 = new Scanner(System.in);
+                        String answer2 = keyboard2.nextLine();
+                        deleteItem(answer2);
+                    }
                 }
             }
         }
@@ -109,6 +113,7 @@ public class Players
                 if(currentItem.getName().equals (name)){            
                     inventory.remove(currentItem);
                     inventoryWeight -= currentItem.getWeight();
+                    System.out.println("Item deleted");
                 }
             }
         }
