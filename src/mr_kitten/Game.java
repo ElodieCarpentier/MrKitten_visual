@@ -292,6 +292,10 @@ public class Game
         if (nextDoor instanceof LockedDoor){
             LockedDoor l = (LockedDoor)nextDoor;
             l.openLockedDoor(MrKitten.getInventory(),currentRoom);
+            Room nextRoom = nextDoor.getRoom(currentRoom);
+            currentRoom = nextRoom;
+            System.out.println("You " + currentRoom.getDescription());
+            currentRoom.printExits();
         }
         else{
         try{
