@@ -242,6 +242,9 @@ public class Game
         else if(commandWord.equals("talk")){
             talkRoomPeople();
         }
+        else if(commandWord.equals("explore")){
+            exploreRoom();
+        }
         return wantToQuit;
     }
 
@@ -498,6 +501,12 @@ public class Game
                     System.out.println(currentChar.getTalk());
                 }
             }
+        }
+    }
+    
+    private void exploreRoom(){
+        switch(currentRoom){
+            case "dory" : break;
         }
     }
 }
