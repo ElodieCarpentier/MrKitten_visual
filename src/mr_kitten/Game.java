@@ -29,6 +29,7 @@ public class Game
     private Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
+    String nLine=System.getProperty("line.separator"); //Allow to make a new line
     
     /**
      * Create the game and initialise its internal map.
@@ -612,7 +613,55 @@ public class Game
                     }
                 break;
                 
-            case "bedroom" : break;
+            case "bedroom" : 
+                System.out.println ("The master isn't here. It's a great opportunity to discover this unknow room."
+                        +nLine+"Their is soo many things to play with, you can't wait to act with :"
+                        +nLine+"a - The bed: A nice castle for a super cat like me and a beautifull pillow with feathers;"
+                        +nLine+"b - The chest of drawers: I will improve my climbing skill and i could roll out some ball;"
+                        +nLine+"c - The library: So many books well ordered, a great slalom to improve my dexterity;"
+                        +nLine+"d - The new chair: I could mad my claws and relax myself. ");
+                String answer_bedroom = keyboard.nextLine();
+                if (answer_bedroom.equals("a")){
+                    System.out.println("Oohh, you're so exited to play in your castle and after ripped the pillow you eat accidently a feather. You loose 5 hp."
+                            +nLine+"You eat it and gain 25 hp !");
+                    MrKittenHP =MrKittenHP -5;  
+                    Players.setPlayerHP(MrKittenHP);
+                }
+                else if (answer_bedroom.equals("b")){
+                    System.out.println("It's not easy to reach the chest. You're on the top but drawers are locked with a key. Nothing else !");
+                }
+                else if (answer_bedroom.equals("c")){
+                    System.out.println("You're climbing the library unfortunately you're falling but a pillow soften this fall. Are you enought brave to retry ?"
+                           +nLine+"a- No thanks, it's too dangerous !"
+                           +nLine+"b- YES !! I can prove my bravery. I'm not a defeatist ! (The Game company isn't responsable if a accidental death occur !)");
+                    String answer_bedroom_library = keyboard.nextLine();
+                    if (answer_bedroom_library.equals("a")){
+                        System.out.println("It's a choice like a other. Go explore new universe !!!");
+                    }
+                    else {
+                        System.out.println("It's so incredible fantastical unbelievable AMAZING!!! You successfuly perform to climb the librairy but at the last shelf you dropped a book."
+                            +nLine+"This book doesn't look like a common book. Its covered in dust. The front cover represent a head's cat. You decid to back down."
+                            +nLine+"The mysterious book is opening in front of you. Its is surprinsing what you find inside ... "
+                            +nLine+"All words, sentences and pictures are understandable. And you're discovering amazing story about cats."
+                            +nLine+"<< Once upon a time, from down the Marianne's Abysses to the top of Mt Everest, the ancient Cat race was known to be wise and powerful."
+                            +nLine+"   Theirs radiance used to spread on the whole world. [...]"
+                            +nLine+"   One day a young kitten will come and will be the new leader of a new age. His mission is to bring back the Cat empire at this optimal expansion !"
+                            +nLine+"   But a essential artefact is necessary to do that : the legendary guillotine. Its bring back the power to all cats !!! >>"
+                            +nLine+"At the end of this book you notice a old post-it which make reference to a fat cat with lot of knowledge. This post-it is signed by a cat paw and a little sentence :"
+                            +nLine+"<< I will destroy the world as promice dad ! >>"
+                            +nLine+" "
+                            +nLine+"Are you enought honnest and nice to be this little kitten ?"
+                            +nLine+"However this ! You must defend and re-establish the cat world and protect his again his destruction by this mysterious cat !!!"); 
+                    }
+                }
+                else if (answer_bedroom.equals("d")){
+                    System.out.println("You're taking a snap. Nothing else happen. Let's go explore news horizons !");
+                }
+                    if(MrKittenHP <0){
+                        System.out.println("You loose !! GAME OVER !!");
+                        System.exit(1); 
+                    }  
+            break;
             case "street1" :
                 System.out.println("You look around you and see a big old cat on the street, coming toward you.");
                 System.out.println("He looks friendly and comes near you.");
