@@ -96,7 +96,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = livingRoom;  // start game in master's house
+        currentRoom = street2;  // start game in master's house
     }
 
     /*
@@ -261,7 +261,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        System.out.println("   go quit fight talk help ");
     }
     
     /** 
