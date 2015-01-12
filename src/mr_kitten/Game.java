@@ -97,7 +97,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = dory;  // start game in master's house
+        currentRoom = livingRoom;  // start game in master's house
     }
 
     /*
@@ -246,6 +246,9 @@ public class Game
         else if(commandWord.equals("explore")){
             exploreRoom();
         }
+        else if(commandWord.equals("inventory")){
+            inventory();
+        }
         return wantToQuit;
     }
 
@@ -262,7 +265,12 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit fight talk explore help  ");
+        System.out.println("   go quit fight talk explore inventory help  ");
+        System.out.println("go + direction -- deplace in the map");
+        System.out.println("quit -- quit the game");
+        System.out.println("fight -- fight a characters");
+        System.out.println("explore -- explore the room and realize actions");
+        System.out.println("inventory -- print your inventory of item");
     }
     
     /** 
@@ -546,12 +554,16 @@ public class Game
     private void exploreRoom(){
         Scanner keyboard = new Scanner(System.in);
         switch(currentRoom.getName()){
-            case "livingRoom" :System.out.println("This couch is where the master always crashes... Let's do something!");
-                System.out.println("Destroy the couch? a - yes he deserves it! b - No! I may be a little dizzy but I won't turn crazy today!");
+            case "livingRoom" :
+                System.out.println("This couch is where the master always crashes... Let's do something!");
+                System.out.println("Destroy the couch?");
+                System.out.println("a - Yes he deserves it!");
+                System.out.println("b - No! I may be a little dizzy but I won't turn crazy today!");
+                System.out.println("Enter the character please :");
                 String answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
-                    //drop the key and add it to the inventory
+                    MrKitten.grabItem("home key");
                 }
                 else {
                     System.out.println("Pussycat! Without some balls you won't go to any places!");
@@ -564,7 +576,10 @@ public class Game
                 }
                 System.out.println("Need to do something else...");
                 System.out.println("Oh! A goldfish! Seems tasty...");
-                System.out.println("Eat it? a - Yes! b - With a bit of mayonnaise... What could happen?");
+                System.out.println("Eat it?");
+                System.out.println(" a - Yes!");
+                System.out.println(" b - With a bit of mayonnaise... What could happen?");
+                System.out.println("Enter the character: ");
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
                 System.out.println("Hum... Yum!");
                 break;
@@ -583,5 +598,9 @@ public class Game
             case "theEnd" : break;
             default : System.out.println("Just... how??"); break;
         }
+    }
+    
+    private void inventory(){
+        MrKitten.printInventory();
     }
 }

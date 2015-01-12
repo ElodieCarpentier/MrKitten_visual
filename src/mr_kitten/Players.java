@@ -55,10 +55,11 @@ public class Players
     /*
      * Get the inventory of a player
      */
-    public static void getInventory(String name)
+    public static void printInventory()
     {
         for (int i = 0;i<inventory.size();i++){
             Item currentItem = inventory.get(i);
+            System.out.println("   *********   ");
             System.out.println(currentItem.getName()+"\t");
             System.out.println(currentItem.getDescription());
             System.out.println(currentItem.getWeight());
