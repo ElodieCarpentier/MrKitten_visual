@@ -61,7 +61,7 @@ public class Game
     private void createRooms()
     {
         //Declare rooms;
-        Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,theGreatDescent,dory,theFishPalace;
+        Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,harbor,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
         kitchen = new Room ("are in the Kitchen of the Master's house","kitchen");
@@ -71,6 +71,7 @@ public class Game
         street2 = new Room ("are in the Street near the Petshop","street2");
         sewer = new Room ("are in the Sewer under the streets","sewer");
         petshop = new Room ("are in the Petshop","petshop");
+        harbor = new Room ("are on the city's harbor", "harbor");
         theGreatDescent = new Room ("are going deep down under water","theGreatDescent");
         dory = new Room ("are with Dory the great fish","dory");
         theFishPalace = new Room ("are in the Fish Palace","theFishPalace");
@@ -89,6 +90,7 @@ public class Game
         Door doorPS2 = new Door (petshop, street2);street2.addExit("south",doorPS2);petshop.addExit("north",doorPS2);
         Door doorSS2 = new Door (sewer, street2);street2.addExit("down",doorSS2);sewer.addExit("up",doorSS2);
         Door doorGdP = new Door (theGreatDescent, petshop);petshop.addExit("down", doorGdP);theGreatDescent.addExit("up",doorGdP);
+        //Door door HP = new Door (harbor, petshop);petshop.addExit("down", doorHP);harbor.addExit("up", doorHP);
         Door doorDGd = new Door (dory, theGreatDescent);theGreatDescent.addExit("west",doorDGd); dory.addExit("east",doorDGd);
         Door doorFpGd = new Door (theFishPalace, theGreatDescent);theGreatDescent.addExit("down",doorFpGd);theFishPalace.addExit("up",doorFpGd);
         Item keyFishTavern = new Item ("blue key","This key opens the door between the fish palace and the San Ricardo tavern",0);
@@ -140,7 +142,7 @@ public class Game
         Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"...", "petshop");
         Characters mrRobot = new Characters("Mr.Robot", 40, 25,"", "petshop");
-        Characters shark = new Characters("Sharks", 20, 10,"Look at that Bruce! A furry fish! We have to taste that. Prepare to die!", "theGreatDescent");//A COMPLETER
+        Characters shark = new Characters("Sharks", 20, 10,"...", "theGreatDescent");//A COMPLETER;;;
         Characters darkMoule = new Characters("Dark Moule", 35, 20, "Who do you think you are?!"
                 + "You cannot prevail, you silly kitty..."
                 + "I will crush you!", "theFishPalace");
@@ -672,9 +674,19 @@ public class Game
                 fightPeople();
                 MrKitten.grabItem("potionCareMean");
                 System.out.println("The robot has dropped a potion. Will you make good use of it?");
+                break;                
+            case "theGreatDescent" :
+                System.out.println("A group of dangerous looking sharks is swimming toward you!");
+                Actors.sharkDialog();
+                fightPeople();
+                System.out.println("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!");
+                MrKitten.grabItem("superBite");
+                System.out.println("Congratulations! You can now bite your ennemies with this super jaw!");
                 break;
-            case "theGreatDescent" : break;
-            case "dory" : break;
+            case "dory" :
+                System.out.println("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?");
+                Actors.doryDialogue();
+                break;
             case "theFishPalace" : break;
             case "tavernSanRicardo" : break;
             case "starWars" : break;

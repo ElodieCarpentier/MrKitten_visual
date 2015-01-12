@@ -170,4 +170,8 @@ public class Actors
     System.out.println("Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family.");
     System.out.println("I know this is shocking, but it is the truth.");
     }
+    
+    public static void sharkDialog(){
+        System.out.println("Look at that Bruce! A furry fish! We have to taste that. Prepare to die!");
+    }
 }
