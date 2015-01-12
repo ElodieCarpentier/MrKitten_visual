@@ -134,13 +134,7 @@ public class Game
      */
     public void createCharacters() {
         Characters goldFish = new Characters("Gold Fish", 10, 3,"Blub blub blub blob. Please don't kill me.", "livingRoom");
-        Characters garfield = new Characters("Garfield", 30, 5,"Hey buddy...What are you carrying there?"
-                + "Oh my...Is that the ancient Cat book? Are you a descendant of the Ancients?"
-                + "You look pretty young. I bet you do not know our race story."
-                + "Long ago, the ancient Cats were very powerful. But today, they have almost disappeared."
-                + "Today, only small, dumb and domesticated cats remain."
-                + "Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family."
-                + "I know this is shocking, but it is the truth.", "street1");
+        Characters garfield = new Characters("Garfield", 30, 5,"...", "street1");
         Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "street2");
         Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
@@ -617,7 +611,23 @@ public class Game
                 break;
                 
             case "bedroom" : break;
-            case "street1" : break;
+            case "street1" :
+                System.out.println("You look around you and see a big old cat on the street, coming toward you.");
+                System.out.println("He looks friendly and comes near you.");
+                System.out.println("You may want to talk to him");
+                System.out.println("There is also a garbage can over here, it smells delicious...");
+                System.out.println("What do you want to do?");
+                System.out.println("a - talk to the cat");
+                System.out.println("b - explore the garbage can");
+                answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                Actors.garfieldDialog();   
+                }
+                else if (answer.equals("b")){
+                System.out.println("You found a healing potion! That might be useful...");
+                MrKitten.grabItem("potionCareMin");
+                }
+                break;
             case "street2" : break;
             case "sewer" : break;
             case "petshop" : break;
