@@ -136,7 +136,7 @@ public class Game
         Characters goldFish = new Characters("Gold Fish", 10, 3,"Blub blub blub blob. Please don't kill me.", "livingRoom");
         Characters garfield = new Characters("Garfield", 30, 5,"...", "street1");
         Characters strayCat = new Characters("strayCat", 20, 5,"...", "street2");
-        Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "street2");
+        Characters splinter = new Characters("Splinter", 25, 15,"niark niark niark", "sewer");
         Characters dory = new Characters("Dory", 25, 5,"Blablablabla", "dory");//A COMPLETER
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"Hello, young cat. I have heard of you. I think you could use some help in your quest."
                 + "I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
@@ -646,7 +646,14 @@ public class Game
                 System.out.println("Let us hope you will not regret it...");
                 }
                 break;
-            case "sewer" : break;
+            case "sewer" : 
+                System.out.println("Look! A wild rat is coming toward you!");
+                System.out.println("It seems you have entered his territory");
+                fightPeople();
+                MrKitten.grabItem("superPiss");
+                System.out.println("Congratulations! You have learned a new ability : SuperPiss");
+                System.out.println("You are now able to pee on people in a...deadly way...");
+                break;
             case "petshop" : break;
             case "theGreatDescent" : break;
             case "dory" : break;
