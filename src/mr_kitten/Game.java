@@ -507,18 +507,23 @@ public class Game
             switch (answer){
                 case "a": {
                     playerHP=playerHP+30;
+                    MrKitten.useItem("potionCareMin");
                 };break;
                 case "b": {
                     playerHP=playerHP+120;
+                    MrKitten.useItem("potionCareMax");
                 };break;
                 case "c": {
                     playerHP=playerHP+60;
+                    MrKitten.useItem("potionCareMean");
                 };break;
                 case "d": {
                     playerHP=playerHP+35;
+                    MrKitten.useItem("algea");
                 };break;
                 case "e": {
                     playerHP=playerHP+100;
+                    MrKitten.useItem("potionBonus");
                 };break;
                 default:  System.out.println("what the hell did you just say? You are fighting, you take dommage"); break;
             }
