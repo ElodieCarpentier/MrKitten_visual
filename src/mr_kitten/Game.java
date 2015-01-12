@@ -3,6 +3,7 @@ package mr_kitten;
 
 import java.util.Random;
 import java.util.*;
+import java.io.*; 
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -519,8 +520,44 @@ public class Game
     }
     
     private void exploreRoom(){
-        switch(currentRoom){
+        Scanner keyboard = new Scanner(System.in);
+        switch(currentRoom.getName()){
+            case "livingRoom" :System.out.println("This couch is where the master always crashes... Let's do something!");
+                System.out.println("Destroy the couch? a - yes he deserves it! b - No! I may be a little dizzy but I won't turn crazy today!");
+                String answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
+                    //drop the key and add it to the inventory
+                }
+                else {
+                    System.out.println("Pussycat! Without some balls you won't go to any places!");
+                }
+                try {
+                    Thread.sleep(2000);
+                }
+                catch (Exception e) {
+                    System.out.println("Bizarre que ça marche pas...");
+                }
+                System.out.println("Need to do something else...");
+                System.out.println("Oh! A goldfish! Seems tasty...");
+                System.out.println("Eat it? a - Yes! b - With a bit of mayonnaise... What could happen?");
+                answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
+                System.out.println("Hum... Yum!");
+                break;
+            case "kitchen" : break;
+            case "bedroom" : break;
+            case "street1" : break;
+            case "street2" : break;
+            case "sewer" : break;
+            case "petshop" : break;
+            case "theGreatDescent" : break;
             case "dory" : break;
+            case "theFishPalace" : break;
+            case "tavernSanRicardo" : break;
+            case "starWars" : break;
+            case "theCloset" : break;
+            case "theEnd" : break;
+            default : System.out.println("Just... how??"); break;
         }
     }
 }

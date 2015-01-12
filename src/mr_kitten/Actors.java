@@ -118,17 +118,17 @@ public class Actors
             System.out.println("d - Do you really want the D?");
             System.out.println("enter your answer!");
             answer = keyboard.nextLine();
-            switch (4){
-                case 1: if (answer.equals("a")){
+            switch (answer){
+                case "a": {
                         System.out.println("Never trust somebody that has his underwear on top of his pants!");
                     };break;
-            case 2: if (answer.equals("b")){
+            case "b": {
                         System.out.println("His attack dealt too much damage to handle...");
                     };break;
-            case 3: if (answer.equals("c")){
+            case "c": {
                         System.out.println("Soooooo good! You are a true scientist!");
                     };good = true;break;
-            case 4: if (answer.equals("d")){
+            case "d": {
                         System.out.println("That hardrive doesn't have anything special...");
                     };break;    
                 default : System.out.println("How can you do that you witch!");break;
