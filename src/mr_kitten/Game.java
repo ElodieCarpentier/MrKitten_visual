@@ -254,7 +254,7 @@ public class Game
             exploreRoom();
         }
         else if(commandWord.equals("inventory")){
-            inventory();
+            //inventory();
         }
         return wantToQuit;
     }
@@ -1022,7 +1022,7 @@ public class Game
 }
 
     
-    private void inventory(){
-        MrKitten.printInventory();
+    public void inventory(Interface in){
+        MrKitten.printInventoryIN(in);
     }
 }
