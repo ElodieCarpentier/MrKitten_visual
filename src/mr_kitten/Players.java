@@ -47,6 +47,25 @@ public class Players
     /*
      * Get the inventory of a player
      */
+    public static void printInventoryIN(Interface in)
+    {
+        if (inventory.isEmpty()){
+            in.jTextArea1.setText("it's empty !!");
+        }
+        else {
+            String s=("");
+            for (int i = 0;i<inventory.size();i++){
+                Item currentItem = inventory.get(i);
+                s = s +("   *********   "
+                    +"\n Name : "+currentItem.getName()+"\t"
+                    +"\n Description :"+currentItem.getDescription()
+                    +"\n "+currentItem.getWeight()+"g \n");
+            }
+            in.jTextArea1.setText(s);
+        }
+        
+    }
+    
     public static void printInventory()
     {
         for (int i = 0;i<inventory.size();i++){

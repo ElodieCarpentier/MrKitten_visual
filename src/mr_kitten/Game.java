@@ -254,7 +254,7 @@ public class Game
             exploreRoom();
         }
         else if(commandWord.equals("inventory")){
-            inventory();
+            //inventory();
         }
         return wantToQuit;
     }
@@ -597,12 +597,31 @@ public class Game
                 break;
             case "kitchen" :
                 in.jTextArea1.setText(ExpInfo.printKitchen_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
                 break;
             case "bedroom" : 
                 in.jTextArea1.setText(ExpInfo.printbedroom_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                //in.jButtonC.setVisible(true);
+                //in.jButtonD.setVisible(true);
                 break;
             case "street1" :
                 in.jTextArea1.setText(ExpInfo.printStreet1_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "street2" :
+                in.jTextArea1.setText(ExpInfo.printStreet2_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "sewer" :
+                in.jTextArea1.setText(ExpInfo.printSewer_intro());
+                //Se battre contre le rat, si victoire lancer la suite
+                in.jTextArea1.setText(ExpInfo.printSewer_conclu());//ça c'est la suite
+                //ajout de l'item super piss
                 break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
@@ -1012,7 +1031,7 @@ public class Game
 }
 
     
-    private void inventory(){
-        MrKitten.printInventory();
+    public void inventory(Interface in){
+        MrKitten.printInventoryIN(in);
     }
 }
