@@ -11,6 +11,7 @@ package mr_kitten;
  */
 public class Interface extends javax.swing.JDialog {
     private static Game g = new Game();
+    private boolean quest1 = false;
     /**
      * Creates new form Interface
      */
@@ -46,6 +47,8 @@ public class Interface extends javax.swing.JDialog {
         go_south = new javax.swing.JButton();
         Look = new javax.swing.JButton();
         Items = new javax.swing.JButton();
+        jButtonA = new javax.swing.JButton();
+        jButtonB = new javax.swing.JButton();
 
         jRadioButton1.setText("Oh Yes!");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -181,6 +184,22 @@ public class Interface extends javax.swing.JDialog {
             }
         });
 
+        jButtonA.setText("a");
+        jButtonA.setVisible(false);
+        jButtonA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAMouseClicked(evt);
+            }
+        });
+
+        jButtonB.setText("b");
+        jButtonB.setVisible(false);
+        jButtonB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonBMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,37 +210,45 @@ public class Interface extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(go_west, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(go_north)
-                            .addComponent(go_south))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(go_east, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Explore)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Help)
-                                    .addComponent(Look)
-                                    .addComponent(Items))
-                                .addGap(2, 2, 2)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(293, 293, 293)
-                        .addComponent(go_up, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(go_up, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Help))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
-                        .addComponent(go_down, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(230, 230, 230)
+                                .addComponent(go_west, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(go_north)
+                                    .addComponent(go_south))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(go_east, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButtonA)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(Explore))
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jButtonB)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(Items))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Look))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(297, 297, 297)
+                                .addComponent(go_down, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,11 +259,15 @@ public class Interface extends javax.swing.JDialog {
                         .addComponent(Shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(Explore)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Explore)
+                            .addComponent(jButtonA))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Items)
-                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonB)
+                            .addComponent(Items, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Look)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Help)
@@ -326,6 +357,41 @@ public class Interface extends javax.swing.JDialog {
     //g.lookInventory();
     }//GEN-LAST:event_ItemsMouseClicked
 
+    private void jButtonAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAMouseClicked
+        String currentRoom = g.getCurrentRoom().getName();
+        //quest from living room
+        if(currentRoom.equals("livingRoom")){
+            if(quest1 == false) {
+                jTextArea1.setText(ExpInfo.printlivingRoom_answerA());
+                g.getPlayers().grabItem("home key");
+                jTextArea1.setText(ExpInfo.printlivingRoom_conclu());
+                quest1 = true;
+            }
+            else{
+                jTextArea1.setText("Hum...Yum !");
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+            }
+            
+        }
+    }//GEN-LAST:event_jButtonAMouseClicked
+
+    private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
+        String currentRoom = g.getCurrentRoom().getName();
+        if(currentRoom.equals("livingRoom")){
+            if(quest1 == false) {
+                jTextArea1.setText(ExpInfo.printlivingRoom_answerB());
+                jTextArea1.setText(ExpInfo.printlivingRoom_conclu());
+                quest1 = true;
+            }
+            else{
+                jTextArea1.setText("Hum...Yum !"); 
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_jButtonBMouseClicked
+
     private javax.swing.JDialog getYesNo (){
         YesNo.setVisible(true);
         return YesNo;
@@ -386,6 +452,8 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JButton go_south;
     private javax.swing.JButton go_up;
     private javax.swing.JButton go_west;
+    public javax.swing.JButton jButtonA;
+    public javax.swing.JButton jButtonB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;
