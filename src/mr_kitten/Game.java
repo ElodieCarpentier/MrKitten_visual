@@ -764,7 +764,29 @@ public class Game
                 MrKitten.grabItem("puppyEyes");
                 System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
                 break;
-            case "starWars" : break;
+            case "starWars" : 
+                System.out.println("Nice neon lights illuminate a dark desk. Its looks like the Charlie's pub of the 7th street where the disco is on the floor but that's not relate to this story."
+                    +nLine+"You 're walking in direction of this desk ... suddendly the lights out and the office chair turn over. A black man appear !");
+                Actors.vadorDialog_a();
+                System.out.println("**************"
+                    +nLine+"Would you join this incredible profession ?"
+                    +nLine+"a - Yes, it appears to be a stable situation for my personnal projects."
+                    +nLine+"b - NO !! I've no time for this bumf !");
+                String answer_starwars = keyboard.nextLine();
+                if (answer_starwars.equals("a")){
+                System.out.println(" After many years of hard work and after encounter your wife and produced lot of baby ... You died of old age :( R.I.P  ");
+                System.out.println("You loose !! GAME OVER !!");
+                System.exit(1);
+                }
+                else if (answer_starwars.equals("b")){
+                Actors.vadorDialog_b();
+                fightPeople();
+                System.out.println("That's was a critical hit for this madness. He was not very bright !"
+                    +nLine+"Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !");
+                MrKitten.grabItem("potionCareMax");
+                MrKitten.grabItem("laserTail");
+                }
+                break;
             case "theCloset" : 
                 System.out.println("There is big wooden cupboard in front of you.");
                 System.out.println("You approach an feel a fresh gust of wind. What is this?");

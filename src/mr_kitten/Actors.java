@@ -131,4 +131,14 @@ public class Actors
         System.out.println("You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!");
         System.out.println("I will never let you take it!");
     }
+     public static void vadorDialog_a() {
+        System.out.println("Oh well ! A new visitor in my house. Do you know where you are ?");
+        System.out.println("Because I'm the answer to all your questions indeed I'm in the darkside where all is possible ! Ahahah !");
+        System.out.println("I can propose to you a nice offer. A full time job in the darkside coorporation !");
+    }
+    
+    public static void vadorDialog_b() {
+        System.out.println("What ?! You can't refuse this offer !!");
+        System.out.println("Let's fight and see my superiority !!");
+    }
 }
