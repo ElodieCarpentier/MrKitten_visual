@@ -174,4 +174,10 @@ public class Actors
     public static void sharkDialog(){
         System.out.println("Look at that Bruce! A furry fish! We have to taste that. Prepare to die!");
     }
+    
+    public static void darkMouleDialog(){
+        System.out.println("Who do you think you are?!");
+        System.out.println("You cannot prevail, you silly kitty...");
+        System.out.println("I will crush you!");
+    }
 }
