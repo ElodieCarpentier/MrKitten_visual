@@ -25,7 +25,7 @@ import java.io.*;
 public class Game 
 {
     private Parser parser;
-    private Room currentRoom;
+    protected Room currentRoom;
     private static Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
@@ -74,21 +74,21 @@ public class Game
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,harbor,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
-        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen","kitchen.png");
-        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom","livingroom.png");
-        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom","bedroom.png");
-        street1 = new Room ("are in the Street near the entrance of the house","street1","street.png");
-        street2 = new Room ("are in the Street near the Petshop","street2","street.png");
-        sewer = new Room ("are in the Sewer under the streets","sewer", "sewer.png");
-        petshop = new Room ("are in the Petshop","petshop","petshop.png");
-        harbor = new Room ("are on the city's harbor", "harbor","harbor");
-        theGreatDescent = new Room ("are going deep down under water","theGreatDescent","underwater.png");
-        dory = new Room ("are with Dory the great fish","dory","seareef.png");
-        theFishPalace = new Room ("are in the Fish Palace","theFishPalace","fishpalace.png");
-        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","artworkTavern.png");
-        starWars = new Room ("are in a Galaxy far far away...","starWars","starwars.png");
-        theCloset = new Room ("are ready to fight with lions","theCloset","narnia.png");
-        theEnd = new Room ("did it, you did it, Yeah!","theEnd","nyancat.png");
+        kitchen = new Room ("You are in the Kitchen of the Master's house","kitchen","kitchen.png");
+        livingRoom = new Room ("You are in the Living room of the Master's house","livingRoom","livingroom.png");
+        bedroom = new Room ("You are in the Bedroom of the Master's house","bedroom","bedroom.png");
+        street1 = new Room ("You are in the Street near the entrance of the house","street1","street.png");
+        street2 = new Room ("You are in the Street near the Petshop","street2","street.png");
+        sewer = new Room ("You are in the Sewer under the streets","sewer", "sewer.png");
+        petshop = new Room ("You are in the Petshop","petshop","petshop.png");
+        //harbor = new Room ("are on the city's harbor", "harbor","harbor");
+        theGreatDescent = new Room ("You are going deep down under water","theGreatDescent","underwater.png");
+        dory = new Room ("You are with Dory the great fish","dory","seareef.png");
+        theFishPalace = new Room ("You are in the Fish Palace","theFishPalace","fishpalace.png");
+        tavernSanRicardo = new Room ("You are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","artworkTavern.png");
+        starWars = new Room ("You are in a Galaxy far far away...","starWars","starwars.png");
+        theCloset = new Room ("You are ready to fight with lions","theCloset","narnia.png");
+        theEnd = new Room ("You did it, you did it, Yeah!","theEnd","nyancat.png");
         
         //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
@@ -347,7 +347,7 @@ public class Game
     {
         if(!command.hasSecondWord()) {
             // if there is no second word, we describe the current room 
-            System.out.println("You " + currentRoom.getDescription());
+            System.out.println(currentRoom.getDescription());
             currentRoom.printExits();
         }
         else {
