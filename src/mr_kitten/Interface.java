@@ -449,6 +449,7 @@ public class Interface extends javax.swing.JDialog {
             jTextArea1.setText(ExpInfo.printfishpalace_answerA());
             jButtonA.setVisible(false);
             jButtonB.setVisible(false);
+            g.getPlayers().grabItem("algea");
         }
         else if (currentRoom.equals("starWars")){
             jTextArea1.setText(ExpInfo.printvador_answerA());
@@ -499,6 +500,7 @@ public class Interface extends javax.swing.JDialog {
             jTextArea1.setText(ExpInfo.printStreet1_answerB());
             jButtonA.setVisible(false);
             jButtonB.setVisible(false);
+            g.getPlayers().grabItem("potionCareMin");
         }
         else if (currentRoom.equals("street2")){
             jTextArea1.setText(ExpInfo.printStreet2_answerB());
@@ -565,6 +567,7 @@ public class Interface extends javax.swing.JDialog {
                 jButtonB.setVisible(false);
                 jButtonC.setVisible(false);
                 jButtonD.setVisible(false);
+                g.getPlayers().grabItem("Artefact Of True Vision");
             }
         }
     }//GEN-LAST:event_jButtonCMouseClicked

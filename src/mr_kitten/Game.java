@@ -27,7 +27,7 @@ public class Game
 {
     private Parser parser;
     protected Room currentRoom;
-    private Players MrKitten;
+    Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
     String nLine=System.getProperty("line.separator"); //Allow to make a new line
@@ -119,7 +119,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = theEnd;  // start game in master's house
+        currentRoom = livingRoom;  // start game in master's house
     }
 
     /*
@@ -645,6 +645,7 @@ public class Game
                 break;
             case "tavernSanRicardo" : //manque la partie end après le combat
                 in.jTextArea1.setText(ExpInfo.printtavern_intro());
+                MrKitten.grabItem("puppyEyes");
                 break;
             case "starWars" : 
                 in.jTextArea1.setText(ExpInfo.printvador_intro());
