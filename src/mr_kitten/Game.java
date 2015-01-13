@@ -245,13 +245,13 @@ public class Game
             lookRoom(command);
         }
         else if(commandWord.equals("fight")){
-            fightPeople();
+            //fightPeople();
         }
         else if(commandWord.equals("talk")){
-            talkRoomPeople();
+            //talkRoomPeople();
         }
         else if(commandWord.equals("explore")){
-            exploreRoom();
+            //exploreRoom();
         }
         else if(commandWord.equals("inventory")){
             //inventory();
@@ -369,43 +369,55 @@ public class Game
     /*
      * You can fight peoples in the current room  
      */
-    private void fightPeople()
+    public void fightPeopleIN(Interface in)
     { 
         String ennemi = "";
-        int ennemiHP=0;
-        int ennemiAD=0;
+        //int ennemiHP=0;
+        //int ennemiAD=0;
         boolean charactersFind = false;
         for (int i = 0;i<characters.size();i++){
             Characters currentChar = characters.get(i);
             if (currentChar.getRoom().equals(currentRoom.getName())) {
                 ennemi = currentChar.getName();
-                ennemiHP = currentChar.getEnnemiHP();
-                ennemiAD = currentChar.getEnnemiAD();
+                //ennemiHP = currentChar.getEnnemiHP();
+               // ennemiAD = currentChar.getEnnemiAD();
                 charactersFind = true;
                 break;
             }
         }  
         if (charactersFind == false) {
-            System.out.println("There is no character in this room");
+            in.jTextArea1.setText("There is no character in this room");
         }
         else {
+            String s =("");
             if (ennemi.equals("mrRobot")){
-                Actors.mrRobotDialog();
+                s=s+Actors.mrRobotDialog();
+                in.jTextArea1.setText(s);
             }
-            int MrKittenHP = MrKitten.getPlayerHP();
-            System.out.println("Mr Kitten VS "+ ennemi);
+            //int MrKittenHP = MrKitten.getPlayerHP();
+            s=s+("\n Mr Kitten VS "+ ennemi+" \n");
+            in.jTextArea1.setText(s);
+        }
+    }
+    
+    public void selectAttack(Interface in, int MrKittenHP, int ennemiHP){
             while (MrKittenHP>0 && ennemiHP>0){
-                    System.out.println("    *********   ");
-                    System.out.println("Mr.Kitten's HP = "+MrKittenHP);
-                    System.out.println(ennemi+"'s HP = "+ennemiHP);
-                    System.out.println("    *********   ");
-                    System.out.println (" What would you like ? ");
-                    System.out.println(" a - attack ");
-                    System.out.println(" b - special attack ");
-                    System.out.println(" c - items");
-                    System.out.println(" Enter the character please :");
-                    Scanner keyboard = new Scanner(System.in);
-                    String answer = keyboard.nextLine();
+                    String s=("\n    *********   \n"
+                            +"\n Mr.Kitten's HP = "+MrKittenHP+" \n"
+                            +"\n Ennemi's HP = "+ennemiHP+" \n"
+                            +"\n    *********   \n"
+                            +"\n What would you like ? \n"
+                            +"\n    a - attack \n"
+                            +"\n    b - special attack \n"
+                            +"\n    c - items \n");
+                    in.jTextArea1.setText(s);
+                    in.jButtonA.setVisible(true);
+                    in.jButtonB.setVisible(true);
+                    in.jButtonC.setVisible(true);
+            }
+    }
+    
+    /*
                     switch (answer){
                         case "a": {
                             ennemiHP=attack(ennemiHP);
@@ -430,9 +442,10 @@ public class Game
             }else {
                 System.out.println("You loose !! GAME OVER !!");
                 System.exit(1);              
-            }
+            }if(ennemiHP >0){
+                 
         }
-    }
+    }*/
     /**
      * Reduce ennemi HP by a normal attack
      */
@@ -590,10 +603,7 @@ public class Game
             case "livingRoom" :
                 in.jTextArea1.setText(ExpInfo.printlivingRoom_intro());
                 in.jButtonA.setVisible(true);
-                in.jButtonB.setVisible(true);
-                /*if(in.jButtonAMouseClicked(java.awt.event.MouseEvent evt)){
-                    in.jTextArea1.setText(ExpInfo.printlivingRoom_answerA());
-                }*/
+                in.jButtonB.setVisible(true);          
                 break;
             case "kitchen" :
                 in.jTextArea1.setText(ExpInfo.printKitchen_intro());
@@ -628,7 +638,7 @@ public class Game
         }
     }
     
-    public String exploreRoom(){
+    /*public String exploreRoom(){
         String answer;
         int MrKittenHP = MrKitten.getPlayerHP();
         Scanner keyboard = new Scanner(System.in);
@@ -667,7 +677,7 @@ public class Game
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
 //                System.out.println("Hum... Yum!");*/
                    //break;
-            case "kitchen" :
+            /*case "kitchen" :
                 ExpInfo.printKitchen_intro();
                 /*System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
                 System.out.println("It's smelling cooking food ! The kitchen table is probably full of food.");
@@ -675,7 +685,7 @@ public class Game
                 System.out.println("    a - Oh god YES ! I'm hungry guys !");
                 System.out.println("    b - No, it's better on the kitchen cupboard");
                 System.out.println("Enter the character please :");*/
-                String answer_kitchen = keyboard.nextLine();
+                /*String answer_kitchen = keyboard.nextLine();
                 if (answer_kitchen.equals("a")){
                     ExpInfo.printKitchen_answerA();
                     //System.out.println("Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
@@ -762,7 +772,7 @@ public class Game
                 System.out.println("    a - talk to the cat");
                 System.out.println("    b - explore the garbage can");
                 System.out.println("Enter the character please :");*/
-                answer = keyboard.nextLine();
+                /*answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     //Actors.garfieldDialog();  
                     ExpInfo.printStreet1_answerA();
@@ -781,13 +791,13 @@ public class Game
                 System.out.println("    a - yes");
                 System.out.println("    b - no");
                 System.out.println("Enter the character please :");*/
-                answer = keyboard.nextLine();
+                /*answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     ExpInfo.printStreet2_answerA();
                     /*System.out.println("Uh-Oh! There is already someone in this garbage can!");
                     System.out.println("This stray cat doesn't look soft!");*/
-                    fightPeople();
-                }
+                    //fightPeople();
+                /*}
                 else if (answer.equals("b")){
                     ExpInfo.printStreet2_answerB();
                     //System.out.println("Let us hope you will not regret it...");
@@ -796,13 +806,13 @@ public class Game
             case "sewer" : 
                 /*System.out.println("Look! A wild rat is coming toward you!");
                 System.out.println("It seems you have entered his territory");*/
-                ExpInfo.printSewer_intro();
-                fightPeople();
+                /*ExpInfo.printSewer_intro();
+                //fightPeople();
                 MrKitten.grabItem("superPiss");
                 ExpInfo.printSewer_conclu();
                 /*System.out.println("Congratulations! You have learned a new ability : SuperPiss");
                 System.out.println("You are now able to pee on people in a...deadly way...");*/
-                break;
+                /*break;
             case "petshop" : 
                 ExpInfo.printPetshop_intro();
                 
@@ -813,7 +823,7 @@ public class Game
                 System.out.println("    a - yes");
                 System.out.println("    b - no");
                 System.out.println("Enter the character please :");*/
-                answer = keyboard.nextLine();
+                /*answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     ExpInfo.printPetshop_answerA();
 //                    Actors.ratatouilleDialog();
@@ -826,7 +836,7 @@ public class Game
                 ExpInfo.printPetshop_fight();
 //                System.out.println("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!");
 //                Actors.mrRobotDialog();
-                fightPeople();
+                //fightPeople();
                 MrKitten.grabItem("potionCareMean");
                 ExpInfo.printPetshop_end();
 //                System.out.println("The robot has dropped a potion. Will you make good use of it?");
@@ -835,7 +845,7 @@ public class Game
                 ExpInfo.printgreatdescent_intro();
 //                System.out.println("A group of dangerous looking sharks is swimming toward you!");
 //                Actors.sharkDialog();
-                fightPeople();
+                //fightPeople();
 //                System.out.println("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!");
                 MrKitten.grabItem("superBite");
                 ExpInfo.printgreatdescent_end();
@@ -945,7 +955,7 @@ public class Game
                     ExpInfo.printfishpalace_answerB();
 //                    System.out.println("Let us hope you will not regret it...");
                 }
-                fightPeople();
+                //fightPeople();
                 ExpInfo.printfishpalace_end();
 //                System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
                 MrKitten.grabItem("bluekey");
@@ -978,7 +988,7 @@ public class Game
                 else if (answer_starwars.equals("b")){
                     ExpInfo.printvador_answerB();
 //                Actors.vadorDialog_b();
-                fightPeople();
+                //fightPeople();
                 ExpInfo.printvador_end();
 //                System.out.println("That's was a critical hit for this madness. He was not very bright !"
 //                    +nLine+"Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !");
@@ -994,7 +1004,7 @@ public class Game
                 System.out.println("He looks stern.");
                 System.out.println("He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes...");
                 Actors.brotherDialog();
-                fightPeople();
+                //fightPeople();
                 System.out.println("Wow! You won!");
                 System.out.println("This was a really serious opponent, you almost died.");
                 System.out.println("Still, it always hurts to have to kill your own brother...");
@@ -1019,7 +1029,7 @@ public class Game
             default : System.out.println("Just... how??"); break;
         }
         return ("Coucou");
-}
+}*/
 
     
     public void inventory(Interface in){

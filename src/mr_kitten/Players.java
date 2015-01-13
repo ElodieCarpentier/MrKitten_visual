@@ -24,7 +24,7 @@ public class Players
     private static ArrayList<Item> inventory;
     private int inventoryWeight = 0;
     private static int maxWeight = 30;
-    private static int playerHP;
+    private int playerHP;
     
     /**
      * Constructor for objects of class Players
@@ -81,7 +81,7 @@ public class Players
         return playerHP;
     }
     
-    public static void setPlayerHP(int newPlayerHP){
+    public void setPlayerHP(int newPlayerHP){
         playerHP = newPlayerHP;
     }
     /*

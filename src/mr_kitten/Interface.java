@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 package mr_kitten;
-
+import java.util.*;
 /**
  *
  * @author Arya
  */
 public class Interface extends javax.swing.JDialog {
     private static Game g = new Game();
-    private boolean quest1 = false;
+    private boolean quest1, quest2 = false;
+    int MrKittenHP, ennemiHP, ennemiAD;
     /**
      * Creates new form Interface
      */
@@ -414,9 +415,38 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
         }
         else if (currentRoom.equals("street2")){
-            jTextArea1.setText(ExpInfo.printStreet2_answerA());
+            //Premiers question -- lancement du combat avec straycat
+            if (quest2 == false ){
+                jTextArea1.setText(ExpInfo.printStreet2_answerA());
+                //Lancement du combat -- Texte intro
+                g.fightPeopleIN(this);
+                MrKittenHP = g.getPlayers().getPlayerHP();
+                //Ennemi = straycat
+                ennemiHP = 20;
+                ennemiAD = 5;
+                if(MrKittenHP>0 && ennemiHP>0){
+                    g.selectAttack(this, MrKittenHP,ennemiHP);
+                }
+                quest2=true;
+            }else{//Réponse au attack
+                ennemiHP=g.attack(ennemiHP);
+                if(ennemiHP >0){
+                    Random nbRd = new Random();
+                    int nextnb = nbRd.nextInt(ennemiAD)+1;
+                    MrKittenHP =  MrKittenHP - nextnb;
+                }
+                else{
+                    jTextArea1.setText("You win !! it's remains"+MrKittenHP+" HP");
+                    g.getPlayers().setPlayerHP(MrKittenHP);
+                }
+                if(MrKittenHP ==0){
+                    jTextArea1.setText("You loose !! GAME OVER !!");
+                    System.exit(1); 
+                }
+            }
             jButtonA.setVisible(false);
             jButtonB.setVisible(false);
+            jButtonC.setVisible(false);
         } 
     }//GEN-LAST:event_jButtonAMouseClicked
 
@@ -450,9 +480,41 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
         }
         else if (currentRoom.equals("street2")){
-            jTextArea1.setText(ExpInfo.printStreet2_answerB());
-            jButtonA.setVisible(false);
+            //jTextArea1.setText(ExpInfo.printStreet2_answerB());
+            /*jButtonA.setVisible(false);
             jButtonB.setVisible(false);
+            fightPeopleIn(this);*/
+            //
+            //else if (currentRoom.equals("street2")){
+            //Premiers question -- lancement du combat avec straycat
+            if (quest2 == false ){
+                jTextArea1.setText(ExpInfo.printStreet2_answerB());
+                //Lancement du combat -- Texte intro
+                g.fightPeopleIN(this);
+                MrKittenHP = g.getPlayers().getPlayerHP();
+                //Ennemi = straycat
+                ennemiHP = 20;
+                ennemiAD = 5;
+                if(MrKittenHP>0 && ennemiHP>0){
+                    g.selectAttack(this, MrKittenHP,ennemiHP);
+                }
+                quest2=true;
+            }else{//Réponse au attack
+                //ennemiHP=g.attackSpecial(ennemiHP);
+                if(ennemiHP >0){
+                    Random nbRd = new Random();
+                    int nextnb = nbRd.nextInt(ennemiAD)+1;
+                    MrKittenHP =  MrKittenHP - nextnb;
+                }
+                else{
+                    jTextArea1.setText("You win !! it's remains"+MrKittenHP+" HP");
+                    g.getPlayers().setPlayerHP(MrKittenHP);
+                }
+                if(MrKittenHP ==0){
+                    System.out.println("You loose !! GAME OVER !!");
+                    System.exit(1); 
+                }
+            }
         }
     }//GEN-LAST:event_jButtonBMouseClicked
 
