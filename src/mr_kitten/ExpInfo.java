@@ -322,17 +322,24 @@ public class ExpInfo {
                   + "\n People are coming! There is no way you are going to let them take your life!"
                   + "\n You demand a trial by combat!"
                   + "\n Against...the King!"
-                  + Actors.darkMouleDialog());
-          return intro;
-      }
-      protected static String printfishpalace_question(){
-          String question=("Quick! Before the fight begins, you see an algae laying on the ground"
+                  + Actors.darkMouleDialog()+
+                  "Quick! Before the fight begins, you see an algae laying on the ground"
                   + "\n That may be useful! Do you want to pick it?"
                   + "\n     a - yes"
                   + "\n     b - no"
                   + "\n Enter the character please :");
-          return question;
+          return intro;
       }
+      
+//      protected static String printfishpalace_question(){
+//          String question=("Quick! Before the fight begins, you see an algae laying on the ground"
+//                  + "\n That may be useful! Do you want to pick it?"
+//                  + "\n     a - yes"
+//                  + "\n     b - no"
+//                  + "\n Enter the character please :");
+//          return question;
+//      }
+      
       protected static String printfishpalace_answerA(){
           String answerA=("Algae item add in your inventory.");
           return answerA;
@@ -352,14 +359,16 @@ public class ExpInfo {
       protected static String printtavern_intro(){
           String intro=("You see a gorgeous looking cat with red-orange fur."
                   + "\n This badass looking guy looks at you with a surprised look."
-                  + Actors.pussInBootsDialog());
+                  + Actors.pussInBootsDialog()+
+                  "\n Congratulations! You learned the puppyEyes technique! "
+                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
           return intro;
       }
-      protected static String printtavern_end(){
-          String end=("ongratulations! You learned the puppyEyes technique! "
-                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
-          return end;
-      }
+//      protected static String printtavern_end(){
+//          String end=("Congratulations! You learned the puppyEyes technique! "
+//                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
+//          return end;
+//      }
       
       /*
       * Print for vador
@@ -384,15 +393,18 @@ public class ExpInfo {
           return answerA;
       }
       protected static String printvador_answerB(){
-          String answerB=(Actors.vadorDialog_b());
-          return answerB;
-      }
-      protected static String printvador_end(){
-          String end=("That's was a critical hit for this madness. He was not very bright !"
+          String answerB=(Actors.vadorDialog_b()+
+                  "\n That's was a critical hit for this madness. He was not very bright !"
                   + "\n Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !"
                   + "\n This badass looking guy looks at you with a surprised look.");
-          return end;
+          return answerB;
       }
+//      protected static String printvador_end(){
+//          String end=("That's was a critical hit for this madness. He was not very bright !"
+//                  + "\n Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !"
+//                  + "\n This badass looking guy looks at you with a surprised look.");
+//          return end;
+//      }
       
       /*
       * Print of thcloset
@@ -404,17 +416,22 @@ public class ExpInfo {
                   + "\n There is a cat here..."
                   + "\n He looks stern."
                   + "\n He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes..."
-                  + Actors.brotherDialog());
-          return intro;
-      }
-       protected static String printcloset_end(){
-          String end=("Wow! You won!"
+                  + Actors.brotherDialog()+
+                  "\n Wow! You won!"
                   + "\n This was a really serious opponent, you almost died."
                   + "\n Still, it always hurts to have to kill your own brother..."
                   + "\n But the gy deserved it, you could jot let him live. He is too dangerous."
                   + "\n You notice a small door in a corner. What could be hiding in it?");
-          return end;
+          return intro;
       }
+//       protected static String printcloset_end(){
+//          String end=("Wow! You won!"
+//                  + "\n This was a really serious opponent, you almost died."
+//                  + "\n Still, it always hurts to have to kill your own brother..."
+//                  + "\n But the gy deserved it, you could jot let him live. He is too dangerous."
+//                  + "\n You notice a small door in a corner. What could be hiding in it?");
+//          return end;
+//      }
        
        /*
        * Print foe the end
