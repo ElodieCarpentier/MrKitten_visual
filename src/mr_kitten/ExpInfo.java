@@ -239,4 +239,19 @@ public class ExpInfo {
           String end= ("The robot has dropped a potion. Will you make good use of it?");
           return end;
       }
+      
+      /**
+       * Print of the great descent
+       */
+      protected static String printgreatdescent_intro(){
+          String intro=("A group of dangerous looking sharks is swimming toward you!"
+                  + "\n"
+                  + Actors.sharkDialog());
+          return intro;
+      }
+      protected static String printgreatdescent_end(){
+          String end= ("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!"
+                  + "\n Congratulations! You can now bite your ennemies with this super jaw!");
+          return end;
+      }
 }
