@@ -183,8 +183,18 @@ public class Actors
     
     public static void pussInBootsDialog(){
         System.out.println("Hola, Senor Gato!");
-        System.out.println("\"I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way...\"");
+        System.out.println("I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way...\"");
         System.out.println("I have heard about your quest, and I want you to know that I support you!");
         System.out.println("Let me teach you something that could be of a great help, for this quest and for all your life...");
+    }
+    
+    public static void brotherDialog(){
+        System.out.println("So, here you are...brother. I have been waiting for you.");
+        System.out.println("Do not look so suprised! I am an Ancient Cat, just like you.");
+        System.out.println("When I first heard about the magical Guillotine, I knew I was the only one who could use it.");
+        System.out.println("And you, you want to take it, and spread power amongst these dumb kitties!");
+        System.out.println("This would only lead us to chaos...But if you join me, we could rule the world, together!");
+        System.out.println("You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!");
+        System.out.println("I will never let you take it!");
     }
 }

@@ -149,13 +149,7 @@ public class Game
         Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");
         Characters darkVador = new Characters("Dark Vador", 40, 25,"Shhhh...Shhhh...Are you a rebel? You look like a strange Ewok..."
                 + "Anyway, no one can enter a colonized planet like this! I will execute you!", "star wars");//A COMPLETER
-        Characters brother = new Characters("Brother", 50, 30,"So, here you are...brother. I have been waiting for you."
-                + "Do not look so suprised! I am an Ancient Cat, just like you."
-                + "When I first heard about the magical Guillotine, I knew I was the only one who could use it."
-                + "And you, you want to take it, and spread power amongst these dumb kitties!"
-                + "This would only lead us to chaos...But if you join me, we could rule the world, together!"
-                + "You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!"
-                + "I will never let you take it!", "theEnd");
+        Characters brother = new Characters("Brother", 50, 30,"...", "theEnd");
     
         characters = new ArrayList<Characters>();
         characters.add(goldFish);
@@ -764,7 +758,21 @@ public class Game
                 System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
                 break;
             case "starWars" : break;
-            case "theCloset" : break;
+            case "theCloset" : 
+                System.out.println("There is big wooden cupboard in front of you.");
+                System.out.println("You approach an feel a fresh gust of wind. What is this?");
+                System.out.println("You decide to enter the cupboard.");
+                System.out.println("There is a cat here...");
+                System.out.println("He looks stern.");
+                System.out.println("He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes...");
+                Actors.brotherDialog();
+                fightPeople();
+                System.out.println("Wow! You won!");
+                System.out.println("This was a really serious opponent, you almost died.");
+                System.out.println("Still, it always hurts to have to kill your own brother...");
+                System.out.println("But the gy deserved it, you could jot let him live. He is too dangerous.");
+                System.out.println("You notice a small door in a corner. What could be hiding in it?");
+                break;
             case "theEnd" : break;
             default : System.out.println("Just... how??"); break;
         }
