@@ -354,7 +354,7 @@ public class Interface extends javax.swing.JDialog {
     }//GEN-LAST:event_LookMouseClicked
 
     private void ItemsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ItemsMouseClicked
-    //g.lookInventory();
+        g.inventory(this);
     }//GEN-LAST:event_ItemsMouseClicked
 
     private void jButtonAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAMouseClicked
