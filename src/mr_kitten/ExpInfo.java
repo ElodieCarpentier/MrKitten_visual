@@ -15,7 +15,10 @@ public class ExpInfo {
       return answerError;
     }
     
-    
+    /**
+     * Print of living room
+     * @return 
+     */
     protected static String printlivingRoom_intro(){
             String intro = ("This couch is where the master always crashes... Let's do something!\n"
                 + "\n Destroy the couch?"
@@ -49,5 +52,27 @@ public class ExpInfo {
        String end = ("/n Hum... Yum!");
        return end; 
     }
-
+    
+    /**
+     * Print of kitchen 
+     */
+    protected static String printKitchen_intro(){
+        String intro =("Best place of the world for all cordon bleu. Their is always something to eat. \n"
+                +"\n It's smelling cooking food ! The kitchen table is probably full of food.\n"
+                +"\n Do you want jump on the kitchen table ?\n"
+                +"\n    a - Oh god YES ! I'm hungry guys !\n"
+                +"\n    b - No, it's better on the kitchen cupboard\n"
+                +"\n Enter the character please :\n");
+        return intro;
+    }
+    
+    protected static String printKitchen_answerA(){
+        String answerA =("\n Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
+        return answerA;            
+    }
+    
+    protected static String printKitchen_answerB(){
+        String answerB =("\n Jackpot ! A cooked fish is on this cupboard. You eat it and gain 50 hp !");
+        return answerB;            
+    }
 }

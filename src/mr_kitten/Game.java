@@ -597,20 +597,24 @@ public class Game
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
 //                System.out.println("Hum... Yum!");
                 break;
-            case "kitchen" :System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
+            case "kitchen" :
+                ExpInfo.printKitchen_intro();
+                /*System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
                 System.out.println("It's smelling cooking food ! The kitchen table is probably full of food.");
                 System.out.println("Do you want jump on the kitchen table ?");
                 System.out.println("    a - Oh god YES ! I'm hungry guys !");
                 System.out.println("    b - No, it's better on the kitchen cupboard");
-                System.out.println("Enter the character please :");
+                System.out.println("Enter the character please :");*/
                 String answer_kitchen = keyboard.nextLine();
                 if (answer_kitchen.equals("a")){
-                    System.out.println("Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
+                    ExpInfo.printKitchen_answerA();
+                    //System.out.println("Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
                     MrKittenHP =MrKittenHP +25;  
                     Players.setPlayerHP(MrKittenHP);
                 }
                 else {
-                    System.out.println("Jackpot ! A cooked fish is on this cupboard. You eat it and gain 50 hp !");
+                    ExpInfo.printKitchen_answerB();
+                    //System.out.println("Jackpot ! A cooked fish is on this cupboard. You eat it and gain 50 hp !");
                      MrKittenHP =MrKittenHP +50;
                     Players.setPlayerHP(MrKittenHP);
                 }
