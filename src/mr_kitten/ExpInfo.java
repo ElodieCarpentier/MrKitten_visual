@@ -116,7 +116,7 @@ public class ExpInfo {
     }
     
     protected static String printbedroom_answerCa() {
-        String answerCa = ("It's a choice like a other. Go explore new universe !!!");
+        String answerCa = ("It's a choice like another. Go explore new universe !!!");
         return answerCa;
     }
     
@@ -249,7 +249,7 @@ public class ExpInfo {
                   + Actors.sharkDialog());
           return intro;
       }
-      protected static String printgreatdescent_end(){
+      protected static String printgreatdescent_end(){ //pas encore fait, implémenter combat en 1er
           String end= ("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!"
                   + "\n Congratulations! You can now bite your ennemies with this super jaw!");
           return end;
@@ -265,7 +265,7 @@ public class ExpInfo {
           return intro;
       }
       protected static String printdory_answerA(){
-          String answerA=("Oh I remember now!! Thank you big guy!");
+          String answerA=("Oh I remember now!! Thank you big guy!"+Actors.doryDialog_good());
           return answerA;
       }
       protected static String printdory_answerB(){
@@ -281,10 +281,11 @@ public class ExpInfo {
           return answerD;
       }
       
-      protected static String printdory_good(){
-          String answergood=(Actors.doryDialog_good());
-          return answergood;
-      }
+//      protected static String printdory_good(){
+//          String answergood=(Actors.doryDialog_good());
+//          return answergood;
+//      }
+      
        protected static String printdory_goodanswerA(){
           String answerA=("Never trust somebody that has his underwear on top of his pants!");
           return answerA;
@@ -294,7 +295,9 @@ public class ExpInfo {
           return answerB;
       }
       protected static String printdory_goodanswerC(){
-          String answerC=("Soooooo good! You are a true scientist!");
+          String answerC=("Soooooo good! You are a true scientist!"+
+                  "\n Good job! You just won an ancient artefact!"
+                  + "\n You recieved: Artefact of true vision");
           return answerC;
       }
       protected static String printdory_goodanswerD(){
@@ -302,11 +305,11 @@ public class ExpInfo {
           return answerD;
       }
       
-      protected static String printdory_end(){
-          String end=("Good job! You just won an ancient artefact!"
-                  + "\n You recieved: Artefact of true vision");
-          return end;
-      }
+//      protected static String printdory_end(){
+//          String end=("Good job! You just won an ancient artefact!"
+//                  + "\n You recieved: Artefact of true vision");
+//          return end;
+//      }
       
       /*
       * Print of the fishpalace

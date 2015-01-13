@@ -119,7 +119,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = livingRoom;  // start game in master's house
+        currentRoom = dory;  // start game in master's house
     }
 
     /*
@@ -604,8 +604,8 @@ public class Game
                 in.jTextArea1.setText(ExpInfo.printbedroom_intro());
                 in.jButtonA.setVisible(true);
                 in.jButtonB.setVisible(true);
-                //in.jButtonC.setVisible(true);
-                //in.jButtonD.setVisible(true);
+                in.jButtonC.setVisible(true);
+                in.jButtonD.setVisible(true);
                 break;
             case "street1" :
                 in.jTextArea1.setText(ExpInfo.printStreet1_intro());
@@ -622,6 +622,21 @@ public class Game
                 //Se battre contre le rat, si victoire lancer la suite
                 in.jTextArea1.setText(ExpInfo.printSewer_conclu());//ça c'est la suite
                 //ajout de l'item super piss
+                break;
+            case "petshop" :
+                in.jTextArea1.setText(ExpInfo.printPetshop_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "theGreatDescent" :
+                in.jTextArea1.setText(ExpInfo.printgreatdescent_intro());
+                break;
+            case "dory" : 
+                in.jTextArea1.setText(ExpInfo.printdory_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                in.jButtonC.setVisible(true);
+                in.jButtonD.setVisible(true);
                 break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
@@ -881,7 +896,7 @@ public class Game
                 }
                 if (good){
                     good = false;
-                    ExpInfo.printdory_good();
+                    //ExpInfo.printdory_good();
 //                        System.out.println("I also remember that I have a History test tomorrow!");
 //                        System.out.println("You gotta help me! Just remember me which animal is");
 //                        System.out.println("the great defender of the world!");
@@ -913,7 +928,7 @@ public class Game
                         ExpInfo.printanswerError();
                 }
                 if (good){
-                    ExpInfo.printdory_end();
+                    //ExpInfo.printdory_end();
 //                    System.out.println("Good job! You just won an ancient artefact!");
 //                    System.out.println("You recieved: Artefact of true vision");
                     MrKitten.grabItem("artefactOfTrueVision");
