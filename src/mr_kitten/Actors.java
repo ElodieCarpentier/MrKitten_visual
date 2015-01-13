@@ -83,17 +83,19 @@ public class Actors
         return redFish;
     }
     
-    public static void ratatouilleDialog(){
-        System.out.println("Hello, young cat. I have heard of you. I think you could use some help in your quest.");
-        System.out.println("I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time.");
-        System.out.println("I have a dream that our txo races can live together peacefully.");
+    public static String ratatouilleDialog(){
+        String ratatouille =("Hello, young cat. I have heard of you. I think you could use some help in your quest."
+                + "\n I can teach you something, and I hope you will make good use of it. I also hope that this action will unite the Cats and Rats race for a very long time."
+                + "\n I have a dream that our txo races can live together peacefully.");
+        return ratatouille;
     }
     
-    public static void mrRobotDialog(){
-    System.out.println("Bip Beep Bop, stranger detected. Beep beep, danger incoming");
-    System.out.println("Must..destroy...");
-    System.out.println("The danger...");
-    System.out.println("Beep...");
+    public static String mrRobotDialog(){
+        String robotDialog = ("Bip Beep Bop, stranger detected. Beep beep, danger incoming"
+                + "\n Must..destroy..."
+                + "\n The danger..."
+                + "\n Beep...");
+        return robotDialog;
     }
     
     public static String garfieldDialog(){

@@ -768,17 +768,21 @@ public class Game
                 System.out.println("Enter the character please :");*/
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                    Actors.ratatouilleDialog();
-                    System.out.println("Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
+                    ExpInfo.printPetshop_answerA();
+//                    Actors.ratatouilleDialog();
+//                    System.out.println("Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
                 }
                 else if (answer.equals("b")){
-                    System.out.println("Let us hope you will not regret it...");
+                    ExpInfo.printPetshop_answerB();
+//                    System.out.println("Let us hope you will not regret it...");
                 }
-                System.out.println("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!");
-                Actors.mrRobotDialog();
+                ExpInfo.printPetshop_fight();
+//                System.out.println("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!");
+//                Actors.mrRobotDialog();
                 fightPeople();
                 MrKitten.grabItem("potionCareMean");
-                System.out.println("The robot has dropped a potion. Will you make good use of it?");
+                ExpInfo.printPetshop_end();
+//                System.out.println("The robot has dropped a potion. Will you make good use of it?");
                 break;                
             case "theGreatDescent" :
                 System.out.println("A group of dangerous looking sharks is swimming toward you!");

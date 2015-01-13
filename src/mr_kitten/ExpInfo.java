@@ -218,4 +218,25 @@ public class ExpInfo {
                   +"\n Enter the character please : \n");
           return intro;
       }
+      
+      protected static String printPetshop_answerA() {
+          String answerA = (Actors.ratatouilleDialog()
+                  + "\n Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
+          return answerA;
+      }
+      
+      protected static String printPetshop_answerB(){
+          String answerB = ("Let us hope you will not regret it...");
+          return answerB;
+      }
+      protected static String printPetshop_fight() {
+            String fight= ("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!"
+                   + "\n"
+                   + Actors.mrRobotDialog());
+           return fight;
+       }
+      protected static String printPetshop_end(){
+          String end= ("The robot has dropped a potion. Will you make good use of it?");
+          return end;
+      }
 }
