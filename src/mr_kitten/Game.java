@@ -583,15 +583,18 @@ public class Game
     
     public void exploreRoomTest(Interface in){
         //CECI EST UN TEST
-        int MrKittenHP = g.getPlayers().getPlayerHP();
-        switch(g.getRoom().getName()){
+        int MrKittenHP = MrKitten.getPlayerHP();
+        switch(currentRoom.getName()){
             case "livingRoom" :
-                jTextArea1.setText(ExpInfo.printlivingRoom_intro()); 
-                getYesNo();
+                in.jTextArea1.setText(ExpInfo.printlivingRoom_intro()); 
                 break;
             case "kitchen" :
-                jTextArea1.setText(ExpInfo.printKitchen_intro());
-            default : jTextArea1.setText("Just... how??"); 
+                in.jTextArea1.setText(ExpInfo.printKitchen_intro());
+            case "bedroom" : 
+                in.jTextArea1.setText(ExpInfo.printbedroom_intro());
+            case "street1" :
+                in.jTextArea1.setText(ExpInfo.printStreet1_intro());
+            default : in.jTextArea1.setText("Just... how??"); 
             break;
         }
     }

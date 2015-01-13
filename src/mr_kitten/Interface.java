@@ -374,10 +374,10 @@ public class Interface extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Explore;
-    private javax.swing.JButton Help;
-    private javax.swing.JButton Items;
-    private javax.swing.JButton Look;
+    public javax.swing.JButton Explore;
+    public javax.swing.JButton Help;
+    public javax.swing.JButton Items;
+    public javax.swing.JButton Look;
     private javax.swing.JButton Shutdown;
     private javax.swing.JDialog YesNo;
     private javax.swing.JButton go_down;
@@ -391,6 +391,6 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
