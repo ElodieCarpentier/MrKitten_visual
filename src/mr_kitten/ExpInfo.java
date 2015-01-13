@@ -254,4 +254,57 @@ public class ExpInfo {
                   + "\n Congratulations! You can now bite your ennemies with this super jaw!");
           return end;
       }
+      
+      /**
+       * Print of Dory
+       */
+      protected static String printdory_intro(){
+          String intro= ("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?"
+                  + "\n"
+                  + Actors.doryDialog_intro());
+          return intro;
+      }
+      protected static String printdory_answerA(){
+          String answerA=("Oh I remember now!! Thank you big guy!");
+          return answerA;
+      }
+      protected static String printdory_answerB(){
+          String answerB=("How romantic is this, give a kiss to Keane for me!");
+          return answerB;
+      }
+      protected static String printdory_answerC(){
+          String answerC=("You lost me there man...");
+          return answerC;
+      }
+      protected static String printdory_answerD(){
+          String answerD=("You gotta love panckakes...");
+          return answerD;
+      }
+      
+      protected static String printdory_good(){
+          String answergood=(Actors.doryDialog_good());
+          return answergood;
+      }
+       protected static String printdory_goodanswerA(){
+          String answerA=("Never trust somebody that has his underwear on top of his pants!");
+          return answerA;
+      }
+      protected static String printdory_goodanswerB(){
+          String answerB=("His attack dealt too much damage to handle...");
+          return answerB;
+      }
+      protected static String printdory_goodanswerC(){
+          String answerC=("Soooooo good! You are a true scientist!");
+          return answerC;
+      }
+      protected static String printdory_goodanswerD(){
+          String answerD=("That hardrive doesn't have anything special...");
+          return answerD;
+      }
+      
+      protected static String printdory_end(){
+          String end=("Good job! You just won an ancient artefact!"
+                  + "\n You recieved: Artefact of true vision");
+          return end;
+      }
 }

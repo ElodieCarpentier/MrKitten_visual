@@ -564,7 +564,7 @@ public class Game
     private void talkRoomPeople(){
         if (currentRoom.getName().equals("dory")){
             System.out.println("DORY :");
-            doryDialogue();return;
+            Actors.doryDialog_intro();return;
         }
         else if (currentRoom.getName().equals("petshop")){
             System.out.println("RED FISH :");
@@ -814,8 +814,83 @@ public class Game
 //                System.out.println("Congratulations! You can now bite your ennemies with this super jaw!");
                 break;
             case "dory" :
-                System.out.println("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?");
-                doryDialogue();
+                ExpInfo.printdory_intro();
+//                System.out.println("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?");
+//                
+//                System.out.println("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,");
+//                System.out.println("and this is crazy, but here's my number. Hey how is it going mate?");
+//                System.out.println("Oh I might need your help! Do you know where Marin is going?");
+//                System.out.println("    a - P. Sherman Wallaby Way in Sydney Bitch!");
+//                System.out.println("    b - Somewhere only we know <3");
+//                System.out.println("    c - I heard something that my cousin told me about a women he was seeing in some places"
+//                    +nLine+"and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
+//                    +nLine+"pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly.");
+//                System.out.println("    d - answer d");
+//                System.out.println("Enter the character please :");
+                String answer_dory = keyboard.nextLine();
+                boolean good = false;
+                switch (answer_dory){
+                    case "a": if (answer_dory.equals("a")){
+                        ExpInfo.printdory_answerA();
+//                            System.out.println("Oh I remember now!! Thank you big guy!");
+                        };good = true;
+                        break;
+                    case "b": if (answer_dory.equals("b")){
+                        ExpInfo.printdory_answerB();
+//                        System.out.println("How romantic is this, give a kiss to Keane for me!");
+                        };break;
+                    case "c": if (answer_dory.equals("c")){
+                        ExpInfo.printdory_answerC();
+//                        System.out.println("You lost me there man...");
+                        };break;
+                    case "d": if (answer_dory.equals("d")){
+                        ExpInfo.printdory_answerD();
+//                        System.out.println("You gotta love panckakes...");
+                        };break;    
+                default:  
+//                    System.out.println("what the hell did you just say?"); break;
+                    ExpInfo.printanswerError();
+                }
+                if (good){
+                    good = false;
+                    ExpInfo.printdory_good();
+//                        System.out.println("I also remember that I have a History test tomorrow!");
+//                        System.out.println("You gotta help me! Just remember me which animal is");
+//                        System.out.println("the great defender of the world!");
+//                        System.out.println("    a - Superman! Have you seen his underwear? So much red!");
+//                        System.out.println("    b - Magicarpe! Obviously this magesterial fish! And he is red too!");
+//                        System.out.println("    c - Etalon du cul! What a french name for a true hero! ");
+//                        System.out.println("    d - Do you really want the D?");
+//                        System.out.println("Enter the character please :");
+                        answer = keyboard.nextLine();
+                switch (answer){
+                case "a": {
+                    ExpInfo.printdory_goodanswerA();
+//                        System.out.println("Never trust somebody that has his underwear on top of his pants!");
+                    };break;
+                case "b": {
+                    ExpInfo.printdory_goodanswerB();
+//                            System.out.println("His attack dealt too much damage to handle...");
+                        };break;
+                case "c": {
+                    ExpInfo.printdory_goodanswerC();
+//                            System.out.println("Soooooo good! You are a true scientist!");
+                        };good = true;break;
+                case "d": {
+                    ExpInfo.printdory_goodanswerD();
+//                            System.out.println("That hardrive doesn't have anything special...");
+                        };break;    
+                    default : 
+//                        System.out.println("How can you do that you witch!");break;
+                        ExpInfo.printanswerError();
+                }
+                if (good){
+                    ExpInfo.printdory_end();
+//                    System.out.println("Good job! You just won an ancient artefact!");
+//                    System.out.println("You recieved: Artefact of true vision");
+                    MrKitten.grabItem("artefactOfTrueVision");
+                }
+        }
                 break;
             case "theFishPalace" :
                 System.out.println("You just entered the fish palace. It is magnificent and amazing.");
@@ -910,69 +985,5 @@ public class Game
     
     private void inventory(){
         MrKitten.printInventory();
-    }
-    
-    public void doryDialogue()
-    {
-        System.out.println("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,");
-        System.out.println("and this is crazy, but here's my number. Hey how is it going mate?");
-        System.out.println("Oh I might need your help! Do you know where Marin is going?");
-        System.out.println("    a - P. Sherman Wallaby Way in Sydney Bitch!");
-        System.out.println("    b - Somewhere only we know <3");
-        System.out.println("    c - I heard something that my cousin told me about a women he was seeing in some places"
-        +nLine+"and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
-        +nLine+"pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly.");
-        System.out.println("    d - answer d");
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter the character please :");
-        String answer = keyboard.nextLine();
-        boolean good = false;
-        switch (answer){
-            case "a": if (answer.equals("a")){
-                        System.out.println("Oh I remember now!! Thank you big guy!");
-                    };good = true;break;
-            case "b": if (answer.equals("b")){
-                        System.out.println("How romantic is this, give a kiss to Keane for me!");
-                    };break;
-            case "c": if (answer.equals("c")){
-                        System.out.println("You lost me there man...");
-                    };break;
-            case "d": if (answer.equals("d")){
-                        System.out.println("You gotta love panckakes...");
-                    };break;    
-            default:  System.out.println("what the hell did you just say?"); break;
-        }
-        if (good){
-            good = false;
-            System.out.println("I also remember that I have a History test tomorrow!");
-            System.out.println("You gotta help me! Just remember me which animal is");
-            System.out.println("the great defender of the world!");
-            System.out.println("    a - Superman! Have you seen his underwear? So much red!");
-            System.out.println("    b - Magicarpe! Obviously this magesterial fish! And he is red too!");
-            System.out.println("    c - Etalon du cul! What a french name for a true hero! ");
-            System.out.println("    d - Do you really want the D?");
-            System.out.println("Enter the character please :");
-            answer = keyboard.nextLine();
-            switch (answer){
-                case "a": {
-                        System.out.println("Never trust somebody that has his underwear on top of his pants!");
-                    };break;
-            case "b": {
-                        System.out.println("His attack dealt too much damage to handle...");
-                    };break;
-            case "c": {
-                        System.out.println("Soooooo good! You are a true scientist!");
-                    };good = true;break;
-            case "d": {
-                        System.out.println("That hardrive doesn't have anything special...");
-                    };break;    
-                default : System.out.println("How can you do that you witch!");break;
-            }
-            if (good){
-                System.out.println("Good job! You just won an ancient artefact!");
-                System.out.println("You recieved: Artefact of true vision");
-                MrKitten.grabItem("artefactOfTrueVision");
-            }
-        }
     }
 }

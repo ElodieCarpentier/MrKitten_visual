@@ -146,4 +146,30 @@ public class Actors
         System.out.println("What ?! You can't refuse this offer !!");
         System.out.println("Let's fight and see my superiority !!");
     }
+    
+    public static String doryDialog_intro (){
+        String dory=("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,"
+                + "\n and this is crazy, but here's my number. Hey how is it going mate?"
+                + "\n Oh I might need your help! Do you know where Marin is going?"
+                + "\n     a - P. Sherman Wallaby Way in Sydney Bitch!"
+                + "\n     b - Somewhere only we know <3"
+                + "\n     c - I heard something that my cousin told me about a women he was seeing in some places"
+                + "\n and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
+                + "\n pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly."
+                + "\n     d - answer d"
+                + "\n Enter the character please :");
+        return dory;
+    }
+    
+    public static String doryDialog_good(){
+        String dorygood=("I also remember that I have a History test tomorrow!"
+                + "\n You gotta help me! Just remember me which animal is"
+                + "\n the great defender of the world!"
+                + "\n     a - Superman! Have you seen his underwear? So much red!"
+                + "\n     b - Magicarpe! Obviously this magesterial fish! And he is red too!"
+                + "\n     c - Etalon du cul! What a french name for a true hero! "
+                + "\n     d - Do you really want the D?"
+                + "\n Enter the character please :");
+        return dorygood;
+    }
 }
