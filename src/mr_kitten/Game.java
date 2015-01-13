@@ -56,6 +56,7 @@ public class Game
     public static ArrayList<Characters> getListCharacters(){
         return characters;
     }
+   
     /**
      * Create all the rooms and link their exits together.
      */
@@ -146,13 +147,8 @@ public class Game
         Characters ratatouille = new Characters("Ratatouille", 20, 5,"...", "petshop");
         Characters mrRobot = new Characters("Mr.Robot", 40, 25,"", "petshop");
         Characters shark = new Characters("Sharks", 20, 10,"...", "theGreatDescent");//A COMPLETER;;;
-        Characters darkMoule = new Characters("Dark Moule", 35, 20, "Who do you think you are?!"
-                + "You cannot prevail, you silly kitty..."
-                + "I will crush you!", "theFishPalace");
-        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"Hola, Senor Gato!"
-                + "I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way..."
-                + "I have heard about your quest, and I want you to know that I support you!"
-                + "Let me teach you something that could be of a great help, for this quest and for all your life...", "tavernSanRicardo");
+        Characters darkMoule = new Characters("Dark Moule", 35, 20, "...", "theFishPalace");
+        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");
         Characters darkVador = new Characters("Dark Vador", 40, 25,"Shhhh...Shhhh...Are you a rebel? You look like a strange Ewok..."
                 + "Anyway, no one can enter a colonized planet like this! I will execute you!", "star wars");//A COMPLETER
         Characters brother = new Characters("Brother", 50, 30,"So, here you are...brother. I have been waiting for you."
@@ -267,6 +263,7 @@ public class Game
         System.out.println("   go quit fight talk explore inventory help  ");
         System.out.println("go + direction -- deplace in the map");
         System.out.println("quit -- quit the game");
+        System.out.println("talk -- speak with a characters");
         System.out.println("fight -- fight a characters");
         System.out.println("explore -- explore the room and realize actions");
         System.out.println("inventory -- print your inventory of item");
@@ -682,7 +679,7 @@ public class Game
             case "street2" :
                 System.out.println("Here you are! Back in the light!");
                 System.out.println("There is another garbage can! Sounds like you are going to make a good deal again!");
-                System.out.println("do you want to explore the garbage can?");
+                System.out.println("Do you want to explore the garbage can?");
                 System.out.println("a - yes");
                 System.out.println("b - no");
                 answer = keyboard.nextLine();
@@ -736,8 +733,36 @@ public class Game
                 System.out.println("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?");
                 doryDialogue();
                 break;
-            case "theFishPalace" : break;
-            case "tavernSanRicardo" : break;
+            case "theFishPalace" :
+                System.out.println("You just entered the fish palace. It is magnificent and amazing.");
+                System.out.println("The court is waiting for you");
+                System.out.println("It seems you have been fooled! You are late, and the court has declared you guilty.");
+                System.out.println("The King of the Waterworld, Dark Moule, is standing on a high chair, looking at you with utter contempt.");
+                System.out.println("People are coming! There is no way you are going to let them take your life!");
+                System.out.println("You demand a trial by combat!");
+                System.out.println("Against...the King!");
+                Actors.darkMouleDialog();
+                System.out.println("Quick! Before the fight begins, you see an algae laying on the ground");
+                System.out.println("That may be useful! Do you want to pick it?");
+                System.out.println("a - yes");
+                System.out.println("b - no");
+                answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                MrKitten.grabItem("algea");}
+                else if (answer.equals("b")){
+                System.out.println("Let us hope you will not regret it...");
+                }
+                fightPeople();
+                System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
+                MrKitten.grabItem("bluekey");
+                break;
+            case "tavernSanRicardo" : 
+                System.out.println("You see a gorgeous looking cat with red-orange fur.");
+                System.out.println("This badass looking guy looks at you with a surprised look.");
+                Actors.pussInBootsDialog();
+                MrKitten.grabItem("puppyEyes");
+                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
+                break;
             case "starWars" : break;
             case "theCloset" : break;
             case "theEnd" : break;
