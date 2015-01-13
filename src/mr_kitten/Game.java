@@ -56,6 +56,7 @@ public class Game
     public static ArrayList<Characters> getListCharacters(){
         return characters;
     }
+   
     /**
      * Create all the rooms and link their exits together.
      */
