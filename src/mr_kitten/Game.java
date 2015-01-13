@@ -564,33 +564,38 @@ public class Game
         Scanner keyboard = new Scanner(System.in);
         switch(currentRoom.getName()){
             case "livingRoom" :
-                System.out.println("This couch is where the master always crashes... Let's do something!");
-                System.out.println("Destroy the couch?");
-                System.out.println("    a - Yes he deserves it!");
-                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
-                System.out.println("Enter the character please :");
+                ExpInfo.printlivingRoom_intro();
+//                System.out.println("This couch is where the master always crashes... Let's do something!");
+//                System.out.println("Destroy the couch?");
+//                System.out.println("    a - Yes he deserves it!");
+//                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
+//                System.out.println("Enter the character please :");
                 String answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
+                    ExpInfo.printlivingRoom_answerA();
+//                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
                     MrKitten.grabItem("home key");
                 }
                 else {
-                    System.out.println("Pussycat! Without some balls you won't go to any places!");
+                    ExpInfo.printlivingRoom_answerB();
+//                    System.out.println("Pussycat! Without some balls you won't go to any places!");
                 }
                 try {
                     Thread.sleep(2000);
                 }
                 catch (Exception e) {
-                    System.out.println("Bizarre que ça marche pas...");
+                    ExpInfo.printanswerError();
+//                    System.out.println("Bizarre que ça marche pas...");
                 }
-                System.out.println("Need to do something else...");
-                System.out.println("Oh! A goldfish! Seems tasty...");
-                System.out.println("Eat it?");
-                System.out.println("    a - Yes!");
-                System.out.println("    b - With a bit of mayonnaise... What could happen?");
-                System.out.println("Enter the character: ");
+//                System.out.println("Need to do something else...");
+//                System.out.println("Oh! A goldfish! Seems tasty...");
+//                System.out.println("Eat it?");
+//                System.out.println("    a - Yes!");
+//                System.out.println("    b - With a bit of mayonnaise... What could happen?");
+//                System.out.println("Enter the character: ");
+                ExpInfo.printlivingRoom_conclu();
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
-                System.out.println("Hum... Yum!");
+//                System.out.println("Hum... Yum!");
                 break;
             case "kitchen" :System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
                 System.out.println("It's smelling cooking food ! The kitchen table is probably full of food.");
