@@ -28,6 +28,10 @@ public class Interface extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        YesNo = new javax.swing.JDialog();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -40,6 +44,49 @@ public class Interface extends javax.swing.JDialog {
         go_east = new javax.swing.JButton();
         go_north = new javax.swing.JButton();
         go_south = new javax.swing.JButton();
+
+        jRadioButton1.setText("Oh Yes!");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setText("Doesn't sound like Fun... No!");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Your call now!");
+
+        javax.swing.GroupLayout YesNoLayout = new javax.swing.GroupLayout(YesNo.getContentPane());
+        YesNo.getContentPane().setLayout(YesNoLayout);
+        YesNoLayout.setHorizontalGroup(
+            YesNoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(YesNoLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(jRadioButton2)
+                .addGap(21, 21, 21))
+            .addGroup(YesNoLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        YesNoLayout.setVerticalGroup(
+            YesNoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, YesNoLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGroup(YesNoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addGap(128, 128, 128))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -103,6 +150,11 @@ public class Interface extends javax.swing.JDialog {
         go_north.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 go_northMouseClicked(evt);
+            }
+        });
+        go_north.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                go_northActionPerformed(evt);
             }
         });
 
@@ -224,6 +276,23 @@ public class Interface extends javax.swing.JDialog {
     g.goRoom(new Command("go", "south"));   // TODO add your handling code here:
     }//GEN-LAST:event_go_southMouseClicked
 
+    private void go_northActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_go_northActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_go_northActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private javax.swing.JDialog getYesNo (){
+        YesNo.setVisible(true);
+        return YesNo;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -270,6 +339,7 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JButton Explore;
     private javax.swing.JButton Help;
     private javax.swing.JButton Shutdown;
+    private javax.swing.JDialog YesNo;
     private javax.swing.JButton go_down;
     private javax.swing.JButton go_east;
     private javax.swing.JButton go_north;
@@ -277,6 +347,9 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JButton go_up;
     private javax.swing.JButton go_west;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
