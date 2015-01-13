@@ -785,12 +785,14 @@ public class Game
 //                System.out.println("The robot has dropped a potion. Will you make good use of it?");
                 break;                
             case "theGreatDescent" :
-                System.out.println("A group of dangerous looking sharks is swimming toward you!");
-                Actors.sharkDialog();
+                ExpInfo.printgreatdescent_intro();
+//                System.out.println("A group of dangerous looking sharks is swimming toward you!");
+//                Actors.sharkDialog();
                 fightPeople();
-                System.out.println("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!");
+//                System.out.println("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!");
                 MrKitten.grabItem("superBite");
-                System.out.println("Congratulations! You can now bite your ennemies with this super jaw!");
+                ExpInfo.printgreatdescent_end();
+//                System.out.println("Congratulations! You can now bite your ennemies with this super jaw!");
                 break;
             case "dory" :
                 System.out.println("Who dat, who dat? How could you do dat, do dat? There's a surgeon fish over there, how could you know that, know that?");
