@@ -373,6 +373,16 @@ public class Interface extends javax.swing.JDialog {
                 jButtonB.setVisible(false);
             }    
         }
+        else if (currentRoom.equals("kitchen")){
+            jTextArea1.setText(ExpInfo.printKitchen_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("bedroom")){
+            jTextArea1.setText(ExpInfo.printbedroom_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
         else if (currentRoom.equals("street1")){
             jTextArea1.setText(ExpInfo.printStreet1_answerA());
             jButtonA.setVisible(false);
@@ -398,6 +408,16 @@ public class Interface extends javax.swing.JDialog {
                 jButtonA.setVisible(false);
                 jButtonB.setVisible(false);
             }
+        }
+        else if (currentRoom.equals("kitchen")){
+            jTextArea1.setText(ExpInfo.printKitchen_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("bedroom")){
+            jTextArea1.setText(ExpInfo.printbedroom_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
         }
         else if (currentRoom.equals("street1")){
             jTextArea1.setText(ExpInfo.printStreet1_answerB());
