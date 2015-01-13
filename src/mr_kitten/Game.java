@@ -119,7 +119,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = dory;  // start game in master's house
+        currentRoom = theEnd;  // start game in master's house
     }
 
     /*
@@ -638,6 +638,27 @@ public class Game
                 in.jButtonC.setVisible(true);
                 in.jButtonD.setVisible(true);
                 break;
+            case "theFishPalace" : //manque la partie end après le combat
+                in.jTextArea1.setText(ExpInfo.printfishpalace_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "tavernSanRicardo" : //manque la partie end après le combat
+                in.jTextArea1.setText(ExpInfo.printtavern_intro());
+                break;
+            case "starWars" : 
+                in.jTextArea1.setText(ExpInfo.printvador_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "theCloset" : 
+                in.jTextArea1.setText(ExpInfo.printcloset_intro());
+                break;
+            case "theEnd" : 
+                in.jTextArea1.setText(ExpInfo.printend_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
         }
@@ -937,7 +958,7 @@ public class Game
                 break;
             case "theFishPalace" :
                 ExpInfo.printfishpalace_intro();
-                ExpInfo.printfishpalace_question();
+               // ExpInfo.printfishpalace_question();
 //                System.out.println("You just entered the fish palace. It is magnificent and amazing.");
 //                System.out.println("The court is waiting for you");
 //                System.out.println("It seems you have been fooled! You are late, and the court has declared you guilty.");
@@ -971,7 +992,7 @@ public class Game
 //                System.out.println("This badass looking guy looks at you with a surprised look.");
 //                Actors.pussInBootsDialog();
                 MrKitten.grabItem("puppyEyes");
-                ExpInfo.printtavern_end();
+                //ExpInfo.printtavern_end();
 //                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
                 break;
             case "starWars" : 
@@ -994,7 +1015,7 @@ public class Game
                     ExpInfo.printvador_answerB();
 //                Actors.vadorDialog_b();
                 fightPeople();
-                ExpInfo.printvador_end();
+                //ExpInfo.printvador_end();
 //                System.out.println("That's was a critical hit for this madness. He was not very bright !"
 //                    +nLine+"Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !");
                 MrKitten.grabItem("potionCareMax");
@@ -1011,7 +1032,7 @@ public class Game
 //                System.out.println("He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes...");
 //                Actors.brotherDialog();
                 fightPeople();
-                ExpInfo.printcloset_end();
+                //ExpInfo.printcloset_end();
 //                System.out.println("Wow! You won!");
 //                System.out.println("This was a really serious opponent, you almost died.");
 //                System.out.println("Still, it always hurts to have to kill your own brother...");

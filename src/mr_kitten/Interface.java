@@ -445,6 +445,21 @@ public class Interface extends javax.swing.JDialog {
                 jButtonD.setVisible(false);
             }
         }
+        else if (currentRoom.equals("theFishPalace")){
+            jTextArea1.setText(ExpInfo.printfishpalace_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("starWars")){
+            jTextArea1.setText(ExpInfo.printvador_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("theEnd")){
+            jTextArea1.setText(ExpInfo.printend_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonAMouseClicked
 
     private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
@@ -510,6 +525,21 @@ public class Interface extends javax.swing.JDialog {
                 jButtonC.setVisible(false);
                 jButtonD.setVisible(false);
             }
+        }
+        else if (currentRoom.equals("theFishPalace")){
+            jTextArea1.setText(ExpInfo.printfishpalace_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("starWars")){
+            jTextArea1.setText(ExpInfo.printvador_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("theEnd")){
+            jTextArea1.setText(ExpInfo.printend_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
         }
     }//GEN-LAST:event_jButtonBMouseClicked
 
