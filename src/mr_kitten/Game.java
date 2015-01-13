@@ -4,6 +4,7 @@ package mr_kitten;
 import java.util.Random;
 import java.util.*;
 import java.io.*;
+import java.awt.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -26,7 +27,7 @@ public class Game
 {
     private Parser parser;
     protected Room currentRoom;
-    private static Players MrKitten;
+    private Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
     String nLine=System.getProperty("line.separator"); //Allow to make a new line
@@ -66,7 +67,7 @@ public class Game
         return characters;
     }
     
-    public static Players getPlayers(){
+    public Players getPlayers(){
         return MrKitten;
     }
     
@@ -588,6 +589,11 @@ public class Game
         switch(currentRoom.getName()){
             case "livingRoom" :
                 in.jTextArea1.setText(ExpInfo.printlivingRoom_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                /*if(in.jButtonAMouseClicked(java.awt.event.MouseEvent evt)){
+                    in.jTextArea1.setText(ExpInfo.printlivingRoom_answerA());
+                }*/
                 break;
             case "kitchen" :
                 in.jTextArea1.setText(ExpInfo.printKitchen_intro());
