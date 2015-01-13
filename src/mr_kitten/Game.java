@@ -74,21 +74,21 @@ public class Game
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,harbor,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
-        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen");
-        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom");
-        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom");
-        street1 = new Room ("are in the Street near the entrance of the house","street1");
-        street2 = new Room ("are in the Street near the Petshop","street2");
-        sewer = new Room ("are in the Sewer under the streets","sewer");
-        petshop = new Room ("are in the Petshop","petshop");
-        harbor = new Room ("are on the city's harbor", "harbor");
-        theGreatDescent = new Room ("are going deep down under water","theGreatDescent");
-        dory = new Room ("are with Dory the great fish","dory");
-        theFishPalace = new Room ("are in the Fish Palace","theFishPalace");
-        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo");
-        starWars = new Room ("are in a Galaxy far far away...","starWars");
-        theCloset = new Room ("are ready to fight with lions","theCloset");
-        theEnd = new Room ("did it, you did it, Yeah!","theEnd");
+        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen","mr_kitten/kitchen.png");
+        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom","mr_kitten/livingroom.png");
+        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom","mr_kitten/bedroom.png");
+        street1 = new Room ("are in the Street near the entrance of the house","street1","/mr_kitten/street.png");
+        street2 = new Room ("are in the Street near the Petshop","street2","/mr_kitten/street.png");
+        sewer = new Room ("are in the Sewer under the streets","sewer", "/mr_kitten/sewer.png");
+        petshop = new Room ("are in the Petshop","petshop","/mr_kitten/petshop.png");
+        harbor = new Room ("are on the city's harbor", "harbor","/mr_kitten/harbor");
+        theGreatDescent = new Room ("are going deep down under water","theGreatDescent","/mr_kitten/underwater.png");
+        dory = new Room ("are with Dory the great fish","dory","/mr_kitten/seareef.png");
+        theFishPalace = new Room ("are in the Fish Palace","theFishPalace","/mr_kitten/fishpalace.png");
+        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","/mr_kitten/artworkTavern.png");
+        starWars = new Room ("are in a Galaxy far far away...","starWars","/mr_kitten/starwars.png");
+        theCloset = new Room ("are ready to fight with lions","theCloset","/mr_kitten/narnia.png");
+        theEnd = new Room ("did it, you did it, Yeah!","theEnd","/mr_kitten/nyancat.png");
         
         //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
@@ -333,6 +333,11 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    
+    public Room getCurrentRoom()
+    {
+        return currentRoom;
     }
     
     /*
@@ -634,52 +639,60 @@ public class Game
                 break;
                 
             case "bedroom" : 
-                System.out.println ("The master isn't here. It's a great opportunity to discover this unknow room."
-                        +nLine+"Their is soo many things to play with, you can't wait to act with :"
-                        +nLine+"a - The bed: A nice castle for a super cat like me and a beautifull pillow with feathers;"
-                        +nLine+"b - The chest of drawers: I will improve my climbing skill and i could roll out some ball;"
-                        +nLine+"c - The library: So many books well ordered, a great slalom to improve my dexterity;"
-                        +nLine+"d - The new chair: I could mad my claws and relax myself. ");
-                System.out.println("Enter the character please :");
+                ExpInfo.printbedroom_intro();
+//                System.out.println ("The master isn't here. It's a great opportunity to discover this unknow room."
+//                        +nLine+"Their is soo many things to play with, you can't wait to act with :"
+//                        +nLine+"a - The bed: A nice castle for a super cat like me and a beautifull pillow with feathers;"
+//                        +nLine+"b - The chest of drawers: I will improve my climbing skill and i could roll out some ball;"
+//                        +nLine+"c - The library: So many books well ordered, a great slalom to improve my dexterity;"
+//                        +nLine+"d - The new chair: I could mad my claws and relax myself. ");
+//                System.out.println("Enter the character please :");
                 String answer_bedroom = keyboard.nextLine();
                 if (answer_bedroom.equals("a")){
-                    System.out.println("Oohh, you're so exited to play in your castle and after ripped the pillow you eat accidently a feather. You loose 5 hp.");
+                    ExpInfo.printbedroom_answerA();
+//                    System.out.println("Oohh, you're so exited to play in your castle and after ripped the pillow you eat accidently a feather. You loose 5 hp.");
                     MrKittenHP =MrKittenHP -5;  
                     Players.setPlayerHP(MrKittenHP);
                 }
                 else if (answer_bedroom.equals("b")){
-                    System.out.println("It's not easy to reach the chest. You're on the top but drawers are locked with a key. Nothing else !");
+                    ExpInfo.printbedroom_answerB();
+//                    System.out.println("It's not easy to reach the chest. You're on the top but drawers are locked with a key. Nothing else !");
                 }
                 else if (answer_bedroom.equals("c")){
-                    System.out.println("You're climbing the library unfortunately you're falling but a pillow soften this fall. Are you enought brave to retry ?"
-                           +nLine+"     a- No thanks, it's too dangerous !"
-                           +nLine+"     b- YES !! I can prove my bravery. I'm not a defeatist ! (The Game company isn't responsable if a accidental death occur !)");
-                    System.out.println("Enter the character please :");
+                    ExpInfo.printbedroom_answerC();
+//                    System.out.println("You're climbing the library unfortunately you're falling but a pillow soften this fall. Are you enought brave to retry ?"
+//                           +nLine+"     a- No thanks, it's too dangerous !"
+//                           +nLine+"     b- YES !! I can prove my bravery. I'm not a defeatist ! (The Game company isn't responsable if a accidental death occur !)");
+//                    System.out.println("Enter the character please :");
                     String answer_bedroom_library = keyboard.nextLine();
                     if (answer_bedroom_library.equals("a")){
-                        System.out.println("It's a choice like a other. Go explore new universe !!!");
+                        ExpInfo.printbedroom_answerCa();
+//                        System.out.println("It's a choice like a other. Go explore new universe !!!");
                     }
                     else {
-                        System.out.println("It's so incredible fantastical unbelievable AMAZING!!! You successfuly perform to climb the librairy but at the last shelf you dropped a book."
-                            +nLine+"This book doesn't look like a common book. Its covered in dust. The front cover represent a head's cat. You decid to back down."
-                            +nLine+"The mysterious book is opening in front of you. Its is surprinsing what you find inside ... "
-                            +nLine+"All words, sentences and pictures are understandable. And you're discovering amazing story about cats."
-                            +nLine+"<< Once upon a time, from down the Marianne's Abysses to the top of Mt Everest, the ancient Cat race was known to be wise and powerful."
-                            +nLine+"   Theirs radiance used to spread on the whole world. [...]"
-                            +nLine+"   One day a young kitten will come and will be the new leader of a new age. His mission is to bring back the Cat empire at this optimal expansion !"
-                            +nLine+"   But a essential artefact is necessary to do that : the legendary guillotine. Its bring back the power to all cats !!! >>"
-                            +nLine+"At the end of this book you notice a old post-it which make reference to a fat cat with lot of knowledge. This post-it is signed by a cat paw and a little sentence :"
-                            +nLine+"<< I will destroy the world as promice dad ! >>"
-                            +nLine+" "
-                            +nLine+"Are you enought honnest and nice to be this little kitten ?"
-                            +nLine+"However this ! You must defend and re-establish the cat world and protect his again his destruction by this mysterious cat !!!"); 
+                        ExpInfo.printbedroom_answerCb();
+//                        System.out.println("It's so incredible fantastical unbelievable AMAZING!!! You successfuly perform to climb the librairy but at the last shelf you dropped a book."
+//                            +nLine+"This book doesn't look like a common book. Its covered in dust. The front cover represent a head's cat. You decid to back down."
+//                            +nLine+"The mysterious book is opening in front of you. Its is surprinsing what you find inside ... "
+//                            +nLine+"All words, sentences and pictures are understandable. And you're discovering amazing story about cats."
+//                            +nLine+"<< Once upon a time, from down the Marianne's Abysses to the top of Mt Everest, the ancient Cat race was known to be wise and powerful."
+//                            +nLine+"   Theirs radiance used to spread on the whole world. [...]"
+//                            +nLine+"   One day a young kitten will come and will be the new leader of a new age. His mission is to bring back the Cat empire at this optimal expansion !"
+//                            +nLine+"   But a essential artefact is necessary to do that : the legendary guillotine. Its bring back the power to all cats !!! >>"
+//                            +nLine+"At the end of this book you notice a old post-it which make reference to a fat cat with lot of knowledge. This post-it is signed by a cat paw and a little sentence :"
+//                            +nLine+"<< I will destroy the world as promice dad ! >>"
+//                            +nLine+" "
+//                            +nLine+"Are you enought honnest and nice to be this little kitten ?"
+//                            +nLine+"However this ! You must defend and re-establish the cat world and protect his again his destruction by this mysterious cat !!!"); 
                     }
                 }
                 else if (answer_bedroom.equals("d")){
-                    System.out.println("You're taking a snap. Nothing else happen. Let's go explore news horizons !");
+                    ExpInfo.printbedroom_answerD();
+//                    System.out.println("You're taking a snap. Nothing else happen. Let's go explore news horizons !");
                 }
                     if(MrKittenHP <0){
-                        System.out.println("You loose !! GAME OVER !!");
+                        ExpInfo.printdeathMessage();
+//                        System.out.println("You loose !! GAME OVER !!");
                         System.exit(1); 
                     }  
             break;
