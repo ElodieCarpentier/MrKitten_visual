@@ -743,13 +743,15 @@ public class Game
                 Actors.darkMouleDialog();
                 System.out.println("Quick! Before the fight begins, you see an algae laying on the ground");
                 System.out.println("That may be useful! Do you want to pick it?");
-                System.out.println("a - yes");
-                System.out.println("b - no");
+                System.out.println("    a - yes");
+                System.out.println("    b - no");
+                System.out.println("Enter the character please :");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                MrKitten.grabItem("algea");}
+                    MrKitten.grabItem("algea");
+                }
                 else if (answer.equals("b")){
-                System.out.println("Let us hope you will not regret it...");
+                    System.out.println("Let us hope you will not regret it...");
                 }
                 fightPeople();
                 System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
@@ -778,7 +780,21 @@ public class Game
                 System.out.println("But the gy deserved it, you could jot let him live. He is too dangerous.");
                 System.out.println("You notice a small door in a corner. What could be hiding in it?");
                 break;
-            case "theEnd" : break;
+            case "theEnd" : System.out.println("What is this?! Oh my God...");
+                System.out.println("The magic guillotine!");
+                System.out.println("Do you want to use it?");
+                System.out.println("    a - yes");
+                System.out.println("    b - no");
+                System.out.println("Enter the character please:");
+                answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                    System.out.println("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!");
+                    System.out.println("Infinite powers aheeeeeaaaaaad!!! Yay!");
+                }
+                else if (answer.equals("b")){
+                    System.out.println("Let us hope you will not regret it...");
+                }
+                break;
             default : System.out.println("Just... how??"); break;
         }
     }
@@ -792,14 +808,14 @@ public class Game
         System.out.println("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,");
         System.out.println("and this is crazy, but here's my number. Hey how is it going mate?");
         System.out.println("Oh I might need your help! Do you know where Marin is going?");
-        System.out.println("a - P. Sherman Wallaby Way in Sydney Bitch!");
-        System.out.println("b - Somewhere only we know <3");
-        System.out.println("c - I heard something that my cousin told me about a women he was seeing in some places"
-        +"and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
-        + "pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly.");
-        System.out.println("d - answer d");
+        System.out.println("    a - P. Sherman Wallaby Way in Sydney Bitch!");
+        System.out.println("    b - Somewhere only we know <3");
+        System.out.println("    c - I heard something that my cousin told me about a women he was seeing in some places"
+        +nLine+"and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
+        +nLine+"pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly.");
+        System.out.println("    d - answer d");
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("enter your answer!");
+        System.out.println("Enter the character please :");
         String answer = keyboard.nextLine();
         boolean good = false;
         switch (answer){
@@ -822,11 +838,11 @@ public class Game
             System.out.println("I also remember that I have a History test tomorrow!");
             System.out.println("You gotta help me! Just remember me which animal is");
             System.out.println("the great defender of the world!");
-            System.out.println("a - Superman! Have you seen his underwear? So much red!");
-            System.out.println("b - Magicarpe! Obviously this magesterial fish! And he is red too!");
-            System.out.println("c - Etalon du cul! What a french name for a true hero! ");
-            System.out.println("d - Do you really want the D?");
-            System.out.println("enter your answer!");
+            System.out.println("    a - Superman! Have you seen his underwear? So much red!");
+            System.out.println("    b - Magicarpe! Obviously this magesterial fish! And he is red too!");
+            System.out.println("    c - Etalon du cul! What a french name for a true hero! ");
+            System.out.println("    d - Do you really want the D?");
+            System.out.println("Enter the character please :");
             answer = keyboard.nextLine();
             switch (answer){
                 case "a": {

@@ -74,11 +74,7 @@ public class Actors
         return position;
     }
     
-    /**
-     * Dori's dialogue
-     */
-    
-    
+     
     public static void redFishDialog(){
         System.out.println( "Mr Kitten,");
         System.out.println("I am here to inform you that the King of the Waterworld summons you to the underwater court.");
