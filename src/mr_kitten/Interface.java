@@ -273,18 +273,7 @@ public class Interface extends javax.swing.JDialog {
     }//GEN-LAST:event_ShutdownMouseClicked
 
     private void ExploreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExploreMouseClicked
-        //CECI EST UN TEST
-        int MrKittenHP = g.getPlayers().getPlayerHP();
-        switch(g.getRoom().getName()){
-            case "livingRoom" :
-                jTextArea1.setText(ExpInfo.printlivingRoom_intro()); 
-                getYesNo();
-                break;
-            case "kitchen" :
-                jTextArea1.setText(ExpInfo.printKitchen_intro());
-            default : jTextArea1.setText("Just... how??"); 
-            break;
-        }
+        g.exploreRoomTest(this);
     }//GEN-LAST:event_ExploreMouseClicked
 
     private void HelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpMouseClicked

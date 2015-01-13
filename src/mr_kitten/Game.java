@@ -581,6 +581,21 @@ public class Game
         }
     }
     
+    public void exploreRoomTest(Interface in){
+        //CECI EST UN TEST
+        int MrKittenHP = g.getPlayers().getPlayerHP();
+        switch(g.getRoom().getName()){
+            case "livingRoom" :
+                jTextArea1.setText(ExpInfo.printlivingRoom_intro()); 
+                getYesNo();
+                break;
+            case "kitchen" :
+                jTextArea1.setText(ExpInfo.printKitchen_intro());
+            default : jTextArea1.setText("Just... how??"); 
+            break;
+        }
+    }
+    
     public String exploreRoom(){
         String answer;
         int MrKittenHP = MrKitten.getPlayerHP();
@@ -884,7 +899,7 @@ public class Game
             default : System.out.println("Just... how??"); break;
         }
         return ("Coucou");
-    }
+}
 
     
     private void inventory(){
