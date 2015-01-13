@@ -26,7 +26,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    private Players MrKitten;
+    private static Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
     String nLine=System.getProperty("line.separator"); //Allow to make a new line
@@ -55,6 +55,14 @@ public class Game
     
     public static ArrayList<Characters> getListCharacters(){
         return characters;
+    }
+    
+    public static Players getPlayers(){
+        return MrKitten;
+    }
+    
+    public Room getRoom(){
+        return currentRoom;
     }
    
     /**
@@ -571,7 +579,7 @@ public class Game
 //                System.out.println("    a - Yes he deserves it!");
 //                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
 //                System.out.println("Enter the character please :");
-                  answer = keyboard.nextLine();
+                /*  answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     ExpInfo.printlivingRoom_answerA();
 //                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
@@ -596,8 +604,8 @@ public class Game
 //                System.out.println("Enter the character: ");
                ExpInfo.printlivingRoom_conclu();
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
-//                System.out.println("Hum... Yum!");
-                   break;
+//                System.out.println("Hum... Yum!");*/
+                   //break;
             case "kitchen" :
                 ExpInfo.printKitchen_intro();
                 /*System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
