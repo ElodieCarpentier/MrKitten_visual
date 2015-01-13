@@ -34,6 +34,12 @@ public class Interface extends javax.swing.JDialog {
         Shutdown = new javax.swing.JButton();
         Explore = new javax.swing.JButton();
         Help = new javax.swing.JButton();
+        go_up = new javax.swing.JButton();
+        go_down = new javax.swing.JButton();
+        go_west = new javax.swing.JButton();
+        go_east = new javax.swing.JButton();
+        go_north = new javax.swing.JButton();
+        go_south = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,37 +70,120 @@ public class Interface extends javax.swing.JDialog {
             }
         });
 
+        go_up.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_up.png"))); // NOI18N
+        go_up.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_upMouseClicked(evt);
+            }
+        });
+
+        go_down.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_down.png"))); // NOI18N
+        go_down.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_downMouseClicked(evt);
+            }
+        });
+
+        go_west.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_left.png"))); // NOI18N
+        go_west.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_westMouseClicked(evt);
+            }
+        });
+
+        go_east.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_right.png"))); // NOI18N
+        go_east.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_eastMouseClicked(evt);
+            }
+        });
+
+        go_north.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_up.png"))); // NOI18N
+        go_north.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_northMouseClicked(evt);
+            }
+        });
+
+        go_south.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/Arrow_down.png"))); // NOI18N
+        go_south.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                go_southMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Explore)
-                    .addComponent(Help))
-                .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(go_west, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(go_north)
+                            .addComponent(go_south))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(go_east, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Explore)
+                            .addComponent(Help))))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(go_up, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(go_down, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(57, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(go_up, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(go_north)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(go_south))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(go_west, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(go_east))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(Shutdown, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Explore)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Help)))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(go_down, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
 
         pack();
@@ -111,8 +200,28 @@ public class Interface extends javax.swing.JDialog {
     }//GEN-LAST:event_ExploreMouseClicked
 
     private void HelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpMouseClicked
-    jTextArea1.setText(g.printHelp());    // TODO add your handling code here:
+    jTextArea1.setText(g.printHelp());
     }//GEN-LAST:event_HelpMouseClicked
+
+//DEPLACEMENT ENTRE LES ROOMS
+    private void go_upMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_upMouseClicked
+    g.goRoom(new Command("go", "up"));
+    }//GEN-LAST:event_go_upMouseClicked
+    private void go_downMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_downMouseClicked
+    g.goRoom(new Command("go", "down"));   
+    }//GEN-LAST:event_go_downMouseClicked
+    private void go_westMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_westMouseClicked
+    g.goRoom(new Command("go", "west"));
+    }//GEN-LAST:event_go_westMouseClicked
+    private void go_eastMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_eastMouseClicked
+    g.goRoom(new Command ("go", "east"));
+    }//GEN-LAST:event_go_eastMouseClicked
+    private void go_northMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_northMouseClicked
+    g.goRoom(new Command("go", "north"));
+    }//GEN-LAST:event_go_northMouseClicked
+    private void go_southMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_southMouseClicked
+    g.goRoom(new Command("go", "south"));   // TODO add your handling code here:
+    }//GEN-LAST:event_go_southMouseClicked
 
     /**
      * @param args the command line arguments
@@ -160,6 +269,12 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JButton Explore;
     private javax.swing.JButton Help;
     private javax.swing.JButton Shutdown;
+    private javax.swing.JButton go_down;
+    private javax.swing.JButton go_east;
+    private javax.swing.JButton go_north;
+    private javax.swing.JButton go_south;
+    private javax.swing.JButton go_up;
+    private javax.swing.JButton go_west;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
