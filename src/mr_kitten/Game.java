@@ -74,21 +74,21 @@ public class Game
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,harbor,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
-        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen","mr_kitten/kitchen.png");
-        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom","mr_kitten/livingroom.png");
-        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom","mr_kitten/bedroom.png");
-        street1 = new Room ("are in the Street near the entrance of the house","street1","/mr_kitten/street.png");
-        street2 = new Room ("are in the Street near the Petshop","street2","/mr_kitten/street.png");
-        sewer = new Room ("are in the Sewer under the streets","sewer", "/mr_kitten/sewer.png");
-        petshop = new Room ("are in the Petshop","petshop","/mr_kitten/petshop.png");
-        harbor = new Room ("are on the city's harbor", "harbor","/mr_kitten/harbor");
-        theGreatDescent = new Room ("are going deep down under water","theGreatDescent","/mr_kitten/underwater.png");
-        dory = new Room ("are with Dory the great fish","dory","/mr_kitten/seareef.png");
-        theFishPalace = new Room ("are in the Fish Palace","theFishPalace","/mr_kitten/fishpalace.png");
-        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","/mr_kitten/artworkTavern.png");
-        starWars = new Room ("are in a Galaxy far far away...","starWars","/mr_kitten/starwars.png");
-        theCloset = new Room ("are ready to fight with lions","theCloset","/mr_kitten/narnia.png");
-        theEnd = new Room ("did it, you did it, Yeah!","theEnd","/mr_kitten/nyancat.png");
+        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen","kitchen.png");
+        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom","livingroom.png");
+        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom","bedroom.png");
+        street1 = new Room ("are in the Street near the entrance of the house","street1","street.png");
+        street2 = new Room ("are in the Street near the Petshop","street2","street.png");
+        sewer = new Room ("are in the Sewer under the streets","sewer", "sewer.png");
+        petshop = new Room ("are in the Petshop","petshop","petshop.png");
+        harbor = new Room ("are on the city's harbor", "harbor","harbor");
+        theGreatDescent = new Room ("are going deep down under water","theGreatDescent","underwater.png");
+        dory = new Room ("are with Dory the great fish","dory","seareef.png");
+        theFishPalace = new Room ("are in the Fish Palace","theFishPalace","fishpalace.png");
+        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","artworkTavern.png");
+        starWars = new Room ("are in a Galaxy far far away...","starWars","starwars.png");
+        theCloset = new Room ("are ready to fight with lions","theCloset","narnia.png");
+        theEnd = new Room ("did it, you did it, Yeah!","theEnd","nyancat.png");
         
         //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
