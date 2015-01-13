@@ -75,4 +75,29 @@ public class ExpInfo {
         String answerB =("\n Jackpot ! A cooked fish is on this cupboard. You eat it and gain 50 hp !");
         return answerB;            
     }
+    
+    /**
+     * Print of street1
+     */
+      protected static String printStreet1_intro(){
+          String intro = ("You look around you and see a big old cat on the street, coming toward you.\n"
+                +"\n He looks friendly and comes near you.\n"
+                +"\n You may want to talk to him \n"
+                +"\n There is also a garbage can over here, it smells delicious...\n"
+                +"\n What do you want to do? \n"
+                +"\n    a - talk to the cat\n"
+                +"\n    b - explore the garbage can\n"
+                +"\n Enter the character please :\n");
+          return intro;
+      }
+      
+      protected static String printStreet1_answerA(){
+          String answer = Actors.garfieldDialog();
+          return answer;
+      }
+      
+      protected static String printStreet1_answerB(){
+          String answer =("You found a healing potion! That might be useful...");
+          return answer;
+      }
 }

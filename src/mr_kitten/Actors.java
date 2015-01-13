@@ -95,14 +95,15 @@ public class Actors
     System.out.println("Beep...");
     }
     
-    public static void garfieldDialog(){
-    System.out.println("Hey buddy...What are you carrying there?");
-    System.out.println("Oh my...Is that the ancient Cat book? Are you a descendant of the Ancients?");
-    System.out.println("You look pretty young. I bet you do not know our race story.");
-    System.out.println("Long ago, the ancient Cats were very powerful. But today, they have almost disappeared.");
-    System.out.println("Today, only small, dumb and domesticated cats remain.");
-    System.out.println("Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family.");
-    System.out.println("I know this is shocking, but it is the truth.");
+    public static String garfieldDialog(){
+    String garfield =("Hey buddy...What are you carrying there? \n"
+            +"\n Oh my...Is that the ancient Cat book? Are you a descendant of the Ancients? \n"
+            +"\n You look pretty young. I bet you do not know our race story.\n"
+            +"\n Long ago, the ancient Cats were very powerful. But today, they have almost disappeared.\n"
+            +"\n Today, only small, dumb and domesticated cats remain.\n"
+            +"\n Humans made us their pets, can you believe that? They torn families apart, sell our babies to stranger. \n They kill the free cats that live on the street. These nasty humans even cut some of us when they don't want us to reproduce and have a family.\n"
+            +"\n I know this is shocking, but it is the truth.\n ");
+        return garfield;
     }
     
     public static void sharkDialog(){
