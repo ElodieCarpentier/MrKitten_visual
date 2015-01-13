@@ -109,8 +109,9 @@ public class Actors
         return garfield;
     }
     
-    public static void sharkDialog(){
-        System.out.println("Look at that Bruce! A furry fish! We have to taste that. Prepare to die!");
+    public static String sharkDialog(){
+        String shark= ("Look at that Bruce! A furry fish! We have to taste that. Prepare to die!");
+        return shark;
     }
     
     public static void darkMouleDialog(){
