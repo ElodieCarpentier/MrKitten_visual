@@ -47,6 +47,7 @@ public class Interface extends javax.swing.JDialog {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setName(""); // NOI18N
         jScrollPane1.setViewportView(jTextArea1);
 
         Shutdown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/shutdown.png"))); // NOI18N
@@ -195,7 +196,7 @@ public class Interface extends javax.swing.JDialog {
     }//GEN-LAST:event_ShutdownMouseClicked
 
     private void ExploreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExploreMouseClicked
-    g.exploreRoom(); // TODO add your handling code here:
+    jTextArea1.setText(g.exploreRoom()); // TODO add your handling code here:
     
     }//GEN-LAST:event_ExploreMouseClicked
 

@@ -3,7 +3,7 @@ package mr_kitten;
 
 import java.util.Random;
 import java.util.*;
-import java.io.*; 
+import java.io.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -30,7 +30,7 @@ public class Game
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
     String nLine=System.getProperty("line.separator"); //Allow to make a new line
-    
+    private Interface GUI;
     /**
      * Create the game and initialise its internal map.
      */
@@ -559,44 +559,45 @@ public class Game
         }
     }
     
-    public void exploreRoom(){
+    public String exploreRoom(){
+        String answer;
         int MrKittenHP = MrKitten.getPlayerHP();
         Scanner keyboard = new Scanner(System.in);
         switch(currentRoom.getName()){
             case "livingRoom" :
-                ExpInfo.printlivingRoom_intro();
+                return ExpInfo.printlivingRoom_intro();
 //                System.out.println("This couch is where the master always crashes... Let's do something!");
 //                System.out.println("Destroy the couch?");
 //                System.out.println("    a - Yes he deserves it!");
 //                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
 //                System.out.println("Enter the character please :");
-                String answer = keyboard.nextLine();
-                if (answer.equals("a")){
-                    ExpInfo.printlivingRoom_answerA();
+                //String answer = keyboard.nextLine();
+               // if (answer.equals("a")){
+              //      ExpInfo.printlivingRoom_answerA();
 //                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
-                    MrKitten.grabItem("home key");
-                }
-                else {
-                    ExpInfo.printlivingRoom_answerB();
+              //      MrKitten.grabItem("home key");
+              //  }
+             //   else {
+             //       ExpInfo.printlivingRoom_answerB();
 //                    System.out.println("Pussycat! Without some balls you won't go to any places!");
-                }
-                try {
-                    Thread.sleep(2000);
-                }
-                catch (Exception e) {
-                    ExpInfo.printanswerError();
+               // }
+               // try {
+              //      Thread.sleep(2000);
+              //  }
+             //   catch (Exception e) {
+              //      ExpInfo.printanswerError();
 //                    System.out.println("Bizarre que ça marche pas...");
-                }
+              //  }
 //                System.out.println("Need to do something else...");
 //                System.out.println("Oh! A goldfish! Seems tasty...");
 //                System.out.println("Eat it?");
 //                System.out.println("    a - Yes!");
 //                System.out.println("    b - With a bit of mayonnaise... What could happen?");
 //                System.out.println("Enter the character: ");
-                ExpInfo.printlivingRoom_conclu();
-                answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
+              //  ExpInfo.printlivingRoom_conclu();
+              //  answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
 //                System.out.println("Hum... Yum!");
-                break;
+             //      break;
             case "kitchen" :
                 ExpInfo.printKitchen_intro();
                 /*System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
@@ -838,7 +839,9 @@ public class Game
                 break;
             default : System.out.println("Just... how??"); break;
         }
+        return ("Coucou");
     }
+
     
     private void inventory(){
         MrKitten.printInventory();
