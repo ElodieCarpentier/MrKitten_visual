@@ -603,6 +603,16 @@ public class Game
                 break;
             case "street1" :
                 in.jTextArea1.setText(ExpInfo.printStreet1_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "street2" :
+                in.jTextArea1.setText(ExpInfo.printStreet2_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "sewer" :
+                in.jTextArea1.setText(ExpInfo.printSewer_intro());
                 break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
@@ -902,56 +912,67 @@ public class Game
         }
                 break;
             case "theFishPalace" :
-                System.out.println("You just entered the fish palace. It is magnificent and amazing.");
-                System.out.println("The court is waiting for you");
-                System.out.println("It seems you have been fooled! You are late, and the court has declared you guilty.");
-                System.out.println("The King of the Waterworld, Dark Moule, is standing on a high chair, looking at you with utter contempt.");
-                System.out.println("People are coming! There is no way you are going to let them take your life!");
-                System.out.println("You demand a trial by combat!");
-                System.out.println("Against...the King!");
-                Actors.darkMouleDialog();
-                System.out.println("Quick! Before the fight begins, you see an algae laying on the ground");
-                System.out.println("That may be useful! Do you want to pick it?");
-                System.out.println("    a - yes");
-                System.out.println("    b - no");
-                System.out.println("Enter the character please :");
+                ExpInfo.printfishpalace_intro();
+                ExpInfo.printfishpalace_question();
+//                System.out.println("You just entered the fish palace. It is magnificent and amazing.");
+//                System.out.println("The court is waiting for you");
+//                System.out.println("It seems you have been fooled! You are late, and the court has declared you guilty.");
+//                System.out.println("The King of the Waterworld, Dark Moule, is standing on a high chair, looking at you with utter contempt.");
+//                System.out.println("People are coming! There is no way you are going to let them take your life!");
+//                System.out.println("You demand a trial by combat!");
+//                System.out.println("Against...the King!");
+//                Actors.darkMouleDialog();
+//                System.out.println("Quick! Before the fight begins, you see an algae laying on the ground");
+//                System.out.println("That may be useful! Do you want to pick it?");
+//                System.out.println("    a - yes");
+//                System.out.println("    b - no");
+//                System.out.println("Enter the character please :");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
+                    ExpInfo.printfishpalace_answerA();
                     MrKitten.grabItem("algea");
                 }
                 else if (answer.equals("b")){
-                    System.out.println("Let us hope you will not regret it...");
+                    ExpInfo.printfishpalace_answerB();
+//                    System.out.println("Let us hope you will not regret it...");
                 }
                 fightPeople();
-                System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
+                ExpInfo.printfishpalace_end();
+//                System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
                 MrKitten.grabItem("bluekey");
                 break;
             case "tavernSanRicardo" : 
-                System.out.println("You see a gorgeous looking cat with red-orange fur.");
-                System.out.println("This badass looking guy looks at you with a surprised look.");
-                Actors.pussInBootsDialog();
+                ExpInfo.printtavern_intro();
+//                System.out.println("You see a gorgeous looking cat with red-orange fur.");
+//                System.out.println("This badass looking guy looks at you with a surprised look.");
+//                Actors.pussInBootsDialog();
                 MrKitten.grabItem("puppyEyes");
-                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
+                ExpInfo.printtavern_end();
+//                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
                 break;
             case "starWars" : 
-                System.out.println("Nice neon lights illuminate a dark desk. Its looks like the Charlie's pub of the 7th street where the disco is on the floor but that's not relate to this story."
-                    +nLine+"You 're walking in direction of this desk ... suddendly the lights out and the office chair turn over. A black man appear !");
-                Actors.vadorDialog_a();
-                System.out.println("**************"
-                    +nLine+"Would you join this incredible profession ?"
-                    +nLine+"a - Yes, it appears to be a stable situation for my personnal projects."
-                    +nLine+"b - NO !! I've no time for this bumf !");
+                ExpInfo.printvador_intro();
+//                System.out.println("Nice neon lights illuminate a dark desk. Its looks like the Charlie's pub of the 7th street where the disco is on the floor but that's not relate to this story."
+//                    +nLine+"You 're walking in direction of this desk ... suddendly the lights out and the office chair turn over. A black man appear !");
+//                Actors.vadorDialog_a();
+//                System.out.println("**************"
+//                    +nLine+"Would you join this incredible profession ?"
+//                    +nLine+"a - Yes, it appears to be a stable situation for my personnal projects."
+//                    +nLine+"b - NO !! I've no time for this bumf !");
                 String answer_starwars = keyboard.nextLine();
                 if (answer_starwars.equals("a")){
-                System.out.println(" After many years of hard work and after encounter your wife and produced lot of baby ... You died of old age :( R.I.P  ");
-                System.out.println("You loose !! GAME OVER !!");
+                    ExpInfo.printvador_answerA();
+//                System.out.println(" After many years of hard work and after encounter your wife and produced lot of baby ... You died of old age :( R.I.P  ");
+//                System.out.println("You loose !! GAME OVER !!");
                 System.exit(1);
                 }
                 else if (answer_starwars.equals("b")){
-                Actors.vadorDialog_b();
+                    ExpInfo.printvador_answerB();
+//                Actors.vadorDialog_b();
                 fightPeople();
-                System.out.println("That's was a critical hit for this madness. He was not very bright !"
-                    +nLine+"Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !");
+                ExpInfo.printvador_end();
+//                System.out.println("That's was a critical hit for this madness. He was not very bright !"
+//                    +nLine+"Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !");
                 MrKitten.grabItem("potionCareMax");
                 MrKitten.grabItem("laserTail");
                 }

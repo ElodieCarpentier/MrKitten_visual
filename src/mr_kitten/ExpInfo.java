@@ -307,4 +307,87 @@ public class ExpInfo {
                   + "\n You recieved: Artefact of true vision");
           return end;
       }
+      
+      /*
+      * Print of the fishpalace
+      */
+      protected static String printfishpalace_intro(){
+          String intro=("You just entered the fish palace. It is magnificent and amazing."
+                  + "\n The court is waiting for you"
+                  + "\n It seems you have been fooled! You are late, and the court has declared you guilty."
+                  + "\n The King of the Waterworld, Dark Moule, is standing on a high chair, looking at you with utter contempt."
+                  + "\n People are coming! There is no way you are going to let them take your life!"
+                  + "\n You demand a trial by combat!"
+                  + "\n Against...the King!"
+                  + Actors.darkMouleDialog());
+          return intro;
+      }
+      protected static String printfishpalace_question(){
+          String question=("Quick! Before the fight begins, you see an algae laying on the ground"
+                  + "\n That may be useful! Do you want to pick it?"
+                  + "\n     a - yes"
+                  + "\n     b - no"
+                  + "\n Enter the character please :");
+          return question;
+      }
+      protected static String printfishpalace_answerA(){
+          String answerA=("Algae item add in your inventory.");
+          return answerA;
+      }
+      protected static String printfishpalace_answerB(){
+          String answerB=("Let us hope you will not regret it...");
+          return answerB;
+      }
+      protected static String printfishpalace_end() {
+          String end=("When dying, dark Moule has dropped a blue key. You grab it.");
+          return end;
+      }
+      
+      /*
+      * Print for the tavern SanRicardo
+      */
+      protected static String printtavern_intro(){
+          String intro=("You see a gorgeous looking cat with red-orange fur."
+                  + "\n This badass looking guy looks at you with a surprised look."
+                  + Actors.pussInBootsDialog());
+          return intro;
+      }
+      protected static String printtavern_end(){
+          String end=("ongratulations! You learned the puppyEyes technique! "
+                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
+          return end;
+      }
+      
+      /*
+      * Print for vador
+      */
+      protected static String printvador_intro(){
+          String intro=("Nice neon lights illuminate a dark desk. "
+                  + "\n Its looks like the Charlie's pub of the 7th street where the disco is on the floor but that's not relate to this story."
+                  + "\n You 're walking in direction of this desk ... suddendly the lights out and the office chair turn over. "
+                  + "\n A black man appear !"
+                  + "\n"
+                  + Actors.vadorDialog_a()
+                  + "\n **************"
+                  + "\n Would you join this incredible profession ?"
+                  + "\n   a - Yes, it appears to be a stable situation for my personnal projects."
+                  + "\n   b - NO !! I've no time for this bumf !");
+          return intro;
+      }
+      protected static String printvador_answerA(){
+          String answerA=("After many years of hard work and after encounter your wife and produced lot of baby ... "
+                  + "\n You died of old age :( R.I.P "
+                  + "\n You loose !! GAME OVER !!");
+          return answerA;
+      }
+      protected static String printvador_answerB(){
+          String answerB=(Actors.vadorDialog_b());
+          return answerB;
+      }
+      protected static String printvador_end(){
+          String end=("That's was a critical hit for this madness. He was not very bright !"
+                  + "\n Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !"
+                  + "\n This badass looking guy looks at you with a surprised look.");
+          return end;
+      }
 }

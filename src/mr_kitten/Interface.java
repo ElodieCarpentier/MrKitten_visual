@@ -371,9 +371,18 @@ public class Interface extends javax.swing.JDialog {
                 jTextArea1.setText("Hum...Yum !");
                 jButtonA.setVisible(false);
                 jButtonB.setVisible(false);
-            }
-            
+            }    
         }
+        else if (currentRoom.equals("street1")){
+            jTextArea1.setText(ExpInfo.printStreet1_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("street2")){
+            jTextArea1.setText(ExpInfo.printStreet2_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        } 
     }//GEN-LAST:event_jButtonAMouseClicked
 
     private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
@@ -389,6 +398,16 @@ public class Interface extends javax.swing.JDialog {
                 jButtonA.setVisible(false);
                 jButtonB.setVisible(false);
             }
+        }
+        else if (currentRoom.equals("street1")){
+            jTextArea1.setText(ExpInfo.printStreet1_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("street2")){
+            jTextArea1.setText(ExpInfo.printStreet2_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
         }
     }//GEN-LAST:event_jButtonBMouseClicked
 
