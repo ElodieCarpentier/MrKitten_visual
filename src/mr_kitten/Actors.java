@@ -114,17 +114,20 @@ public class Actors
         return shark;
     }
     
-    public static void darkMouleDialog(){
-        System.out.println("Who do you think you are?!");
-        System.out.println("You cannot prevail, you silly kitty...");
-        System.out.println("I will crush you!");
+    public static String darkMouleDialog(){
+        String darkmoule= ("Who do you think you are?!"
+                + "\n You cannot prevail, you silly kitty..."
+                + "\n I will crush you!");
+        return darkmoule;
     }
     
-    public static void pussInBootsDialog(){
-        System.out.println("Hola, Senor Gato!");
-        System.out.println("I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way...\"");
-        System.out.println("I have heard about your quest, and I want you to know that I support you!");
-        System.out.println("Let me teach you something that could be of a great help, for this quest and for all your life...");
+    public static String pussInBootsDialog(){
+        String inboots= ("Hola, Senor Gato!"
+                + "\n I see you come from the portal. It has been a long time since it has been used!"
+                + "\n By another cat that looks like yoy, by the way..."
+                + "\n I have heard about your quest, and I want you to know that I support you!"
+                + "\n Let me teach you something that could be of a great help, for this quest and for all your life...");
+        return inboots;
     }
     
     public static void brotherDialog(){
@@ -136,15 +139,17 @@ public class Actors
         System.out.println("You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!");
         System.out.println("I will never let you take it!");
     }
-     public static void vadorDialog_a() {
-        System.out.println("Oh well ! A new visitor in my house. Do you know where you are ?");
-        System.out.println("Because I'm the answer to all your questions indeed I'm in the darkside where all is possible ! Ahahah !");
-        System.out.println("I can propose to you a nice offer. A full time job in the darkside coorporation !");
+     public static String vadorDialog_a() {
+        String vadorA= ("Oh well ! A new visitor in my house. Do you know where you are ?"
+                + "\n Because I'm the answer to all your questions indeed I'm in the darkside where all is possible ! Ahahah !"
+                + "\n I can propose to you a nice offer. A full time job in the darkside coorporation !");
+        return vadorA;
     }
     
-    public static void vadorDialog_b() {
-        System.out.println("What ?! You can't refuse this offer !!");
-        System.out.println("Let's fight and see my superiority !!");
+    public static String vadorDialog_b() {
+        String vadorB= ("What ?! You can't refuse this offer !!"
+                + "\n Let's fight and see my superiority !!");
+        return vadorB;
     }
     
     public static String doryDialog_intro (){
