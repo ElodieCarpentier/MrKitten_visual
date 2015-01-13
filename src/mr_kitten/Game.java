@@ -248,11 +248,19 @@ public class Game
      * Here we print some stupid, cryptic message and a list of the 
      * command words.
      */
-    private void printHelp() 
+    protected String printHelp() 
     {
         String help = ("You are lost. You are alone. You wander around\n"
-                + "Your command words are:\n");
-        System.out.println("You are lost. You are alone. You wander");
+                + "\n Your command words are:"
+                + "\n go quit fight talk explore inventory help"
+                + "\n go + direction -- deplace in the map"
+                + "\n quit -- quit the game"
+                + "\n talk -- speak with a characters"
+                + "\n fight -- fight a characters"
+                + "\n explore -- explore the room and realize actions"
+                + "\n inventory -- print your inventory of item");
+        return help;
+        /*System.out.println("You are lost. You are alone. You wander");
         System.out.println("around.");
         System.out.println();
         System.out.println("Your command words are:");
@@ -262,7 +270,7 @@ public class Game
         System.out.println("talk -- speak with a characters");
         System.out.println("fight -- fight a characters");
         System.out.println("explore -- explore the room and realize actions");
-        System.out.println("inventory -- print your inventory of item");
+        System.out.println("inventory -- print your inventory of item");*/
     }
     
     /** 
