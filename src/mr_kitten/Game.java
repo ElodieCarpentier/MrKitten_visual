@@ -603,6 +603,16 @@ public class Game
                 break;
             case "street1" :
                 in.jTextArea1.setText(ExpInfo.printStreet1_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "street2" :
+                in.jTextArea1.setText(ExpInfo.printStreet2_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "sewer" :
+                in.jTextArea1.setText(ExpInfo.printSewer_intro());
                 break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
