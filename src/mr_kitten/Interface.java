@@ -43,7 +43,7 @@ public class Interface extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/artworkTavern.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mr_kitten/livingroom.png"))); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -138,7 +138,7 @@ public class Interface extends javax.swing.JDialog {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Explore)
                             .addComponent(Help))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -206,21 +206,27 @@ public class Interface extends javax.swing.JDialog {
 //DEPLACEMENT ENTRE LES ROOMS
     private void go_upMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_upMouseClicked
     g.goRoom(new Command("go", "up"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_upMouseClicked
     private void go_downMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_downMouseClicked
-    g.goRoom(new Command("go", "down"));   
+    g.goRoom(new Command("go", "down"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_downMouseClicked
     private void go_westMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_westMouseClicked
     g.goRoom(new Command("go", "west"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_westMouseClicked
     private void go_eastMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_eastMouseClicked
     g.goRoom(new Command ("go", "east"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_eastMouseClicked
     private void go_northMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_northMouseClicked
     g.goRoom(new Command("go", "north"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_northMouseClicked
     private void go_southMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go_southMouseClicked
-    g.goRoom(new Command("go", "south"));   // TODO add your handling code here:
+    g.goRoom(new Command("go", "south"));
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.currentRoom.getImage())));
     }//GEN-LAST:event_go_southMouseClicked
 
     /**

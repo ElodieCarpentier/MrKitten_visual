@@ -31,6 +31,7 @@ public class Room
     private String description;
     private String name;
     private HashMap <String,Door> HM;
+    private String image;
 
     /**
      * Create a room described "description". Initially, it has
@@ -38,11 +39,16 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description, String name) 
+    public Room(String description, String name, String image) 
     {
         this.description = description;
         this.name = name;
         HM = new HashMap <String,Door> ();
+        this.image=image;
+    }
+    
+    public String getImage(){
+        return image;
     }
     
     /**
@@ -84,4 +90,6 @@ public class Room
     public String getName() {
         return name;
     }
+    
+    
 }

@@ -25,7 +25,7 @@ import java.io.*;
 public class Game 
 {
     private Parser parser;
-    private Room currentRoom;
+    protected Room currentRoom;
     private Players MrKitten;
     private static ArrayList<Item> items;
     private static ArrayList<Characters> characters;
@@ -66,21 +66,21 @@ public class Game
         Room kitchen,livingRoom,bedroom,street1,street2,sewer,petshop,harbor,theGreatDescent,dory,theFishPalace;
         Room tavernSanRicardo,starWars,theCloset,theEnd;
                 
-        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen");
-        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom");
-        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom");
-        street1 = new Room ("are in the Street near the entrance of the house","street1");
-        street2 = new Room ("are in the Street near the Petshop","street2");
-        sewer = new Room ("are in the Sewer under the streets","sewer");
-        petshop = new Room ("are in the Petshop","petshop");
-        harbor = new Room ("are on the city's harbor", "harbor");
-        theGreatDescent = new Room ("are going deep down under water","theGreatDescent");
-        dory = new Room ("are with Dory the great fish","dory");
-        theFishPalace = new Room ("are in the Fish Palace","theFishPalace");
-        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo");
-        starWars = new Room ("are in a Galaxy far far away...","starWars");
-        theCloset = new Room ("are ready to fight with lions","theCloset");
-        theEnd = new Room ("did it, you did it, Yeah!","theEnd");
+        kitchen = new Room ("are in the Kitchen of the Master's house","kitchen","mr_kitten/kitchen.png");
+        livingRoom = new Room ("are in the Living room of the Master's house","livingRoom","mr_kitten/livingroom.png");
+        bedroom = new Room ("are in the Bedroom of the Master's house","bedroom","mr_kitten/bedroom.png");
+        street1 = new Room ("are in the Street near the entrance of the house","street1","/mr_kitten/street.png");
+        street2 = new Room ("are in the Street near the Petshop","street2","/mr_kitten/street.png");
+        sewer = new Room ("are in the Sewer under the streets","sewer", "/mr_kitten/sewer.png");
+        petshop = new Room ("are in the Petshop","petshop","/mr_kitten/petshop.png");
+        harbor = new Room ("are on the city's harbor", "harbor","/mr_kitten/harbor");
+        theGreatDescent = new Room ("are going deep down under water","theGreatDescent","/mr_kitten/underwater.png");
+        dory = new Room ("are with Dory the great fish","dory","/mr_kitten/seareef.png");
+        theFishPalace = new Room ("are in the Fish Palace","theFishPalace","/mr_kitten/fishpalace.png");
+        tavernSanRicardo = new Room ("are in the magnificient Tavern Of San Ricardo","tavernSanRicardo","/mr_kitten/artworkTavern.png");
+        starWars = new Room ("are in a Galaxy far far away...","starWars","/mr_kitten/starwars.png");
+        theCloset = new Room ("are ready to fight with lions","theCloset","/mr_kitten/narnia.png");
+        theEnd = new Room ("did it, you did it, Yeah!","theEnd","/mr_kitten/nyancat.png");
         
         //Declare doors and items
         Door doorKLr = new Door(livingRoom,kitchen); kitchen.addExit("east", doorKLr); livingRoom.addExit("west",doorKLr); 
@@ -325,6 +325,11 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    
+    public Room getCurrentRoom()
+    {
+        return currentRoom;
     }
     
     /*
