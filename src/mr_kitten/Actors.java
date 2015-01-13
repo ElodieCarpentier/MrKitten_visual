@@ -180,4 +180,11 @@ public class Actors
         System.out.println("You cannot prevail, you silly kitty...");
         System.out.println("I will crush you!");
     }
+    
+    public static void pussInBootsDialog(){
+        System.out.println("Hola, Senor Gato!");
+        System.out.println("\"I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way...\"");
+        System.out.println("I have heard about your quest, and I want you to know that I support you!");
+        System.out.println("Let me teach you something that could be of a great help, for this quest and for all your life...");
+    }
 }

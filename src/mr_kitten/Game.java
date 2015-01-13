@@ -146,10 +146,7 @@ public class Game
         Characters mrRobot = new Characters("Mr.Robot", 40, 25,"", "petshop");
         Characters shark = new Characters("Sharks", 20, 10,"...", "theGreatDescent");//A COMPLETER;;;
         Characters darkMoule = new Characters("Dark Moule", 35, 20, "...", "theFishPalace");
-        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"Hola, Senor Gato!"
-                + "I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way..."
-                + "I have heard about your quest, and I want you to know that I support you!"
-                + "Let me teach you something that could be of a great help, for this quest and for all your life...", "tavernSanRicardo");
+        Characters pussInBoots = new Characters("Puss in boots", 25, 15,"...", "tavernSanRicardo");
         Characters darkVador = new Characters("Dark Vador", 40, 25,"Shhhh...Shhhh...Are you a rebel? You look like a strange Ewok..."
                 + "Anyway, no one can enter a colonized planet like this! I will execute you!", "star wars");//A COMPLETER
         Characters brother = new Characters("Brother", 50, 30,"So, here you are...brother. I have been waiting for you."
@@ -759,7 +756,13 @@ public class Game
                 System.out.println("When dying, dark Moule has dropped a blue key. You grab it.");
                 MrKitten.grabItem("bluekey");
                 break;
-            case "tavernSanRicardo" : break;
+            case "tavernSanRicardo" : 
+                System.out.println("You see a gorgeous looking cat with red-orange fur.");
+                System.out.println("This badass looking guy looks at you with a surprised look.");
+                Actors.pussInBootsDialog();
+                MrKitten.grabItem("puppyEyes");
+                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
+                break;
             case "starWars" : break;
             case "theCloset" : break;
             case "theEnd" : break;
