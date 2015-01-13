@@ -1002,36 +1002,45 @@ public class Game
                 }
                 break;
             case "theCloset" : 
-                System.out.println("There is big wooden cupboard in front of you.");
-                System.out.println("You approach an feel a fresh gust of wind. What is this?");
-                System.out.println("You decide to enter the cupboard.");
-                System.out.println("There is a cat here...");
-                System.out.println("He looks stern.");
-                System.out.println("He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes...");
-                Actors.brotherDialog();
+                ExpInfo.printcloset_intro();
+//                System.out.println("There is big wooden cupboard in front of you.");
+//                System.out.println("You approach an feel a fresh gust of wind. What is this?");
+//                System.out.println("You decide to enter the cupboard.");
+//                System.out.println("There is a cat here...");
+//                System.out.println("He looks stern.");
+//                System.out.println("He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes...");
+//                Actors.brotherDialog();
                 fightPeople();
-                System.out.println("Wow! You won!");
-                System.out.println("This was a really serious opponent, you almost died.");
-                System.out.println("Still, it always hurts to have to kill your own brother...");
-                System.out.println("But the gy deserved it, you could jot let him live. He is too dangerous.");
-                System.out.println("You notice a small door in a corner. What could be hiding in it?");
+                ExpInfo.printcloset_end();
+//                System.out.println("Wow! You won!");
+//                System.out.println("This was a really serious opponent, you almost died.");
+//                System.out.println("Still, it always hurts to have to kill your own brother...");
+//                System.out.println("But the gy deserved it, you could jot let him live. He is too dangerous.");
+//                System.out.println("You notice a small door in a corner. What could be hiding in it?");
                 break;
-            case "theEnd" : System.out.println("What is this?! Oh my God...");
-                System.out.println("The magic guillotine!");
-                System.out.println("Do you want to use it?");
-                System.out.println("    a - yes");
-                System.out.println("    b - no");
-                System.out.println("Enter the character please:");
+            case "theEnd" : 
+                ExpInfo.printend_intro();
+//                System.out.println("What is this?! Oh my God...");
+//                System.out.println("The magic guillotine!");
+//                System.out.println("Do you want to use it?");
+//                System.out.println("    a - yes");
+//                System.out.println("    b - no");
+//                System.out.println("Enter the character please:");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                    System.out.println("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!");
-                    System.out.println("Infinite powers aheeeeeaaaaaad!!! Yay!");
+                    ExpInfo.printend_answerA();
+//                    System.out.println("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!");
+//                    System.out.println("Infinite powers aheeeeeaaaaaad!!! Yay!");
                 }
                 else if (answer.equals("b")){
-                    System.out.println("Let us hope you will not regret it...");
+                    ExpInfo.printend_answerB();
+//                    System.out.println("Let us hope you will not regret it...");
                 }
                 break;
-            default : System.out.println("Just... how??"); break;
+            default : 
+                ExpInfo.printanswerError();
+//                System.out.println("Just... how??"); 
+                break;
         }
         return ("Coucou");
 }
