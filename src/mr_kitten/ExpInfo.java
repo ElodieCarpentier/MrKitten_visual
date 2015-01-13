@@ -390,4 +390,48 @@ public class ExpInfo {
                   + "\n This badass looking guy looks at you with a surprised look.");
           return end;
       }
+      
+      /*
+      * Print of thcloset
+      */
+      protected static String printcloset_intro(){
+          String intro=("There is big wooden cupboard in front of you."
+                  + "\n You approach an feel a fresh gust of wind. What is this?"
+                  + "\n You decide to enter the cupboard."
+                  + "\n There is a cat here..."
+                  + "\n He looks stern."
+                  + "\n He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes..."
+                  + Actors.brotherDialog());
+          return intro;
+      }
+       protected static String printcloset_end(){
+          String end=("Wow! You won!"
+                  + "\n This was a really serious opponent, you almost died."
+                  + "\n Still, it always hurts to have to kill your own brother..."
+                  + "\n But the gy deserved it, you could jot let him live. He is too dangerous."
+                  + "\n You notice a small door in a corner. What could be hiding in it?");
+          return end;
+      }
+       
+       /*
+       * Print foe the end
+       */
+       protected static String printend_intro(){
+           String intro=("What is this?! Oh my God..."
+                   + "\n The magic guillotine!"
+                   + "\n Do you want to use it?"
+                   + "\n     a - yes"
+                   + "\n     b - no"
+                   + "\n Enter the character please:");
+           return intro;
+       }
+       protected static String printend_answerA(){
+           String answerA=("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!"
+                   + "\n Infinite powers aheeeeeaaaaaad!!! Yay!");
+           return answerA;
+       }
+       protected static String printend_answerB(){
+           String answerB=("\"Let us hope you will not regret it...");
+           return answerB;
+       }
 }
