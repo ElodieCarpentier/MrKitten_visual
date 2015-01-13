@@ -75,11 +75,12 @@ public class Actors
     }
     
      
-    public static void redFishDialog(){
-        System.out.println( "Mr Kitten,");
-        System.out.println("I am here to inform you that the King of the Waterworld summons you to the underwater court.");
-        System.out.println("You will be judged for the murder of one of our beloved citizens, an honest goldfish who used to live in the same house you did.");
-        System.out.println("We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes.");
+    public static String redFishDialog(){
+        String redFish = ("Mr Kitten, \n"
+                +"\n I am here to inform you that the King of the Waterworld summons you to the underwater court.\n"
+                +"\n You will be judged for the murder of one of our beloved citizens, an honest goldfish who used to live in the same house you did."
+                +"\n We expect your presence in the court in 3 water days, or else you will be hunted down and executed for your crimes. \n");
+        return redFish;
     }
     
     public static void ratatouilleDialog(){

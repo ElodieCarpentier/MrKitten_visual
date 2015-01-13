@@ -100,4 +100,57 @@ public class ExpInfo {
           String answer =("You found a healing potion! That might be useful...");
           return answer;
       }
+      
+      /**
+       * Print of street 2
+       */
+      protected static String printStreet2_intro(){
+          String intro = ("Here you are! Back in the light!\n"
+                  +"\n There is another garbage can! Sounds like you are going to make a good deal again! \n"
+                  +"\n Do you want to explore the garbage can? \n"
+                  +"\n    a - yes \n"
+                  +"\n    b - no \n"
+                  +"\n Enter the character please : \n");
+            return intro;
+      }
+      
+      protected static String printStreet2_answerA(){
+          String answer = ("Uh-Oh! There is already someone in this garbage can! \n"
+                  +"\n This stray cat doesn't look soft! \n");
+          return answer;
+      }
+      
+      protected static String printStreet2_answerB(){
+          String answer = ("Let us hope you will not regret it... \n");
+          return answer;
+      }
+      
+      /**
+       * Print of sewer
+       */
+      protected static String printSewer_intro(){
+          String intro = ("Look! A wild rat is coming toward you! \n"
+                  +" \n It seems you have entered his territory \n ");
+          return intro;
+      }
+      
+      protected static String printSewer_conclu(){
+          String conclu = ("Congratulations! You have learned a new ability : SuperPiss \n"
+                  +"\n You are now able to pee on people in a...deadly way... \n");
+          return conclu;
+      }
+      
+      /**
+       * Print of petshop
+       */
+      protected static String printPetshop_intro(){
+          String intro = ("A red fish appears! He looks stern... \n"
+                  +Actors.redFishDialog()
+                  +"\n There is a rat in one of the cages. He looks different from the other rats...wise.\n" 
+                  +"\n Do you want to talk to him? \n"
+                  +"\n    a - yes \n" 
+                  +"\n    b - no \n" 
+                  +"\n Enter the character please : \n");
+          return intro;
+      }
 }

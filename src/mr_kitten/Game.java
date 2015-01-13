@@ -697,38 +697,45 @@ public class Game
                 }
                 break;
             case "street2" :
-                System.out.println("Here you are! Back in the light!");
+                ExpInfo.printStreet2_intro();
+                /*System.out.println("Here you are! Back in the light!");
                 System.out.println("There is another garbage can! Sounds like you are going to make a good deal again!");
                 System.out.println("Do you want to explore the garbage can?");
                 System.out.println("    a - yes");
                 System.out.println("    b - no");
-                System.out.println("Enter the character please :");
+                System.out.println("Enter the character please :");*/
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                System.out.println("Uh-Oh! There is already someone in this garbage can!");
-                System.out.println("This stray cat doesn't look soft!");
-                fightPeople();
+                    ExpInfo.printStreet2_answerA();
+                    /*System.out.println("Uh-Oh! There is already someone in this garbage can!");
+                    System.out.println("This stray cat doesn't look soft!");*/
+                    fightPeople();
                 }
                 else if (answer.equals("b")){
-                System.out.println("Let us hope you will not regret it...");
+                    ExpInfo.printStreet2_answerB();
+                    //System.out.println("Let us hope you will not regret it...");
                 }
                 break;
             case "sewer" : 
-                System.out.println("Look! A wild rat is coming toward you!");
-                System.out.println("It seems you have entered his territory");
+                /*System.out.println("Look! A wild rat is coming toward you!");
+                System.out.println("It seems you have entered his territory");*/
+                ExpInfo.printSewer_intro();
                 fightPeople();
                 MrKitten.grabItem("superPiss");
-                System.out.println("Congratulations! You have learned a new ability : SuperPiss");
-                System.out.println("You are now able to pee on people in a...deadly way...");
+                ExpInfo.printSewer_conclu();
+                /*System.out.println("Congratulations! You have learned a new ability : SuperPiss");
+                System.out.println("You are now able to pee on people in a...deadly way...");*/
                 break;
             case "petshop" : 
-                System.out.println("A red fish appears! He looks stern...");
-                Actors.redFishDialog();
-                System.out.println("There is a rat in one of the cages. He looks different from the other rats...wise.");
+                ExpInfo.printPetshop_intro();
+                
+                /*System.out.println("A red fish appears! He looks stern...");*/
+                //Actors.redFishDialog();
+                /*System.out.println("There is a rat in one of the cages. He looks different from the other rats...wise.");
                 System.out.println("Do you want to talk to him?");
                 System.out.println("    a - yes");
                 System.out.println("    b - no");
-                System.out.println("Enter the character please :");
+                System.out.println("Enter the character please :");*/
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
                     Actors.ratatouilleDialog();
