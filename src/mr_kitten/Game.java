@@ -445,6 +445,57 @@ public class Game
         return ennemiHP;
     }
     
+       
+    
+    /*
+    * Choose a special attack - interface version
+    */
+    private void specialAttackTest(Interface in){
+        in.jTextArea1.setText("What would you like ?");
+    
+        for (int i = 0;i<MrKitten.getInventory().size();i++){
+        Item currentItem = MrKitten.getInventory().get(i);
+        if (currentItem.getName().equals("superPiss")){
+               in.jTextArea1.setText(" a - superPiss ");
+               in.jButtonA.setVisible(true);
+               
+            }
+            if (currentItem.getName().equals("superBite")){
+               in.jTextArea1.setText(" b - superBite ");
+               in.jButtonB.setVisible(true);
+            }
+            if (currentItem.getName().equals("puppyEyes")){
+               in.jTextArea1.setText(" c - puppyEyes ");
+               in.jButtonC.setVisible(true);
+            }
+            if (currentItem.getName().equals("laserTail")){
+               in.jTextArea1.setText(" d - laserTail ");
+               in.jButtonD.setVisible(true);
+            }
+        }
+        if(specialAttack == true){
+            
+            switch (answer){
+                case "a": {
+                    ennemiHP=ennemiHP-15;
+                };break;
+                case "b": {
+                    ennemiHP=ennemiHP-20;
+                };break;
+                case "c": {
+                    ennemiHP=ennemiHP-25;
+                };break;
+                case "d": {
+                    ennemiHP=ennemiHP-30;
+                };break;
+                default:  in.jTextArea1.setText("what the hell did you just say? You are fighting, you take dommage"); break;
+            }
+        }else {
+            in.jTextArea1.setText("You have no special attack...");
+        }
+        return ennemiHP;
+    }
+    
     /**
      * Choose a special attack
      */
