@@ -370,6 +370,7 @@ public class Interface extends javax.swing.JDialog {
             else{
                 jTextArea1.setText("Hum...Yum !");
                 jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
             }
             
         }
@@ -385,6 +386,7 @@ public class Interface extends javax.swing.JDialog {
             }
             else{
                 jTextArea1.setText("Hum...Yum !"); 
+                jButtonA.setVisible(false);
                 jButtonB.setVisible(false);
             }
         }
