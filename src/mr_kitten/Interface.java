@@ -44,7 +44,8 @@ public class Interface extends javax.swing.JDialog {
         go_east = new javax.swing.JButton();
         go_north = new javax.swing.JButton();
         go_south = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Look = new javax.swing.JButton();
+        Items = new javax.swing.JButton();
 
         jRadioButton1.setText("Oh Yes!");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -166,10 +167,17 @@ public class Interface extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("Look");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Look.setText("Look");
+        Look.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                LookMouseClicked(evt);
+            }
+        });
+
+        Items.setText("Items");
+        Items.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ItemsMouseClicked(evt);
             }
         });
 
@@ -198,8 +206,12 @@ public class Interface extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Explore)
-                            .addComponent(Help)
-                            .addComponent(jButton1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Help)
+                                    .addComponent(Look)
+                                    .addComponent(Items))
+                                .addGap(2, 2, 2)))))
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,13 +234,15 @@ public class Interface extends javax.swing.JDialog {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
                         .addComponent(Explore)
-                        .addGap(4, 4, 4)
-                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Items)
+                        .addGap(11, 11, 11)
+                        .addComponent(Look)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Help)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(57, Short.MAX_VALUE)
+                        .addContainerGap(63, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +260,6 @@ public class Interface extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
                                 .addComponent(go_east)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(go_down, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
@@ -316,9 +329,13 @@ public class Interface extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void LookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LookMouseClicked
     jTextArea1.setText((g.currentRoom.getDescription()));    // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_LookMouseClicked
+
+    private void ItemsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ItemsMouseClicked
+    //g.lookInventory();
+    }//GEN-LAST:event_ItemsMouseClicked
 
     private javax.swing.JDialog getYesNo (){
         YesNo.setVisible(true);
@@ -370,6 +387,8 @@ public class Interface extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Explore;
     private javax.swing.JButton Help;
+    private javax.swing.JButton Items;
+    private javax.swing.JButton Look;
     private javax.swing.JButton Shutdown;
     private javax.swing.JDialog YesNo;
     private javax.swing.JButton go_down;
@@ -378,7 +397,6 @@ public class Interface extends javax.swing.JDialog {
     private javax.swing.JButton go_south;
     private javax.swing.JButton go_up;
     private javax.swing.JButton go_west;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton1;

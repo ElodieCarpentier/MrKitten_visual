@@ -46,12 +46,21 @@ public class Game
      }
     
     /**
-     * Gettor to access list of items and list of characters
+     * Getter to access list of items and list of characters
      * @return 
      */
     public static ArrayList<Item> getListItem(){
         return items;
     }
+    
+//    public void lookInventory()
+//    {
+//    ArrayList<Item> item = new ArrayList<Item>();
+//    for (Item i : item) 
+//    {
+//    Item.lookItem();
+//    }    
+//    }
     
     public static ArrayList<Characters> getListCharacters(){
         return characters;

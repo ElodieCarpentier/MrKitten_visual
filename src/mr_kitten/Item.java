@@ -52,6 +52,12 @@ public class Item
         return itemWeight;
     }
     
+    public String lookItem()
+    {
+        String s = (getName()+ "\n"+ getDescription());
+        return s;
+    }
+    
     /*public static ArrayList getTab()
     {
         return tabItem;
