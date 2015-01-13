@@ -571,16 +571,16 @@ public class Game
 //                System.out.println("    a - Yes he deserves it!");
 //                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
 //                System.out.println("Enter the character please :");
-                //String answer = keyboard.nextLine();
-               // if (answer.equals("a")){
-              //      ExpInfo.printlivingRoom_answerA();
+                  answer = keyboard.nextLine();
+                if (answer.equals("a")){
+                    ExpInfo.printlivingRoom_answerA();
 //                    System.out.println("You totaly nailed it! But you noticed that a key droped on the floor... What could it be?!");
-              //      MrKitten.grabItem("home key");
-              //  }
-             //   else {
-             //       ExpInfo.printlivingRoom_answerB();
+                    MrKitten.grabItem("home key");
+                }
+                else {
+                    ExpInfo.printlivingRoom_answerB();
 //                    System.out.println("Pussycat! Without some balls you won't go to any places!");
-               // }
+                }
                // try {
               //      Thread.sleep(2000);
               //  }
@@ -594,10 +594,10 @@ public class Game
 //                System.out.println("    a - Yes!");
 //                System.out.println("    b - With a bit of mayonnaise... What could happen?");
 //                System.out.println("Enter the character: ");
-              //  ExpInfo.printlivingRoom_conclu();
-              //  answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
+               ExpInfo.printlivingRoom_conclu();
+                answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
 //                System.out.println("Hum... Yum!");
-             //      break;
+                   break;
             case "kitchen" :
                 ExpInfo.printKitchen_intro();
                 /*System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
@@ -676,20 +676,23 @@ public class Game
                     }  
             break;
             case "street1" :
-                System.out.println("You look around you and see a big old cat on the street, coming toward you.");
+                ExpInfo.printStreet1_intro();
+                /*System.out.println("You look around you and see a big old cat on the street, coming toward you.");
                 System.out.println("He looks friendly and comes near you.");
                 System.out.println("You may want to talk to him");
                 System.out.println("There is also a garbage can over here, it smells delicious...");
                 System.out.println("What do you want to do?");
                 System.out.println("    a - talk to the cat");
                 System.out.println("    b - explore the garbage can");
-                System.out.println("Enter the character please :");
+                System.out.println("Enter the character please :");*/
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                    Actors.garfieldDialog();   
+                    //Actors.garfieldDialog();  
+                    ExpInfo.printStreet1_answerA();
                 }
                 else if (answer.equals("b")){
-                    System.out.println("You found a healing potion! That might be useful...");
+                    //System.out.println("You found a healing potion! That might be useful...");
+                    ExpInfo.printStreet1_answerB();
                     MrKitten.grabItem("potionCareMin");
                 }
                 break;
