@@ -250,8 +250,10 @@ public class Game
      */
     private void printHelp() 
     {
+        String help = ("You are lost. You are alone. You wander around\n"
+                + "Your command words are:\n");
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around.");
         System.out.println();
         System.out.println("Your command words are:");
         System.out.println("   go quit fight talk explore inventory help  ");
@@ -267,7 +269,7 @@ public class Game
      * Try to go to one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
      */
-    private void goRoom(Command command) 
+    protected void goRoom(Command command) 
     {
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
@@ -549,7 +551,7 @@ public class Game
         }
     }
     
-    private void exploreRoom(){
+    public void exploreRoom(){
         int MrKittenHP = MrKitten.getPlayerHP();
         Scanner keyboard = new Scanner(System.in);
         switch(currentRoom.getName()){

@@ -14,10 +14,10 @@ public class Mr_Kitten {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Game g = new Game();
-        g.play();
-    }
+    //public static void main(String args[]) {
+    //Game g = new Game();
+    //g.play();
+    //}
+    
     
 }
