@@ -567,8 +567,8 @@ public class Game
             case "livingRoom" :
                 System.out.println("This couch is where the master always crashes... Let's do something!");
                 System.out.println("Destroy the couch?");
-                System.out.println("a - Yes he deserves it!");
-                System.out.println("b - No! I may be a little dizzy but I won't turn crazy today!");
+                System.out.println("    a - Yes he deserves it!");
+                System.out.println("    b - No! I may be a little dizzy but I won't turn crazy today!");
                 System.out.println("Enter the character please :");
                 String answer = keyboard.nextLine();
                 if (answer.equals("a")){
@@ -587,17 +587,18 @@ public class Game
                 System.out.println("Need to do something else...");
                 System.out.println("Oh! A goldfish! Seems tasty...");
                 System.out.println("Eat it?");
-                System.out.println(" a - Yes!");
-                System.out.println(" b - With a bit of mayonnaise... What could happen?");
+                System.out.println("    a - Yes!");
+                System.out.println("    b - With a bit of mayonnaise... What could happen?");
                 System.out.println("Enter the character: ");
                 answer = keyboard.nextLine();//Not usefull since he doesn't really have any choice
                 System.out.println("Hum... Yum!");
                 break;
             case "kitchen" :System.out.println ("Best place of the world for all cordon bleu. Their is always something to eat.");
-                System.out.println("It's smelling cooking food ! The kitchen table is probably full of food." 
-                        + "Do you want jump on the kitchen table ?"
-                        + "a - Oh god YES ! I'm hungry guys !"
-                        + "b - No, it's better on the kitchen cupboard");
+                System.out.println("It's smelling cooking food ! The kitchen table is probably full of food.");
+                System.out.println("Do you want jump on the kitchen table ?");
+                System.out.println("    a - Oh god YES ! I'm hungry guys !");
+                System.out.println("    b - No, it's better on the kitchen cupboard");
+                System.out.println("Enter the character please :");
                 String answer_kitchen = keyboard.nextLine();
                 if (answer_kitchen.equals("a")){
                     System.out.println("Oohh, you're sad :( Their is only the half salt butter but it work. You eat it and gain 25 hp !");
@@ -609,10 +610,10 @@ public class Game
                      MrKittenHP =MrKittenHP +50;
                     Players.setPlayerHP(MrKittenHP);
                 }
-                    if(MrKittenHP >120){
-                        MrKittenHP = 120;
-                        Players.setPlayerHP(MrKittenHP);
-                    }
+                if(MrKittenHP >120){
+                    MrKittenHP = 120;
+                    Players.setPlayerHP(MrKittenHP);
+                }
                 break;
                 
             case "bedroom" : 
@@ -622,10 +623,10 @@ public class Game
                         +nLine+"b - The chest of drawers: I will improve my climbing skill and i could roll out some ball;"
                         +nLine+"c - The library: So many books well ordered, a great slalom to improve my dexterity;"
                         +nLine+"d - The new chair: I could mad my claws and relax myself. ");
+                System.out.println("Enter the character please :");
                 String answer_bedroom = keyboard.nextLine();
                 if (answer_bedroom.equals("a")){
-                    System.out.println("Oohh, you're so exited to play in your castle and after ripped the pillow you eat accidently a feather. You loose 5 hp."
-                            +nLine+"You eat it and gain 25 hp !");
+                    System.out.println("Oohh, you're so exited to play in your castle and after ripped the pillow you eat accidently a feather. You loose 5 hp.");
                     MrKittenHP =MrKittenHP -5;  
                     Players.setPlayerHP(MrKittenHP);
                 }
@@ -634,8 +635,9 @@ public class Game
                 }
                 else if (answer_bedroom.equals("c")){
                     System.out.println("You're climbing the library unfortunately you're falling but a pillow soften this fall. Are you enought brave to retry ?"
-                           +nLine+"a- No thanks, it's too dangerous !"
-                           +nLine+"b- YES !! I can prove my bravery. I'm not a defeatist ! (The Game company isn't responsable if a accidental death occur !)");
+                           +nLine+"     a- No thanks, it's too dangerous !"
+                           +nLine+"     b- YES !! I can prove my bravery. I'm not a defeatist ! (The Game company isn't responsable if a accidental death occur !)");
+                    System.out.println("Enter the character please :");
                     String answer_bedroom_library = keyboard.nextLine();
                     if (answer_bedroom_library.equals("a")){
                         System.out.println("It's a choice like a other. Go explore new universe !!!");
@@ -670,23 +672,25 @@ public class Game
                 System.out.println("You may want to talk to him");
                 System.out.println("There is also a garbage can over here, it smells delicious...");
                 System.out.println("What do you want to do?");
-                System.out.println("a - talk to the cat");
-                System.out.println("b - explore the garbage can");
+                System.out.println("    a - talk to the cat");
+                System.out.println("    b - explore the garbage can");
+                System.out.println("Enter the character please :");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                Actors.garfieldDialog();   
+                    Actors.garfieldDialog();   
                 }
                 else if (answer.equals("b")){
-                System.out.println("You found a healing potion! That might be useful...");
-                MrKitten.grabItem("potionCareMin");
+                    System.out.println("You found a healing potion! That might be useful...");
+                    MrKitten.grabItem("potionCareMin");
                 }
                 break;
             case "street2" :
                 System.out.println("Here you are! Back in the light!");
                 System.out.println("There is another garbage can! Sounds like you are going to make a good deal again!");
-                System.out.println("do you want to explore the garbage can?");
-                System.out.println("a - yes");
-                System.out.println("b - no");
+                System.out.println("Do you want to explore the garbage can?");
+                System.out.println("    a - yes");
+                System.out.println("    b - no");
+                System.out.println("Enter the character please :");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
                 System.out.println("Uh-Oh! There is already someone in this garbage can!");
@@ -710,15 +714,16 @@ public class Game
                 Actors.redFishDialog();
                 System.out.println("There is a rat in one of the cages. He looks different from the other rats...wise.");
                 System.out.println("Do you want to talk to him?");
-                System.out.println("a - yes");
-                System.out.println("b - no");
+                System.out.println("    a - yes");
+                System.out.println("    b - no");
+                System.out.println("Enter the character please :");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                Actors.ratatouilleDialog();
-                System.out.println("Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
+                    Actors.ratatouilleDialog();
+                    System.out.println("Congratulations! You just learned Alchemy! You are now able to craft objects using this principle.");
                 }
                 else if (answer.equals("b")){
-                System.out.println("Let us hope you will not regret it...");
+                    System.out.println("Let us hope you will not regret it...");
                 }
                 System.out.println("Sheeiiiiiit! You woke up the tyran of the petshop, the robot cleaner!");
                 Actors.mrRobotDialog();
