@@ -56,6 +56,7 @@ public class Game
     public static ArrayList<Characters> getListCharacters(){
         return characters;
     }
+   
     /**
      * Create all the rooms and link their exits together.
      */
@@ -263,6 +264,7 @@ public class Game
         System.out.println("   go quit fight talk explore inventory help  ");
         System.out.println("go + direction -- deplace in the map");
         System.out.println("quit -- quit the game");
+        System.out.println("talk -- speak with a characters");
         System.out.println("fight -- fight a characters");
         System.out.println("explore -- explore the room and realize actions");
         System.out.println("inventory -- print your inventory of item");
