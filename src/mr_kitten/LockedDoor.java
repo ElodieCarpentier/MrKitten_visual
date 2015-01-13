@@ -36,16 +36,18 @@ public class LockedDoor extends Door
     {
         boolean hasKey = false;
         for(Item k:a){
-            if (k == Key){
+            if (k.getName().equals(Key.getName())){
                 hasKey = true;
+                System.out.println(k.getName()+" used");
             }
         }
         Room r = super.getRoom(currentRoom);//retourne la next room
         if (hasKey) {
+            System.out.println(r.getName());
             return r;
         }
         else {
-            System.out.println("You don't seem to have the"+Key.getName()+" with you! Find it and try again");
+            System.out.println("You don't seem to have the "+Key.getName()+" with you! Find it and try again");
             return currentRoom;
         }
     }

@@ -77,69 +77,7 @@ public class Actors
     /**
      * Dori's dialogue
      */
-    public static void doryDialogue()
-    {
-        System.out.println("You got a problem buddy?! Wait, did I just said that? Oh, I just met you,");
-        System.out.println("and this is crazy, but here's my number. Hey how is it going mate?");
-        System.out.println("Oh I might need your help! Do you know where Marin is going?");
-        System.out.println("a - P. Sherman Wallaby Way in Sydney Bitch!");
-        System.out.println("b - Somewhere only we know <3");
-        System.out.println("c - I heard something that my cousin told me about a women he was seeing in some places"
-        +"and that she was sometimes refering to someone as Marin, but i don't know if that's him because my dad also told me she was"
-        + "pretty crazy but as my mom said, never trust a man that can't even scratch a butterfly.");
-        System.out.println("d - answer d");
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("enter your answer!");
-        String answer = keyboard.nextLine();
-        boolean good = false;
-        switch (answer){
-            case "a": if (answer.equals("a")){
-                        System.out.println("Oh I remember now!! Thank you big guy!");
-                    };good = true;break;
-            case "b": if (answer.equals("b")){
-                        System.out.println("How romantic is this, give a kiss to Keane for me!");
-                    };break;
-            case "c": if (answer.equals("c")){
-                        System.out.println("You lost me there man...");
-                    };break;
-            case "d": if (answer.equals("d")){
-                        System.out.println("You gotta love panckakes...");
-                    };break;    
-            default:  System.out.println("what the hell did you just say?"); break;
-        }
-        if (good){
-            good = false;
-            System.out.println("I also remember that I have a History test tomorrow!");
-            System.out.println("You gotta help me! Just remember me which animal is");
-            System.out.println("the great defender of the world!");
-            System.out.println("a - Superman! Have you seen his underwear? So much red!");
-            System.out.println("b - Magicarpe! Obviously this magesterial fish! And he is red too!");
-            System.out.println("c - Etalon du cul! What a french name for a true hero! ");
-            System.out.println("d - Do you really want the D?");
-            System.out.println("enter your answer!");
-            answer = keyboard.nextLine();
-            switch (answer){
-                case "a": {
-                        System.out.println("Never trust somebody that has his underwear on top of his pants!");
-                    };break;
-            case "b": {
-                        System.out.println("His attack dealt too much damage to handle...");
-                    };break;
-            case "c": {
-                        System.out.println("Soooooo good! You are a true scientist!");
-                    };good = true;break;
-            case "d": {
-                        System.out.println("That hardrive doesn't have anything special...");
-                    };break;    
-                default : System.out.println("How can you do that you witch!");break;
-            }
-            if (good){
-                System.out.println("Good job! You just won an ancient artefact!");
-                System.out.println("You recieved: Artefact of true vision");
-                //Ajouter à l'équipement l'objet!!
-            }
-        }
-    }
+    
     
     public static void redFishDialog(){
         System.out.println( "Mr Kitten,");
@@ -173,5 +111,28 @@ public class Actors
     
     public static void sharkDialog(){
         System.out.println("Look at that Bruce! A furry fish! We have to taste that. Prepare to die!");
+    }
+    
+    public static void darkMouleDialog(){
+        System.out.println("Who do you think you are?!");
+        System.out.println("You cannot prevail, you silly kitty...");
+        System.out.println("I will crush you!");
+    }
+    
+    public static void pussInBootsDialog(){
+        System.out.println("Hola, Senor Gato!");
+        System.out.println("I see you come from the portal. It has been a long time since it has been used! By another cat that looks like yoy, by the way...\"");
+        System.out.println("I have heard about your quest, and I want you to know that I support you!");
+        System.out.println("Let me teach you something that could be of a great help, for this quest and for all your life...");
+    }
+    
+    public static void brotherDialog(){
+        System.out.println("So, here you are...brother. I have been waiting for you.");
+        System.out.println("Do not look so suprised! I am an Ancient Cat, just like you.");
+        System.out.println("When I first heard about the magical Guillotine, I knew I was the only one who could use it.");
+        System.out.println("And you, you want to take it, and spread power amongst these dumb kitties!");
+        System.out.println("This would only lead us to chaos...But if you join me, we could rule the world, together!");
+        System.out.println("You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!");
+        System.out.println("I will never let you take it!");
     }
 }
