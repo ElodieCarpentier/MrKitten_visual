@@ -405,9 +405,18 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
         }
         else if (currentRoom.equals("bedroom")){
-            jTextArea1.setText(ExpInfo.printbedroom_answerA());
-            jButtonA.setVisible(false);
-            jButtonB.setVisible(false);
+            if (!questBedroom){
+                jTextArea1.setText(ExpInfo.printbedroom_answerA());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printbedroom_answerCa());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+            }
         }
         else if (currentRoom.equals("street1")){
             jTextArea1.setText(ExpInfo.printStreet1_answerA());
@@ -448,6 +457,40 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
             jButtonC.setVisible(false);
         } 
+        }
+        else if (currentRoom.equals("petshop")){
+            jTextArea1.setText(ExpInfo.printPetshop_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("dory")){
+            if (!questDory){
+                jTextArea1.setText(ExpInfo.printdory_answerA());
+                questDory = true;
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printdory_goodanswerA());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+        }
+        else if (currentRoom.equals("theFishPalace")){
+            jTextArea1.setText(ExpInfo.printfishpalace_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("starWars")){
+            jTextArea1.setText(ExpInfo.printvador_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("theEnd")){
+            jTextArea1.setText(ExpInfo.printend_answerA());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonAMouseClicked
 
     private void jButtonBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBMouseClicked
@@ -470,9 +513,18 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
         }
         else if (currentRoom.equals("bedroom")){
-            jTextArea1.setText(ExpInfo.printbedroom_answerB());
-            jButtonA.setVisible(false);
-            jButtonB.setVisible(false);
+            if (!questBedroom){
+                jTextArea1.setText(ExpInfo.printbedroom_answerB());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printbedroom_answerCb());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+            }
         }
         else if (currentRoom.equals("street1")){
             jTextArea1.setText(ExpInfo.printStreet1_answerB());
@@ -516,14 +568,93 @@ public class Interface extends javax.swing.JDialog {
                 }
             }
         }
+        else if (currentRoom.equals("petshop")){
+            jTextArea1.setText(ExpInfo.printPetshop_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("dory")){
+            if (!questDory){
+                jTextArea1.setText(ExpInfo.printdory_answerB());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printdory_goodanswerB());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+        }
+        else if (currentRoom.equals("theFishPalace")){
+            jTextArea1.setText(ExpInfo.printfishpalace_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("starWars")){
+            jTextArea1.setText(ExpInfo.printvador_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
+        else if (currentRoom.equals("theEnd")){
+            jTextArea1.setText(ExpInfo.printend_answerB());
+            jButtonA.setVisible(false);
+            jButtonB.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonBMouseClicked
 
     private void jButtonCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCMouseClicked
-        // TODO add your handling code here:
+        String currentRoom = g.getCurrentRoom().getName();
+        if(currentRoom.equals("bedroom")){
+            jTextArea1.setText(ExpInfo.printbedroom_answerC());
+            jButtonC.setVisible(false);
+            jButtonD.setVisible(false);
+            questBedroom = true;
+        }
+        else if (currentRoom.equals("dory")){
+            if (!questDory){
+                jTextArea1.setText(ExpInfo.printdory_answerC());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printdory_goodanswerC());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+        }
     }//GEN-LAST:event_jButtonCMouseClicked
 
     private void jButtonDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonDMouseClicked
-        // TODO add your handling code here:
+        String currentRoom = g.getCurrentRoom().getName();
+        if(currentRoom.equals("bedroom")){
+            jTextArea1.setText(ExpInfo.printbedroom_answerD());
+            jButtonC.setVisible(false);
+            jButtonD.setVisible(false);
+        }
+        else if (currentRoom.equals("dory")){
+            if (!questDory){
+                jTextArea1.setText(ExpInfo.printdory_answerD());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+            else {
+                jTextArea1.setText(ExpInfo.printdory_goodanswerD());
+                jButtonA.setVisible(false);
+                jButtonB.setVisible(false);
+                jButtonC.setVisible(false);
+                jButtonD.setVisible(false);
+            }
+        }
     }//GEN-LAST:event_jButtonDMouseClicked
 
     private javax.swing.JDialog getYesNo (){

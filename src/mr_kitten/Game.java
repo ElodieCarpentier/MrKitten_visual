@@ -119,7 +119,7 @@ public class Game
         Door doorCSw = new Door (theCloset,starWars);starWars.addExit("east",doorCSw);theCloset.addExit("west",doorCSw);
         Door doorEC = new Door (theEnd, theCloset);theCloset.addExit("south", doorEC);
         
-        currentRoom = livingRoom;  // start game in master's house
+        currentRoom = theEnd;  // start game in master's house
     }
 
     /*
@@ -458,6 +458,57 @@ public class Game
         return ennemiHP;
     }
     
+       
+    
+    /*
+    * Choose a special attack - interface version
+    */
+    private void specialAttackTest(Interface in){
+        in.jTextArea1.setText("What would you like ?");
+    
+        for (int i = 0;i<MrKitten.getInventory().size();i++){
+        Item currentItem = MrKitten.getInventory().get(i);
+        if (currentItem.getName().equals("superPiss")){
+               in.jTextArea1.setText(" a - superPiss ");
+               in.jButtonA.setVisible(true);
+               
+            }
+            if (currentItem.getName().equals("superBite")){
+               in.jTextArea1.setText(" b - superBite ");
+               in.jButtonB.setVisible(true);
+            }
+            if (currentItem.getName().equals("puppyEyes")){
+               in.jTextArea1.setText(" c - puppyEyes ");
+               in.jButtonC.setVisible(true);
+            }
+            if (currentItem.getName().equals("laserTail")){
+               in.jTextArea1.setText(" d - laserTail ");
+               in.jButtonD.setVisible(true);
+            }
+        }
+        if(specialAttack == true){
+            
+            switch (answer){
+                case "a": {
+                    ennemiHP=ennemiHP-15;
+                };break;
+                case "b": {
+                    ennemiHP=ennemiHP-20;
+                };break;
+                case "c": {
+                    ennemiHP=ennemiHP-25;
+                };break;
+                case "d": {
+                    ennemiHP=ennemiHP-30;
+                };break;
+                default:  in.jTextArea1.setText("what the hell did you just say? You are fighting, you take dommage"); break;
+            }
+        }else {
+            in.jTextArea1.setText("You have no special attack...");
+        }
+        return ennemiHP;
+    }
+    
     /**
      * Choose a special attack
      */
@@ -614,8 +665,8 @@ public class Game
                 in.jTextArea1.setText(ExpInfo.printbedroom_intro());
                 in.jButtonA.setVisible(true);
                 in.jButtonB.setVisible(true);
-                //in.jButtonC.setVisible(true);
-                //in.jButtonD.setVisible(true);
+                in.jButtonC.setVisible(true);
+                in.jButtonD.setVisible(true);
                 break;
             case "street1" :
                 in.jTextArea1.setText(ExpInfo.printStreet1_intro());
@@ -632,6 +683,42 @@ public class Game
                 //Se battre contre le rat, si victoire lancer la suite
                 in.jTextArea1.setText(ExpInfo.printSewer_conclu());//ça c'est la suite
                 //ajout de l'item super piss
+                break;
+            case "petshop" :
+                in.jTextArea1.setText(ExpInfo.printPetshop_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "theGreatDescent" :
+                in.jTextArea1.setText(ExpInfo.printgreatdescent_intro());
+                break;
+            case "dory" : 
+                in.jTextArea1.setText(ExpInfo.printdory_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                in.jButtonC.setVisible(true);
+                in.jButtonD.setVisible(true);
+                break;
+            case "theFishPalace" : //manque la partie end après le combat
+                in.jTextArea1.setText(ExpInfo.printfishpalace_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "tavernSanRicardo" : //manque la partie end après le combat
+                in.jTextArea1.setText(ExpInfo.printtavern_intro());
+                break;
+            case "starWars" : 
+                in.jTextArea1.setText(ExpInfo.printvador_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
+                break;
+            case "theCloset" : 
+                in.jTextArea1.setText(ExpInfo.printcloset_intro());
+                break;
+            case "theEnd" : 
+                in.jTextArea1.setText(ExpInfo.printend_intro());
+                in.jButtonA.setVisible(true);
+                in.jButtonB.setVisible(true);
                 break;
             default : in.jTextArea1.setText("Just... how??"); 
             break;
@@ -891,7 +978,7 @@ public class Game
                 }
                 if (good){
                     good = false;
-                    ExpInfo.printdory_good();
+                    //ExpInfo.printdory_good();
 //                        System.out.println("I also remember that I have a History test tomorrow!");
 //                        System.out.println("You gotta help me! Just remember me which animal is");
 //                        System.out.println("the great defender of the world!");
@@ -923,7 +1010,7 @@ public class Game
                         ExpInfo.printanswerError();
                 }
                 if (good){
-                    ExpInfo.printdory_end();
+                    //ExpInfo.printdory_end();
 //                    System.out.println("Good job! You just won an ancient artefact!");
 //                    System.out.println("You recieved: Artefact of true vision");
                     MrKitten.grabItem("artefactOfTrueVision");
@@ -932,7 +1019,7 @@ public class Game
                 break;
             case "theFishPalace" :
                 ExpInfo.printfishpalace_intro();
-                ExpInfo.printfishpalace_question();
+               // ExpInfo.printfishpalace_question();
 //                System.out.println("You just entered the fish palace. It is magnificent and amazing.");
 //                System.out.println("The court is waiting for you");
 //                System.out.println("It seems you have been fooled! You are late, and the court has declared you guilty.");
@@ -966,7 +1053,7 @@ public class Game
 //                System.out.println("This badass looking guy looks at you with a surprised look.");
 //                Actors.pussInBootsDialog();
                 MrKitten.grabItem("puppyEyes");
-                ExpInfo.printtavern_end();
+                //ExpInfo.printtavern_end();
 //                System.out.println("Congratulations! You learned the puppyEyes technique! What a great way to soften your ennemies heart, to then deadly strike him!");
                 break;
             case "starWars" : 
@@ -1011,22 +1098,29 @@ public class Game
                 System.out.println("But the gy deserved it, you could jot let him live. He is too dangerous.");
                 System.out.println("You notice a small door in a corner. What could be hiding in it?");
                 break;
-            case "theEnd" : System.out.println("What is this?! Oh my God...");
-                System.out.println("The magic guillotine!");
-                System.out.println("Do you want to use it?");
-                System.out.println("    a - yes");
-                System.out.println("    b - no");
-                System.out.println("Enter the character please:");
+            case "theEnd" : 
+                ExpInfo.printend_intro();
+//                System.out.println("What is this?! Oh my God...");
+//                System.out.println("The magic guillotine!");
+//                System.out.println("Do you want to use it?");
+//                System.out.println("    a - yes");
+//                System.out.println("    b - no");
+//                System.out.println("Enter the character please:");
                 answer = keyboard.nextLine();
                 if (answer.equals("a")){
-                    System.out.println("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!");
-                    System.out.println("Infinite powers aheeeeeaaaaaad!!! Yay!");
+                    ExpInfo.printend_answerA();
+//                    System.out.println("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!");
+//                    System.out.println("Infinite powers aheeeeeaaaaaad!!! Yay!");
                 }
                 else if (answer.equals("b")){
-                    System.out.println("Let us hope you will not regret it...");
+                    ExpInfo.printend_answerB();
+//                    System.out.println("Let us hope you will not regret it...");
                 }
                 break;
-            default : System.out.println("Just... how??"); break;
+            default : 
+                ExpInfo.printanswerError();
+//                System.out.println("Just... how??"); 
+                break;
         }
         return ("Coucou");
 }*/

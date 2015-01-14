@@ -130,14 +130,15 @@ public class Actors
         return inboots;
     }
     
-    public static void brotherDialog(){
-        System.out.println("So, here you are...brother. I have been waiting for you.");
-        System.out.println("Do not look so suprised! I am an Ancient Cat, just like you.");
-        System.out.println("When I first heard about the magical Guillotine, I knew I was the only one who could use it.");
-        System.out.println("And you, you want to take it, and spread power amongst these dumb kitties!");
-        System.out.println("This would only lead us to chaos...But if you join me, we could rule the world, together!");
-        System.out.println("You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!");
-        System.out.println("I will never let you take it!");
+    public static String brotherDialog(){
+        String brother = ("So, here you are...brother. I have been waiting for you."
+                + "\n Do not look so suprised! I am an Ancient Cat, just like you."
+                + "\n When I first heard about the magical Guillotine, I knew I was the only one who could use it."
+                + "\n And you, you want to take it, and spread power amongst these dumb kitties!"
+                + "\n This would only lead us to chaos...But if you join me, we could rule the world, together!"
+                + "\n You don't want to?... You are just like Mom and Dad, to blind and stupid to see what's right!"
+                + "\n I will never let you take it!");
+        return brother;
     }
      public static String vadorDialog_a() {
         String vadorA= ("Oh well ! A new visitor in my house. Do you know where you are ?"

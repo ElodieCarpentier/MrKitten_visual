@@ -116,7 +116,7 @@ public class ExpInfo {
     }
     
     protected static String printbedroom_answerCa() {
-        String answerCa = ("It's a choice like a other. Go explore new universe !!!");
+        String answerCa = ("It's a choice like another. Go explore new universe !!!");
         return answerCa;
     }
     
@@ -249,7 +249,7 @@ public class ExpInfo {
                   + Actors.sharkDialog());
           return intro;
       }
-      protected static String printgreatdescent_end(){
+      protected static String printgreatdescent_end(){ //pas encore fait, implémenter combat en 1er
           String end= ("You just hit this shark so hard that its jaw just got torn apart from the rest of its body!"
                   + "\n Congratulations! You can now bite your ennemies with this super jaw!");
           return end;
@@ -265,7 +265,7 @@ public class ExpInfo {
           return intro;
       }
       protected static String printdory_answerA(){
-          String answerA=("Oh I remember now!! Thank you big guy!");
+          String answerA=("Oh I remember now!! Thank you big guy!"+Actors.doryDialog_good());
           return answerA;
       }
       protected static String printdory_answerB(){
@@ -281,10 +281,11 @@ public class ExpInfo {
           return answerD;
       }
       
-      protected static String printdory_good(){
-          String answergood=(Actors.doryDialog_good());
-          return answergood;
-      }
+//      protected static String printdory_good(){
+//          String answergood=(Actors.doryDialog_good());
+//          return answergood;
+//      }
+      
        protected static String printdory_goodanswerA(){
           String answerA=("Never trust somebody that has his underwear on top of his pants!");
           return answerA;
@@ -294,7 +295,9 @@ public class ExpInfo {
           return answerB;
       }
       protected static String printdory_goodanswerC(){
-          String answerC=("Soooooo good! You are a true scientist!");
+          String answerC=("Soooooo good! You are a true scientist!"+
+                  "\n Good job! You just won an ancient artefact!"
+                  + "\n You recieved: Artefact of true vision");
           return answerC;
       }
       protected static String printdory_goodanswerD(){
@@ -302,11 +305,11 @@ public class ExpInfo {
           return answerD;
       }
       
-      protected static String printdory_end(){
-          String end=("Good job! You just won an ancient artefact!"
-                  + "\n You recieved: Artefact of true vision");
-          return end;
-      }
+//      protected static String printdory_end(){
+//          String end=("Good job! You just won an ancient artefact!"
+//                  + "\n You recieved: Artefact of true vision");
+//          return end;
+//      }
       
       /*
       * Print of the fishpalace
@@ -319,17 +322,24 @@ public class ExpInfo {
                   + "\n People are coming! There is no way you are going to let them take your life!"
                   + "\n You demand a trial by combat!"
                   + "\n Against...the King!"
-                  + Actors.darkMouleDialog());
-          return intro;
-      }
-      protected static String printfishpalace_question(){
-          String question=("Quick! Before the fight begins, you see an algae laying on the ground"
+                  + Actors.darkMouleDialog()+
+                  "Quick! Before the fight begins, you see an algae laying on the ground"
                   + "\n That may be useful! Do you want to pick it?"
                   + "\n     a - yes"
                   + "\n     b - no"
                   + "\n Enter the character please :");
-          return question;
+          return intro;
       }
+      
+//      protected static String printfishpalace_question(){
+//          String question=("Quick! Before the fight begins, you see an algae laying on the ground"
+//                  + "\n That may be useful! Do you want to pick it?"
+//                  + "\n     a - yes"
+//                  + "\n     b - no"
+//                  + "\n Enter the character please :");
+//          return question;
+//      }
+      
       protected static String printfishpalace_answerA(){
           String answerA=("Algae item add in your inventory.");
           return answerA;
@@ -349,14 +359,16 @@ public class ExpInfo {
       protected static String printtavern_intro(){
           String intro=("You see a gorgeous looking cat with red-orange fur."
                   + "\n This badass looking guy looks at you with a surprised look."
-                  + Actors.pussInBootsDialog());
+                  + Actors.pussInBootsDialog()+
+                  "\n Congratulations! You learned the puppyEyes technique! "
+                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
           return intro;
       }
-      protected static String printtavern_end(){
-          String end=("ongratulations! You learned the puppyEyes technique! "
-                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
-          return end;
-      }
+//      protected static String printtavern_end(){
+//          String end=("Congratulations! You learned the puppyEyes technique! "
+//                  + "\n What a great way to soften your ennemies heart, to then deadly strike him!");
+//          return end;
+//      }
       
       /*
       * Print for vador
@@ -381,13 +393,65 @@ public class ExpInfo {
           return answerA;
       }
       protected static String printvador_answerB(){
-          String answerB=(Actors.vadorDialog_b());
-          return answerB;
-      }
-      protected static String printvador_end(){
-          String end=("That's was a critical hit for this madness. He was not very bright !"
+          String answerB=(Actors.vadorDialog_b()+
+                  "\n That's was a critical hit for this madness. He was not very bright !"
                   + "\n Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !"
                   + "\n This badass looking guy looks at you with a surprised look.");
-          return end;
+          return answerB;
       }
+//      protected static String printvador_end(){
+//          String end=("That's was a critical hit for this madness. He was not very bright !"
+//                  + "\n Congratulations! Vador dropped a potion care and his laser saber become a beautiful lasertail for you !"
+//                  + "\n This badass looking guy looks at you with a surprised look.");
+//          return end;
+//      }
+      
+      /*
+      * Print of thcloset
+      */
+      protected static String printcloset_intro(){
+          String intro=("There is big wooden cupboard in front of you."
+                  + "\n You approach an feel a fresh gust of wind. What is this?"
+                  + "\n You decide to enter the cupboard."
+                  + "\n There is a cat here..."
+                  + "\n He looks stern."
+                  + "\n He is covered in scars and has a nasty look, but apart from that, you two are perfect lookalikes..."
+                  + Actors.brotherDialog()+
+                  "\n Wow! You won!"
+                  + "\n This was a really serious opponent, you almost died."
+                  + "\n Still, it always hurts to have to kill your own brother..."
+                  + "\n But the gy deserved it, you could jot let him live. He is too dangerous."
+                  + "\n You notice a small door in a corner. What could be hiding in it?");
+          return intro;
+      }
+//       protected static String printcloset_end(){
+//          String end=("Wow! You won!"
+//                  + "\n This was a really serious opponent, you almost died."
+//                  + "\n Still, it always hurts to have to kill your own brother..."
+//                  + "\n But the gy deserved it, you could jot let him live. He is too dangerous."
+//                  + "\n You notice a small door in a corner. What could be hiding in it?");
+//          return end;
+//      }
+       
+       /*
+       * Print foe the end
+       */
+       protected static String printend_intro(){
+           String intro=("What is this?! Oh my God..."
+                   + "\n The magic guillotine!"
+                   + "\n Do you want to use it?"
+                   + "\n     a - yes"
+                   + "\n     b - no"
+                   + "\n Enter the character please:");
+           return intro;
+       }
+       protected static String printend_answerA(){
+           String answerA=("Wow! The power of the magic guillotine is real! You just turned into a Nyan Cat!"
+                   + "\n Infinite powers aheeeeeaaaaaad!!! Yay!");
+           return answerA;
+       }
+       protected static String printend_answerB(){
+           String answerB=("\"Let us hope you will not regret it...");
+           return answerB;
+       }
 }
