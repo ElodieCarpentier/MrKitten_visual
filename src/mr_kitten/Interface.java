@@ -12,6 +12,7 @@ import java.util.*;
 public class Interface extends javax.swing.JDialog {
     private static Game g = new Game();
     private boolean quest1, quest2 = false;
+    private boolean questDory, questBedroom = false;
     int MrKittenHP, ennemiHP, ennemiAD;
     /**
      * Creates new form Interface
@@ -457,7 +458,7 @@ public class Interface extends javax.swing.JDialog {
             jButtonB.setVisible(false);
             jButtonC.setVisible(false);
         } 
-        }
+        //}
         else if (currentRoom.equals("petshop")){
             jTextArea1.setText(ExpInfo.printPetshop_answerA());
             jButtonA.setVisible(false);
